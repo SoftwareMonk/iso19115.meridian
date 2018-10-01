@@ -1,0 +1,1915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- removed unchanged ISO 19115 codelists and rewrote for Geonetwork -->
+<!-- Edit: 2018-09-5 Kim Mortimer, added Type and other Darwin Core codelists -->
+<!-- Edit: 2018-08-30 Kim Mortimer, Forked codelist for MERIDIAN, adjusted codelists when appropriate -->
+<!-- Edit: 2015-07-02 AMilan, added 19115-1 and serviceIdentfication codes -->
+<!-- Edit: 20100305 AMilan, removed extra dash in ===MX_ScopeCode=== comment -->
+<!-- Edit: 20100521 Darmel, added 'sponsor' to === CI_RoleCode === -->
+<!-- Edit: 20100730 Darmel, added 'sciencePaper', 'userGuide', and 'dataDictionary' to === DS_InitiativeTypeCode === -->
+<!-- Edit: 20100730 Darmel, added 'referenceInformation', 'auxilliaryData', and 'dataQuality' to === MD_CoverageContentTypeCode === -->
+<!-- Edit: 20100730 Darmel, added 'scienceParty' to === CI_RoleCode ===	-->
+<!-- Edit: 20100730 Darmel, replaced 'wha' with 'who' in CI_RoleCode codelist item 'processor'	-->
+<!-- Edit: 20100730 Darmel, added === MI_BandDefinition ===, === MI_ContextCode ===, === MI_GeometryTypeCode ===, === MI_ObjectiveTypeCode ===, === MI_OperationTypeCode ===, === MI_PolarizationOrientationCode ===, === MI_PriorityCode ===, === MI_SequenceCode ===, === MI_TransferFunctionTypeCode ===, and === MI_TriggerCode === from ISO 19115-2 -->
+<!-- Edit: 20100811 Darmel, added 'dataCenter', 'project', 'instrument', and 'platform' to === MD_KeywordTypeCode === -->
+<!-- Edit: 20100819 Darmel, added 'modelResult' to === MD_CoverageContentTypeCode ===-->
+<!-- Edit: Nov 28, 2011 Anna Milan, changed scienceParty to collaborator to match ISO 19115-1 revisions. Added dataResolution to keyword type codes.-->
+<!-- CORRECTIONS referenced by 2008-09-11 #NN AUTHOR : IGN (France) contact: nicolas.lesage@ign.fr PURPOSE : Correction of 3 typographical errors DESCRIPTION : #01: 'unknwon' replaced by 'unknown' #02: 'MD_MaintenanceFrequencyCode_quartely' replaced by 'MD_MaintenanceFrequencyCode_quarterly' #03: 'quartely' replaced by 'quarterly' -->
+<codelists xmlns="http://www.isotc211.org/2005/gmx" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmx ../../gmx/gmx.xsd http://www.isotc211.org/2005/gco ../../gco/gco.xsd http://www.opengis.net/gml ../../gml/gml.xsd http://www.w3.org/1999/xlink ../../xlink/xlinks.xsd"/>
+	<!--=====Catalogue description=====-->
+	<name>
+		<gco:CharacterString>gmxCodelists</gco:CharacterString>
+	</name>
+	<scope>
+		<gco:CharacterString>Codelists for description of metadata datasets compliant with ISO/TC 211 19115:2003 and 19139</gco:CharacterString>
+	</scope>
+	<fieldOfApplication>
+		<gco:CharacterString>GMX (and imported) namespace</gco:CharacterString>
+	</fieldOfApplication>
+	<versionNumber>
+		<gco:CharacterString>0.0</gco:CharacterString>
+	</versionNumber>
+	<versionDate>
+		<gco:Date>2005-03-18</gco:Date>
+	</versionDate>
+	<!--============================================================================-->
+	<!--============================================================================-->
+	<!--============================= Codelists =======================================-->
+	<!--=== CI_DateTypeCode ===-->
+	
+		<codelist name="gmd:CI_DateTypeCode">
+			<entry>
+				<code>gmd:CI_DateTypeCode_creation</code>
+				<description>date identifies when the resource was brought into existence</description>
+				<label>creation</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_publication</code>
+				<description>date identifies when the resource was issued</description>
+				<label>publication</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_revision</code>
+				<description>date identifies when the resource was examined or re-examined and improved or amended</description>
+				<label>revision</label>				
+			</entry>
+			<!-- 19115-1 additions -->
+			<entry>
+				<code>gmd:CI_DateTypeCode_expiry</code>
+				<description>date identifies when resource expires</description>
+				<label>expiry</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_lastUpdate</code>
+				<description>date identifies when resource was last updated</description>
+				<label>lastUpdate</label>
+				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_lastRevision</code>
+				<description>date identifies when resource was last reviewed</description>
+				<label>lastRevision</label>
+				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_nextUpdate</code>
+				<description>date identifies when resource will be next updated</description>
+				<label>nextUpdate</label>			
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_unavailable</code>
+				<description>date identifies when resource became not available or obtainable</description>
+				<label>unavailable</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_inForce</code>
+				<description>date identifies when resource became in force</description>
+				<label>inForce</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_adopted</code>
+				<description>date identifies when resource was adopted</description>
+				<label>adopted</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_deprecated</code>
+				<description>date identifies when resource was deprecated</description>
+				<label>deprecated</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_superseded</code>
+				<description>date identifies when resource was superseded or replaced by another resource</description>
+				<label>superseded</label>			
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_validityBegins</code>
+				<description>time at which the data are considered to become valid. NOTE: There could be quite a delay between creation and validity begins</description>
+				<label>validityBegins</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_validityExpires</code>
+				<description>time at which the data are no longer considered to be valid</description>
+				<label>validityExpires</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_released</code>
+				<description>the date that the resource shall be released for public access</description>
+				<label>released</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_DateTypeCode_distribution</code>
+				<description>date identifies when an instance of the resource was distributed</description>
+				<label>distribution</label>				
+			</entry>
+		</codelist>	
+	<!--=== CI_OnLineFunctionCode ===-->	
+		<codelist name="gmd:CI_OnLineFunctionCode">
+			<entry>
+				<code>gmd:CI_OnLineFunctionCode_download</code>
+				<description>online instructions for transferring data from one storage device or system to another</description>
+				<label>download</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_OnLineFunctionCode_information</code>
+				<description>online information about the resource</description>
+				<label>information</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_OnLineFunctionCode_offlineAccess</code>
+				<description>online instructions for requesting the resource from the provider</description>
+				<label>offlineAccess</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_OnLineFunctionCode_order</code>
+				<description>online order process for obtening the resource</description>
+				<label>order</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_OnLineFunctionCode_search</code>
+				<description>online search interface for seeking out information about the resource</description>
+				<label>search</label>				
+			</entry>
+			<!-- 19115-1 additions -->
+			<entry>
+				<code>gmd:CI_OnLineFunctionCode_completeMetadata</code>
+				<description>complete metadata provided</description>
+				<label>completeMetadata</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_OnLineFunctionCode_browseGraphic</code>
+				<description>browse graphic provided</description>
+				<label>browseGraphic</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_OnLineFunctionCode_upload</code>
+				<description>online resource upload capability provided</description>
+				<label>upload</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_OnLineFunctionCode_emailService</code>
+				<description>online email service provided</description>
+				<label>emailService</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_OnLineFunctionCode_browsing</code>
+				<description>online browsing provided</description>
+				<label>browsing</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_OnLineFunctionCode_fileAccess</code>
+				<description>online file access provided</description>
+				<label>fileAccess</label>				
+			</entry>
+		</codelist>
+	
+	<!--=== CI_PresentationFormCode ===-->
+	
+		<codelist name="gmd:CI_PresentationFormCode">
+			<entry>
+				<code>gmd:CI_PresentationFormCode_documentDigital</code>
+				<description>digital representation of a primarily textual item (can contain illustrations also)</description>
+				<label>documentDigital</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_documentHardcopy</code>
+				<description>representation of a primarily textual item (can contain illustrations also) on paper, photograhic material, or other media</description>
+				<label>imageDigital</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_imageDigital</code>
+				<description>likeness of natural or man-made features, objects, and activities acquired through the sensing of visual or any other segment of the electromagnetic spectrum by sensors, such as thermal infrared, and high resolution radar and stored in digital format</description>
+				<label>documentHardcopy</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_imageHardcopy</code>
+				<description>likeness of natural or man-made features, objects, and activities acquired through the sensing of visual or any other segment of the electromagnetic spectrum by sensors, such as thermal infrared, and high resolution radar and reproduced on paper, photographic material, or other media for use directly by the human user</description>
+				<label>imageHardcopy</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_mapDigital</code>
+				<description>map represented in raster or vector form</description>
+				<label>mapDigital</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_mapHardcopy</code>
+				<description>map printed on paper, photographic material, or other media for use directly by the human user</description>
+				<label>mapHardcopy</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_modelDigital</code>
+				<description>multi-dimensional digital representation of a feature, process, etc.</description>
+				<label>modelDigital</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_modelHardcopy</code>
+				<description>3-dimensional, physical model</description>
+				<label>modelHardcopy</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_profileDigital</code>
+				<description>vertical cross-section in digital form</description>
+				<label>profileDigital</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_profileHardcopy</code>
+				<description>vertical cross-section printed on paper, etc.</description>
+				<label>profileHardcopy</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_tableDigital</code>
+				<description>digital representation of facts or figures systematically displayed, especially in columns</description>
+				<label>tableDigital</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_tableHardcopy</code>
+				<description>representation of facts or figures systematically displayed, especially in columns, printed onpapers, photographic material, or other media</description>
+				<label>tableHardcopy</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_videoDigital</code>
+				<description>digital video recording</description>
+				<label>videoDigital</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_videoHardcopy</code>
+				<description>video recording on film</description>
+				<label>videoHardcopy</label>				
+			</entry>
+			<!-- 19115-1 additions -->
+			<entry>
+				<code>gmd:CI_PresentationFormCode_audioDigital</code>
+				<description>digital audio recording</description>
+				<label>audioDigital</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_audioHardcopy</code>
+				<description>audio recording delivered by analog media, such as a magnetic tape</description>
+				<label>audioHardcopy</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_multimediaDigital</code>
+				<description>information representation using simultaneously various digital modes for text, sound, image</description>
+				<label>multimediaDigital</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_multimediaHardcopy</code>
+				<description>information representation using simultaneously various analog modes for text, sound, image</description>
+				<label>multimediaHardcopy</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_physicalSample</code>
+				<description>a physical object, e.g. Rock or mineral sample, microscope slide</description>
+				<label>physicalSample</label>			
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_diagramDigital</code>
+				<description>information represented graphically by charts such as pie chart, bar chart, and other type of diagrams and recorded in digital format</description>
+				<label>diagramDigital</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_PresentationFormCode_diagramHardcopy</code>
+				<description>information represented graphically by charts such as pie chart, bar chart, and other type of diagrams and printed on paper, phototographic material, or other media</description>
+				<label>diagramHardcopy</label>			
+			</entry>
+		</codelist>	
+	<!--=== CI_RoleCode ===-->	
+		<codelist name="gmd:CI_RoleCode">
+			<entry>
+				<code>gmd:CI_RoleCode_resourceProvider</code>
+				<description>party that supplies the resource</description>
+				<label>resourceProvider</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_custodian</code>
+				<description>party that accepts accountability and responsability for the data and ensures appropriate care and maintenance of the resource</description>
+				<label>custodian</label>			
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_owner</code>
+				<description>party that owns the resource</description>
+				<label>owner</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_sponsor</code>
+				<description>party that sponsors the resource</description>
+				<label>sponsor</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_user</code>
+				<description>party who uses the resource</description>
+				<label>user</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_distributor</code>
+				<description>party who distributes the resource</description>
+				<label>distributor</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_originator</code>
+				<description>party who created the resource</description>
+				<label>originator</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_pointOfContact</code>
+				<description>party who can be contacted for acquiring knowledge about or acquisition of the resource</description>
+				<label>pointOfContact</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_principalInvestigator</code>
+				<description>key party responsible for gathering information and conducting research</description>
+				<label>principalInvestigator</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_processor</code>
+				<description>party who has processed the data in a manner such that the resource has been modified</description>
+				<label>processor</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_publisher</code>
+				<description>party who published the resource</description>
+				<label>publisher</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_author</code>
+				<description>party who authored the resource</description>
+				<label>author</label>			
+			</entry>
+			<!-- 19115-1 additions -->
+			<entry>
+				<code>gmd:CI_RoleCode_coAuthor</code>
+				<description>party who jointly authors the resource</description>
+				<label>coAuthor</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_collaborator</code>
+				<description>party who assists with the generation of the resource other than the principal investigator</description>
+				<label>collaborator</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_editor</code>
+				<description>party who reviewed or modified the resource to improve the content</description>
+				<label>editor</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_mediator</code>
+				<description>a class of entity that mediates access to the resource and for whom the resource is intended or useful</description>
+				<label>mediator</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_rightsHolder</code>
+				<description>party owning or managing rights over the resource</description>
+				<label>rightsHolder</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_contributor</code>
+				<description>party contributing to the resource</description>
+				<label>contributor</label>				
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_funder</code>
+				<description>party providing monetary support for the resource</description>
+				<label>funder</label>			
+			</entry>
+			<entry>
+				<code>gmd:CI_RoleCode_stakeholder</code>
+				<description>party who has an interest in the resource or the use of the resource</description>
+				<label>stakeholder</label>				
+			</entry>
+		</codelist>
+	<!--=== DS_AssociationTypeCode ===-->	
+		<codelist name="gmd:DS_AssociationTypeCode">
+			<entry>
+				<code>gmd:DS_AssociationTypeCode_crossReference</code>
+				<description>reference from one dataset to another</description>
+				<label>crossReference</label>				
+			</entry>
+			<entry>
+				<code>gmd:DS_AssociationTypeCode_largerWorkCitation</code>
+				<description>reference to a master dataset of which this one is a part</description>
+				<label>largerWorkCitation</label>				
+			</entry>
+			<entry>
+				<code>gmd:DS_AssociationTypeCode_partOfSeamlessDatabase</code>
+				<description>part of the same structured set of data held in a computer</description>
+				<label>partOfSeamlessDatabase</label>				
+			</entry>
+			<entry>
+				<code>gmd:DS_AssociationTypeCode_source</code>
+				<description>mapping and charting information from which the dataset content originates</description>
+				<label>source</label>				
+			</entry>
+			<entry>
+				<code>gmd:DS_AssociationTypeCode_stereoMate</code>
+				<description>part of a set of imagery that when used together, provides three-dimensional images</description>
+				<label>stereoMate</label>				
+			</entry>
+			<!-- 19115-1 -->
+			<entry>
+				<code>gmd:DS_AssociationTypeCode_isComposedOf</code>
+				<description>reference to resources that are parts of this resource</description>
+				<label>isComposedOf</label>				
+			</entry>
+			<entry>
+				<code>gmd:DS_AssociationTypeCode_collectiveTitle</code>
+				<description>common title for a collection of resources. NOTE: title identifies elements of a series collectively, combined with information about what volumes are available at the source cite</description>
+				<label>collectiveTitle</label>				
+			</entry>
+			<entry>
+				<code>gmd:DS_AssociationTypeCode_series</code>
+				<description>associated through a common heritage such as produced to a common product specification</description>
+				<label>series</label>				
+			</entry>
+			<entry>
+				<code>gmd:DS_AssociationTypeCode_dependency</code>
+				<description>associated through a dependency</description>
+				<label>dependency</label>				
+			</entry>
+			<entry>
+				<code>gmd:DS_AssociationTypeCode_revisionOf</code>
+				<description>resource is a revision of associated resource</description>
+				<label>revisionOf</label>				
+			</entry>
+		</codelist>
+	
+	<!--=== MD_CellGeometryCode ===-->
+	
+		<codelist name="gmd:MD_CellGeometryCode">
+			<entry>
+				<code>gmd:MD_CellGeometryCode_point</code>
+				<description>each cell represents a point</description>
+				<label>point</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_CellGeometryCode_area</code>
+				<description>each cell represents an area</description>
+				<label>area</label>				
+			</entry>
+			<!-- 19115-1 -->
+			<entry>
+				<code>gmd:MD_CellGeometryCode_voxel</code>
+				<description>each cell represents a volumetric measurement on a regular grid in three dimensional space</description>
+				<label>voxel</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_CellGeometryCode_stratum</code>
+				<description>height range for a single point vertical profile</description>
+				<label>stratum</label>			
+			</entry>
+		</codelist>
+	
+	<!--=== MD_ClassificationCode ===-->
+	
+		<codelist name="gmd:MD_ClassificationCode">
+			<entry>
+				<code>gmd:MD_ClassificationCode_unclassified</code>
+				<description>available for general disclosure</description>
+				<label>unclassified</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ClassificationCode_restricted</code>
+				<description>not for general disclosure</description>
+				<label>restricted</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ClassificationCode_confidential</code>
+				<description>available for someone who can be entrusted with information</description>
+				<label>confidential</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ClassificationCode_secret</code>
+				<description>kept or meant to be kept private, unknown, or hidden from all but a select group of people</description>
+				<label>secret</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ClassificationCode_topSecret</code>
+				<description>of the highest secrecy</description>
+				<label>topSecret</label>				
+			</entry>
+			<!-- 19115-1 -->
+			<entry>
+				<code>gmd:MD_ClassificationCode_SBU</code>
+				<description>although unclassified, requires strict controls over its distribution</description>
+				<label>SBU</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_ClassificationCode_forOfficialUseOnly</code>
+				<description>unclassified information that is to be used only for official purposes determined by the designating body</description>
+				<label>forOfficialUseOnly</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ClassificationCode_protected</code>
+				<description>compromise of the information could cause damage</description>
+				<label>protected</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ClassificationCode_limitedDistribution</code>
+				<description>desimination limited by designating body</description>
+				<label>limitedDistribution</label>				
+			</entry>
+		</codelist>	
+	<!--=== MD_CoverageContentTypeCode ===-->	
+		<codelist name="gmd:MD_CoverageContentTypeCode">
+			<entry>
+				<code>gmd:MD_CoverageContentTypeCode_image</code>
+				<description>meaningful numerical representation of a physical parameter that is not the actual value of the physical parameter</description>
+				<label>image</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_CoverageContentTypeCode_thematicClassification</code>
+				<description>code value with no quantitative meaning, used to represent a physical quantity</description>
+				<label>thematicClassification</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_CoverageContentTypeCode_physicalMeasurement</code>
+				<description>value in physical units of the quantity being measured</description>
+				<label>physicalMeasurement</label>				
+			</entry>
+			<!-- 19115-1 additions -->
+			<entry>
+				<code>gmd:MD_CoverageContentTypeCode_auxillaryInformation</code>
+				<description>data, usually a physical measurement, used to support the calculation of the primary physicalMeasurement coverages in the dataset (e.g. grid of aerosol optical thickness used in the calculation of a sea surface temperature product).</description>
+				<label>auxillaryInformation</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_CoverageContentTypeCode_qualityInformation</code>
+				<description>data used to characterize the quality of the physicalMeasurement coverages in the dataset. Typically included in a gmi:QE_CoverageResult.</description>
+				<label>qualityInformation</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_CoverageContentTypeCode_referenceInformation</code>
+				<description>reference information used to support the calculation or use of the physicalMeasurement coverages in the dataset (e.g. grids of latitude/longitude used to geolocate the physical measurements).</description>
+				<label>referenceInformation</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_CoverageContentTypeCode_modelResult</code>
+				<description>resources with values that are calculated using a model rather than being observed or calculated from observations.</description>
+				<label>modelResult</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_CoverageContentTypeCode_coordinate</code>
+				<description>data used to provide coordinate axis values</description>
+				<label>coordinate</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_CoverageContentTypeCode_auxilliaryData</code>
+				<description>values of extraneous data that are not part of the physical measurement</description>
+				<label>auxilliaryData</label>				
+			</entry>
+		</codelist>	
+	<!--=== MD_KeywordTypeCode ===-->	
+		<codelist name="gmd:MD_KeywordTypeCode">
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_discipline</code>
+				<description>keyword identifies a branch of instruction or specialized learning</description>
+				<label>discipline</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_place</code>
+				<description>keyword identifies a location</description>
+				<label>place</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_dataResolution</code>
+				<description>keyword identifies a temporal or spatial resolution</description>
+				<label>dataResolution</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_stratum</code>
+				<description>keyword identifies the layer(s) of any deposited substance</description>
+				<label>stratum</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_temporal</code>
+				<description>keyword identifies a time period related to the dataset</description>
+				<label>temporal</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_theme</code>
+				<description>keyword identifies a particular subject or topic</description>
+				<label>theme</label>				
+			</entry>
+			<!-- 19115-1 additions -->
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_dataCentre</code>
+				<description>keyword identifies a repository or archive that manages and distributes data</description>
+				<label>dataCentre</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_featureType</code>
+				<description>keyword identifies a resource containing or about a collection of feature instances with common characteristics</description>
+				<label>featureType</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_instrument</code>
+				<description>keyword identifies a device used to measure or compare physical properties</description>
+				<label>instrument</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_platform</code>
+				<description>keyword identifies a structure upon which an instrument is mounted</description>
+				<label>platform</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_process</code>
+				<description>keyword identifies a series of actions or natural occurrences</description>
+				<label>process</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_project</code>
+				<description>keyword identifies an endeavour undertaken to create or modify a product or service</description>
+				<label>project</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_service</code>
+				<description>keyword identifies an activity carried out by one party for the benefit of another</description>
+				<label>service</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_product</code>
+				<description>keyword identifies a type of product</description>
+				<label>product</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_KeywordTypeCode_subTopicCategory</code>
+				<description>refinement of a topic category for the purpose of geographic data classification</description>
+				<label>subTopicCategory</label>				
+			</entry>
+			<!-- end 19115-1 additions -->
+		</codelist>	
+	<!--=== MD_MaintenanceFrequencyCode ===-->	
+		<codelist name="gmd:MD_MaintenanceFrequencyCode">
+			<entry>
+				<code>gmd:MD_MaintenanceFrequencyCode_continual</code>
+				<description>data is repeatedly and frequently updated</description>
+				<label>continual</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MaintenanceFrequencyCode_daily</code>
+				<description>data is updated each day</description>
+				<label>daily</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MaintenanceFrequencyCode_weekly</code>
+				<description>data is updated on a weekly basis</description>
+				<label>weekly</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MaintenanceFrequencyCode_fortnightly</code>
+				<description>data is updated every two weeks</description>
+				<label>fortnightly</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MaintenanceFrequencyCode_monthly</code>
+				<description>data is updated each month</description>
+				<label>monthly</label>				
+			</entry>
+			<entry>
+				<!-- CHANGE 2008-09-11 #02 -->
+				<code>gmd:MD_MaintenanceFrequencyCode_quarterly</code>
+				<!-- CHANGE 2008-09-11 #02 <code>gmd:MD_MaintenanceFrequencyCode_quartely</code> -->
+				<description>data is updated every three months</description>
+				<!-- CHANGE 2008-09-11 #03 -->
+				<label>quarterly</label>
+				<!-- CHANGE 2008-09-11 #03 <label>quartely</label> -->
+				
+			</entry>
+			<entry>
+				<code>gmd:MD_MaintenanceFrequencyCode_biannually</code>
+				<description>data is updated twice each year</description>
+				<label>biannually</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_MaintenanceFrequencyCode_annually</code>
+				<description>data is updated every year</description>
+				<label>annually</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MaintenanceFrequencyCode_asNeeded</code>
+				<description>data is updated as deemed necessary</description>
+				<label>asNeeded</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MaintenanceFrequencyCode_irregular</code>
+				<description>data is updated in intervals that are uneven in duration</description>
+				<label>irregular</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MaintenanceFrequencyCode_notPlanned</code>
+				<description>there are no plans to update the data</description>
+				<label>notPlanned</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MaintenanceFrequencyCode_unknown</code>
+				<description>frequency of maintenance for the data is not known</description>
+				<!-- CHANGE 2008-09-11 #01-->
+				<label>unknown</label>
+				<!-- CHANGE 2008-09-11 #01 <label>unknwon</label> -->			
+			</entry>
+		</codelist>	
+	<!--=== MD_MediumFormatCode ===-->	
+		<codelist name="gmd:MD_MediumFormatCode">
+			<entry>
+				<code>gmd:MD_MediumFormatCode_cpio</code>
+				<description>CoPy In / Out (UNIX file format and command)</description>
+				<label>cpio</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumFormatCode_tar</code>
+				<description>Tape ARchive</description>
+				<label>tar</label>				
+			</entry>			
+			<entry>
+				<code>gmd:MD_MediumFormatCode_highSierra</code>
+				<description>high sierra file system for optical disks - not to be confused with the Apple File System, introduced with High Sierra</description>
+				<label>highSierra</label>				
+			</entry>			
+			<entry>
+				<code>gmd:MD_MediumFormatCode_iso9660</code>
+				<description>information processing volume and file structure of CD-ROM (iso disk images)</description>
+				<label>iso9660</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumFormatCode_iso9660RockRidge</code>
+				<description>rock ridge interchange protocol (UNIX)</description>
+				<label>iso9660RockRidge</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumFormatCode_iso9660AppleHFS</code>
+				<description>hierarchical file system (Macintosh, widely used pre-1998))</description>
+				<label>iso9660AppleHFS</label>				
+			</entry>
+			<!-- ISO 19115-1 -->
+			<entry>
+				<code>gmd:MD_MediumFormatCode_udf</code>
+				<description>universal disk format</description>
+				<label>udf</label>				
+			</entry>
+			<!-- custom -->
+			<entry>
+				<code>gmd:MD_MediumFormatCode_m2ts</code>
+				<description>Blu-ray disc audio-video MPEG-2 transport stream container file format</description>
+				<label>m2ts</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumFormatCode_fat</code>
+				<description>File allocation table and derivatives (widely used on read-writable physical disks)</description>
+				<label>fat</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumFormatCode_hfsplus</code>
+				<description>hierarchical file system plus (Macintosh OS 8.1 and later)</description>
+				<label>hfsplus</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumFormatCode_apfs</code>
+				<description>Apple file system (macOS High Sierra and later)</description>
+				<label>apfs</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumFormatCode_ntfs</code>
+				<description>New technology file system (Windows)</description>
+				<label>ntfs</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumFormatCode_ext</code>
+				<description>Extended filesystem (Linux, multiple versions)</description>
+				<label>ext</label>				
+			</entry>
+		</codelist>
+	
+	<!--=== MD_MediumNameCode ===-->
+	
+		<codelist name="gmd:MD_MediumNameCode">
+			<entry>
+				<code>gmd:MD_MediumNameCode_cdRom</code>
+				<description>read-only optical disk, usually with a capacity of about 700 MB </description>
+				<label>cdRom</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_dvd</code>
+				<description>digital versatile disk, usually with a capacity of about 4.5 GB</description>
+				<label>dvd</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_dvdRom</code>
+				<description>digital versatile disk, read only</description>
+				<label>dvdRom</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_3halfInchFloppy</code>
+				<description>3,5 inch magnetic disk</description>
+				<label>3halfInchFloppy</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_5quarterInchFloppy</code>
+				<description>5,25 inch magnetic disk</description>
+				<label>5quarterInchFloppy</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_7trackTape</code>
+				<description>7 track magnetic tape</description>
+				<label>7trackTape</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_9trackType</code>
+				<description>9 track magnetic tape</description>
+				<label>9trackType</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_3480Cartridge</code>
+				<description>3480 cartridge tape drive</description>
+				<label>3480Cartridge</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_3490Cartridge</code>
+				<description>3490 cartridge tape drive</description>
+				<label>3490Cartridge</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_3580Cartridge</code>
+				<description>3580 cartridge tape drive</description>
+				<label>3580Cartridge</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_4mmCartridgeTape</code>
+				<description>4 millimetre magnetic tape</description>
+				<label>4mmCartridgeTape</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_8mmCartridgeTape</code>
+				<description>8 millimetre magnetic tape</description>
+				<label>8mmCartridgeTape</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_1quarterInchCartridgeTape</code>
+				<description>0,25 inch magnetic tape</description>
+				<label>1quarterInchCartridgeTape</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_digitalLinearTape</code>
+				<description>half inch cartridge streaming tape drive</description>
+				<label>digitalLinearTape</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_onLine</code>
+				<description>direct computer linkage</description>
+				<label>onLine</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_satellite</code>
+				<description>linkage through a satellite communication system</description>
+				<label>satellite</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_telephoneLink</code>
+				<description>communication through a telephone network</description>
+				<label>telephoneLink</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_hardcopy</code>
+				<description>pamphlet or leaflet giving descriptive information</description>
+				<label>hardcopy</label>				
+			</entry>
+			<!-- custom -->
+			<entry>
+				<code>gmd:MD_MediumNameCode_bluray</code>
+				<description>optical disk, usually with a capacity of 25 or 50 GB</description>
+				<label>blu-ray</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_2halfInchPATAHardDiskDrive</code>
+				<description>Rotating magnetic disk drive with a 2.5 inch formfactor, which can be connected directly to a computer using a parallel ATA connection</description>
+				<label>2halfInchPATAHardDiskDrive</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_3halfInchPATAHardDiskDrive</code>
+				<description>Rotating magnetic disk drive with a 2.5 inch formfactor, which can be connected directly to a computer using a parallel ATA connection</description>
+				<label>3halfInchPATAHardDiskDrive</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_2halfInchSATAHardDiskDrive</code>
+				<description>Rotating magnetic disk drive with a 2.5 inch formfactor, which can be connected directly to a computer using a serial ATA connection</description>
+				<label>2halfInchSATAHardDiskDrive</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_3halfInchSATAHardDiskDrive</code>
+				<description>Rotating magnetic disk drive with a 2.5 inch formfactor, which can be connected directly to a computer using a serial ATA connection</description>
+				<label>3halfInchSATAHardDiskDrive</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_SDCard</code>
+				<description>Secure Digital (or its mini or micro variants) memory card</description>
+				<label>SDCard</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_MediumNameCode_OtherMemoryCard</code>
+				<description>Any other memory card, such as the 'Memory Stick', 'CompactFlash' or 'Picture Card'</description>
+				<label>OtherMemoryCard</label>				
+			</entry>
+		</codelist>
+	<!--=== MD_ProgressCode===-->	
+		<codelist name="gmd:MD_ProgressCode">
+			<entry>
+				<code>gmd:MD_ProgressCode_completed</code>
+				<description>production of the data has been completed</description>
+				<label>completed</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_historicalArchive</code>
+				<description>data has been stored in an offline storage facility</description>
+				<label>historicalArchive</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_obsolete</code>
+				<description>data is no longer relevant</description>
+				<label>obsolete</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_onGoing</code>
+				<description>data is continually being updated</description>
+				<label>onGoing</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_planned</code>
+				<description>fixed date has been established upon or by which the data will be created or updated</description>
+				<label>planned</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_required</code>
+				<description>data needs to be generated or updated</description>
+				<label>required</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_underDevelopment</code>
+				<description>data is currently in the process of being created</description>
+				<label>underDevelopment</label>				
+			</entry>
+			<!-- 19115-1 -->
+			<entry>
+				<code>gmd:MD_ProgressCode_final</code>
+				<description>progress concluded and no changes will be accepted</description>
+				<label>final</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_pending</code>
+				<description>committed to, but not yet addressed</description>
+				<label>pending</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_retired</code>
+				<description>item is no longer recommended for use. It has not been superseded by another item</description>
+				<label>retired</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_superseded</code>
+				<description>replaced by new</description>
+				<label>superseded</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_tentative</code>
+				<description>provisional changes likely before resource becomes final or complete</description>
+				<label>tentative</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_valid</code>
+				<description>acceptable under specific conditions</description>
+				<label>valid</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_accepted</code>
+				<description>agreed to by sponsor</description>
+				<label>accepted</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_notAccepted</code>
+				<description>rejected by sponsor</description>
+				<label>notAccepted</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_withdrawn</code>
+				<description>removed from consideration</description>
+				<label>withdrawn</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_proposed</code>
+				<description>suggested that development needs to be undertaken</description>
+				<label>proposed</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ProgressCode_deprecated</code>
+				<description>resource superseded and will become obsolete, use only for historical purposes</description>
+				<label>deprecated</label>				
+			</entry>
+		</codelist>	
+	<!--=== MD_RestrictionCode ===-->	
+		<codelist name="gmd:MD_RestrictionCode">
+			<entry>
+				<code>gmd:MD_RestrictionCode_copyright</code>
+				<description>exclusive right to the publication, production, or sale of the rights to a literary, dramatic, musical, or artistic work, or to the use of a commercial print or label, granted by law for a specified period of time to an author, composer, artist, distributor</description>
+				<label>copyright</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_patent</code>
+				<description>government has granted exclusive right to make, sell, use or license an invention or discovery</description>
+				<label>patent</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_patentPending</code>
+				<description>produced or sold information awaiting a patent</description>
+				<label>patentPending</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_trademark</code>
+				<description>a name, symbol, or other device identifying a product, officially registered and legally restricted to the use of the owner or manufacturer</description>
+				<label>trademark</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_license</code>
+				<description>formal permission to do something</description>
+				<label>license</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_intellectualPropertyRights</code>
+				<description>rights to financial benefit from and control of distribution of non-tangible property that is a result of creativity</description>
+				<label>intellectualPropertyRights</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_restricted</code>
+				<description>withheld from general circulation or disclosure</description>
+				<label>restricted</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_otherRestrictions</code>
+				<description>limitation not listed</description>
+				<label>otherRestrictions</label>				
+			</entry>
+			<!-- ISO 19115-1 -->
+			<entry>
+				<code>gmd:MD_RestrictionCode_unrestricted</code>
+				<description>no constraints exist</description>
+				<label>unrestricted</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_licenceUnrestricted</code>
+				<description>formal permission not required to use the resource</description>
+				<label>licenceUnrestricted</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_licenceEndUser</code>
+				<description>formal permission required for a person or an entity to use the resource and that may differ from the person that orders or purchases it</description>
+				<label>licenceEndUser</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_licenceDistributor</code>
+				<description>formal permission required for a person or an entity to commercialize or distribute the resource</description>
+				<label>licenceDistributor</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_private</code>
+				<description>protects rights of individual or organisations from observation, intrusion, or attention of others</description>
+				<label>private</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_statutory</code>
+				<description>prescribed by law</description>
+				<label>statutory</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_confidential</code>
+				<description>not available to the public contains information that could be prejudicial to a commercial, industrial, or national interest</description>
+				<label>confidential</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_SBU</code>
+				<description>although unclassified, requires strict controls over its distribution.</description>
+				<label>SBU</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_RestrictionCode_in-confidence</code>
+				<description>with trust</description>
+				<label>in-confidence</label>				
+			</entry>
+		</codelist>
+	
+	<!--=== MD_ScopeCode ===-->
+	
+		<codelist name="gmd:MD_ScopeCode">
+			<entry>
+				<code>gmd:MD_ScopeCode_attribute</code>
+				<description>information applies to the attribute class</description>
+				<label>attribute</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_attributeType</code>
+				<description>information applies to the characteristic of a feature</description>
+				<label>attributeType</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_collectionHardware</code>
+				<description>information applies to the collection hardware class</description>
+				<label>collectionHardware</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_collectionSession</code>
+				<description>information applies to the collection session</description>
+				<label>collectionSession</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_dataset</code>
+				<description>information applies to the dataset</description>
+				<label>dataset</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_series</code>
+				<description>information applies to the series</description>
+				<label>series</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_nonGeographicDataset</code>
+				<description>information applies to non-geographic data</description>
+				<label>nonGeographicDataset</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_dimensionGroup</code>
+				<description>information applies to a dimension group</description>
+				<label>dimensionGroup</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_feature</code>
+				<description>information applies to a feature</description>
+				<label>feature</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_featureType</code>
+				<description>information applies to a feature type</description>
+				<label>featureType</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_propertyType</code>
+				<description>information applies to a property type</description>
+				<label>propertyType</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_fieldSession</code>
+				<description>information applies to a field session</description>
+				<label>fieldSession</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_software</code>
+				<description>information applies to a computer program or routine</description>
+				<label>software</label>				
+			</entry>
+		<!-- omitted - out of scope
+			<entry>
+				<code>gmd:MD_ScopeCode_service</code>
+					<description>information applies to a capability which a service provider entity makes available to a service user entity through a set of interfaces that define a behaviour, such as a use case</description>
+					<label>service</label>
+				
+			</entry>
+		-->
+			<entry>
+				<code>gmd:MD_ScopeCode_model</code>
+				<description>information applies to a copy or imitation of an existing or hypothetical object</description>
+				<label>model</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_tile</code>
+				<description>information applies to a tile, a spatial subset of geographic data</description>
+				<label>tile</label>				
+			</entry>
+			<!-- 19115-1 additions -->
+			<entry>
+				<code>gmd:MD_ScopeCode_metadata</code>
+				<description>information applies to metadata</description>
+				<label>metadata</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_initiative</code>
+				<description>information applies to an initiative</description>
+				<label>initiative</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_sample</code>
+				<description>information applies to a sample</description>
+				<label>sample</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_document</code>
+				<description>information applies to a document</description>
+				<label>document</label>				
+			</entry>
+			<!-- omitted - records are unlikely to refer to a repository
+		<entry>
+				<code>gmd:MD_ScopeCode_repository</code>
+					<description>information applies to a repository</description>
+					<label>repository</label>
+				
+			</entry>
+		-->
+			<entry>
+				<code>gmd:MD_ScopeCode_aggregate</code>
+				<description>information applies to an aggregate resource</description>
+				<label>aggregate </label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_product</code>
+				<description>metadata describing an ISO 19131 data product specification</description>
+				<label>product</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_collection</code>
+				<description>information applies to an unstructured set</description>
+				<label>collection</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_coverage</code>
+				<description>information applies to a coverage</description>
+				<label>coverage</label>				
+			</entry>
+			<!-- omitted - confusing overlap with software and does not seem applicable to MERIDIAN 
+		<entry>
+				<code>gmd:MD_ScopeCode_application</code>
+					<description>information resource hosted on a specific set of hardware and accessible over a network</description>
+					<label>application</label>
+				
+			</entry>			
+		-->
+		</codelist>	
+	<!--=== MD_MetadataScopeCode ===-->
+	<!-- custom entry -->		
+		<codelist name="gmd:MD_MetadataScopeCode">
+			<entry>
+				<code>gmd:MD_ScopeCode_dataset</code>
+				<description>information applies to the dataset</description>
+				<label>dataset</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_series</code>
+				<description>information applies to the series</description>
+				<label>series</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_nonGeographicDataset</code>
+				<description>information applies to non-geographic data</description>
+				<label>nonGeographicDataset</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_software</code>
+				<description>information applies to a computer program or routine</description>
+				<label>software</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_model</code>
+				<description>information applies to a copy or imitation of an existing or hypothetical object</description>
+				<label>model</label>				
+			</entry>
+			<!-- 19115-1 additions -->
+			<entry>
+				<code>gmd:MD_ScopeCode_initiative</code>
+				<description>information applies to an initiative</description>
+				<label>initiative</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_sample</code>
+				<description>information applies to a sample</description>
+				<label>sample</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_ScopeCode_aggregate</code>
+				<description>information applies to an aggregate resource</description>
+				<label>aggregate </label>			
+			</entry>
+		</codelist>
+	<!--=== MD_TopicCategoryCode ===-->	
+		<codelist name="gmd:MD_TopicCategoryCode">
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_farming</code>
+				<description>rearing of animals and/or cultivation of plants. Examples: agriculture, irrigation, aquaculture, plantations, herding, pests and diseases affecting crops and livestock</description>
+				<label>farming</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_biota</code>
+				<description>flora and/or fauna in natural environment. Examples: wildlife, vegetation, biological sciences, ecology, wilderness, sealife, wetlands, habitat</description>
+				<label>biota</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_boundaries</code>
+				<description>legal land descriptions. Examples: political and administrative boundaries</description>
+				<label>boundaries</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_climatologyMeteorologyAtmosphere</code>
+				<description>processes and phenomena of the atmosphere. Examples: cloud cover, weather, climate, atmospheric conditions, climate change, precipitation</description>
+				<label>climatologyMeteorologyAtmosphere</label>			
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_economy</code>
+				<description>economic activities, conditions and employment. Examples: production, labour, revenue, commerce, industry, tourism and ecotourism, forestry, fisheries, commercial or subsistence hunting, exploration and exploitation of resources such as minerals, oil and gas</description>
+				<label>economy</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_elevation</code>
+				<description>height above or below sea level. Examples: altitude, bathymetry, digital elevation models, slope, derived products</description>
+				<label>elevation</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_environment</code>
+				<description>environmental resources, protection and conservation. Examples: environmental pollution, waste storage and treatment, environmental impact assessment, monitoring environmental risk, nature reserves, landscape</description>
+				<label>environment</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_geoscientificInformation</code>
+				<description>information pertaining to earth sciences. Examples: geophysical features and processes, geology, minerals, sciences dealing with the composition, structure and origin of the earth s rocks, risks of earthquakes, volcanic activity, landslides, gravity information, soils, permafrost, hydrogeology, erosion</description>
+				<label>geoscientificInformation</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_health</code>
+				<description>health, health services, human ecology, and safety. Examples: disease and illness, factors affecting health, hygiene, substance abuse, mental and physical health, health services</description>
+				<label>health</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_imageryBaseMapsEarthCover</code>
+				<description>base maps. Examples: land cover, topographic maps, imagery, unclassified images, annotations</description>
+				<label>imageryBaseMapsEarthCover</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_intelligenceMilitary</code>
+				<description>military bases, structures, activities. Examples: barracks, training grounds, military transportation, information collection</description>
+				<label>intelligenceMilitary</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_inlandWaters</code>
+				<description>inland water features, drainage systems and their characteristics. Examples: rivers and glaciers, salt lakes, water utilization plans, dams, currents, floods, water quality, hydrographic charts</description>
+				<label>inlandWaters</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_location</code>
+				<description>positional information and services. Examples: addresses, geodetic networks, control points, postal zones and services, place names</description>
+				<label>location</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_oceans</code>
+				<description>features and characteristics of salt water bodies (excluding inland waters). Examples: tides, tidal waves, coastal information, reefs</description>
+				<label>oceans</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_planningCadastre</code>
+				<description>information used for appropriate actions for future use of the land. Examples: land use maps, zoning maps, cadastral surveys, land ownership</description>
+				<label>planningCadastre</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_society</code>
+				<description>characteristics of society and cultures. Examples: settlements, anthropology, archaeology, education, traditional beliefs, manners and customs, demographic data, recreational areas and activities, social impact assessments, crime and justice, census information</description>
+				<label>society</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_structure</code>
+				<description>man-made construction. Examples: buildings, museums, churches, factories, housing, monuments, shops, towers</description>
+				<label>structure</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_transportation</code>
+				<description>means and aids for conveying persons and/or goods. Examples: roads, airports/airstrips, shipping routes, tunnels, nautical charts, vehicle or vessel location, aeronautical charts, railways</description>
+				<label>transportation</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_utilitiesCommunication</code>
+				<description>energy, water and waste systems and communications infrastructure and services. Examples: hydroelectricity, geothermal, solar and nuclear sources of energy, water purification and distribution, sewage collection and disposal, electricity and gas distribution, data communication, telecommunication, radio, communication networks</description>
+				<label>utilitiesCommunication</label>				
+			</entry>
+			<!-- 19115-1 -->
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_extraTerrestrial</code>
+				<description>region more than 100 km above the surface of the Earth</description>
+				<label>extraTerrestrial</label>				
+			</entry>
+			<entry>
+				<code>gmd:MD_TopicCategoryCode_disaster</code>
+				<description>Information related to disasters. Examples: site of the disaster, evacuation zone, disaster-prevention facility, disaster relief activities</description>
+				<label>disaster</label>				
+			</entry>
+		</codelist>	
+	<!--=== MI_BandDefinition ===-->	
+		<codelist name="gmi:MI_BandDefinition">
+			<entry>
+				<code>gmi:MI_BandDefinition_3db</code>
+				<description>width of a distribution equal to the distance between the outer two points on the distribution having power level half of that at the peak</description>
+				<label>3db</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_BandDefinition_halfMaximum</code>
+				<description>width of a distribution equal to the distance between the outer two points on the distribution having power level half of that at the peak</description>
+				<label>halfMaximum</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_BandDefinition_fiftyPercent</code>
+				<description>full spectral width of a spectral power density measured at 50% of its peak height</description>
+				<label>fiftyPercent</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_BandDefinition_oneOverE</code>
+				<description>width of a distribution equal to the distance between the outer two points on the distribution having power level 1/e that of the peak</description>
+				<label>oneOverE</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_BandDefinition_equivalentWidth</code>
+				<description>width of a band with full sensitivity or absorption at every wavelength that detects or absorbs the same amount of energy as the band described</description>
+				<label>equivalentWidth</label>				
+			</entry>
+		</codelist>	
+	<!--=== MI_ContextCode ===-->	
+		<codelist name="gmi:MI_ContextCode">
+			<entry>
+				<code>gmi:MI_ContextCode_acquistion</code>
+				<description>event related to a specific domain</description>
+				<label>acqisition</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_ContextCode_pass</code>
+				<description>event related to a sequence of collections</description>
+				<label>pass</label>			
+			</entry>
+			<entry>
+				<code>gmi:MI_ContextCode_wayPoint</code>
+				<description>event related to navigational manoeuvre</description>
+				<label>wayPoint</label>			
+			</entry>
+		</codelist>	
+	<!--=== MI_GeometryTypeCode ===-->	
+		<codelist name="gmi:MI_GeometryTypeCode">
+			<entry>
+				<code>gmi:MI_GeometryTypeCode_point</code>
+				<description>single geographic point of interest</description>
+				<label>point</label>			
+			</entry>
+			<entry>
+				<code>gmi:MI_GeometryTypeCode_linear</code>
+				<description>extended collection in a single vector</description>
+				<label>linear</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_GeometryTypeCode_areal</code>
+				<description>collection of a geographic area defined by a polygon (coverage)</description>
+				<label>areal</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_GeometryTypeCode_strip</code>
+				<description>series of linear collections grouped by way points</description>
+				<label>strip</label>				
+			</entry>
+		</codelist>
+	
+	<!--=== MI_ObjectiveTypeCode ===-->
+	
+		<codelist name="gmi:MI_ObjectiveTypeCode">
+			<entry>
+				<code>gmi:MI_ObjectiveTypeCode_instantaneousCollection</code>
+				<description>single instance of collection</description>
+				<label>instantaneousCollection</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_ObjectiveTypeCode_persistentView</code>
+				<description>multiple instances of collection</description>
+				<label>persistentView</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_ObjectiveTypeCode_survey</code>
+				<description>collection over specified domain</description>
+				<label>survey</label>	
+			</entry>
+		</codelist>
+	
+	<!--=== MI_OperationTypeCode ===-->
+	
+		<codelist name="gmi:MI_OperationTypeCode">
+			<entry>
+				<code>gmi:MI_OperationTypeCode_real</code>
+				<description>originates from live-fly or other non-simulated operational source</description>
+				<label>real</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_OperationTypeCode_simulated</code>
+				<description>originates from target simulator sources</description>
+				<label>simulated</label>			
+			</entry>
+			<entry>
+				<code>gmi:MI_OperationTypeCode_synthesized</code>
+				<description>mix of real and simulated data</description>
+				<label>synthesized</label>				
+			</entry>
+		</codelist>	
+	<!--=== MI_PolarizationOrientationCode ===-->	
+		<codelist name="gmi:MI_PolarizationOrientationCode">
+			<entry>
+				<code>gmi:MI_PolarizationOrientationCode_horizontal</code>
+				<description>polarization of the sensor oriented in the horizontal plane in realtion to the swath direction</description>
+				<label>horizontal</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_PolarizationOrientationCode_vertical</code>
+				<description>polarization of the sensor oriented in the vertical plane in realtion to the swath direction</description>
+				<label>vertical</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_PolarizationOrientationCode_leftCircular</code>
+				<description>polarization of the sensor oriented in the left circular plane in realtion to the swath direction</description>
+				<label>leftCircular</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_PolarizationOrientationCode_rightCircular</code>
+				<description>polarization of the sensor oriented in the right circular plane in realtion to the swath direction</description>
+				<label>rightCircular</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_PolarizationOrientationCode_theta</code>
+				<description>polarization of the sensor oriented in the angle between +90 deg and 0 deg parallel to swath direction</description>
+				<label>theta</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_PolarizationOrientationCode_phi</code>
+				<description>polarization of the sensor oriented in the angle between +90 deg and 0 deg perpendicular to swath direction</description>
+				<label>phi</label>				
+			</entry>
+		</codelist>
+	
+	<!--=== MI_PriorityCode ===-->
+	
+		<codelist name="gmi:MI_PriorityCode">
+			<entry>
+				<code>gmi:MI_PriorityCode_critical</code>
+				<description>decisive importance</description>
+				<label>critical</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_PriorityCode_highImportance</code>
+				<description>requires resources to be made available</description>
+				<label>highImportance</label>			
+			</entry>
+			<entry>
+				<code>gmi:MI_PriorityCode_mediumImportance</code>
+				<description>normal operation priority</description>
+				<label>mediumImportance</label>			
+			</entry>
+			<entry>
+				<code>gmi:MI_PriorityCode_lowImportance</code>
+				<description>to be completed when resources are available</description>
+				<label>lowImportance</label>				
+			</entry>
+		</codelist>	
+	<!--=== MI_SequenceCode ===-->	
+		<codelist name="gmi:MI_SequenceCode">
+			<entry>
+				<code>gmi:MI_SequenceCode_start</code>
+				<description>beginning of a collection</description>
+				<label>start</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_SequenceCode_end</code>
+				<description>end of a collection</description>
+				<label>end</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_SequenceCode_instantaneous</code>
+				<description>collection without a significant duration</description>
+				<label>instantaneous</label>				
+			</entry>
+		</codelist>	
+	<!--=== MI_TransferFunctionTypeCode ===-->	
+		<codelist name="gmi:MI_TransferFunctionTypeCode">
+			<entry>
+				<code>gmi:MI_TransferFunctionTypeCode_linear</code>
+				<description>beginning of a collection</description>
+				<label>linear</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_TransferFunctionTypeCode_logarithmic</code>
+				<description>end of a collection</description>
+				<label>logarithmic</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_TransferFunctionTypeCode_exponential</code>
+				<description>collection without a significant duration</description>
+				<label>exponential</label>				
+			</entry>
+		</codelist>
+	
+	<!--=== MI_TriggerCode ===-->	
+		<codelist name="gmi:MI_TriggerCode">
+			<entry>
+				<code>gmi:MI_TriggerCode_automatic</code>
+				<description>event due to external stimuli</description>
+				<label>automatic</label>			
+			</entry>
+			<entry>
+				<code>gmi:MI_TriggerCode_manual</code>
+				<description>event manually instigated</description>
+				<label>manual</label>				
+			</entry>
+			<entry>
+				<code>gmi:MI_TriggerCode_preProgrammed</code>
+				<description>event instigated by planned internal stimuli</description>
+				<label>preProgrammed</label>				
+			</entry>
+		</codelist>	
+	<!--===MX_ScopeCode===-->	
+		<codelist name="gmx:MX_ScopeCode">
+			<!--MD_ScopeCode values-->
+			<entry>
+				<code>gmx:MX_ScopeCode_attribute</code>
+				<description>information applies to the attribute class</description>
+				<label>attribute</label>			
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_attributeType</code>
+				<description>information applies to the characteristic of a feature</description>
+				<label>attributeType</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_collectionHardware</code>
+				<description>information applies to the collection hardware class</description>
+				<label>collectionHardware</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_collectionSession</code>
+				<description>information applies to the collection session</description>
+				<label>collectionSession</label>			
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_dataset</code>
+				<description>information applies to the dataset</description>
+				<label>dataset</label>			
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_series</code>
+				<description>information applies to the series</description>
+				<label>series</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_nonGeographicDataset</code>
+					<description>information applies to non-geographic data</description>
+					<label>nonGeographicDataset</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_dimensionGroup</code>
+				<description>information applies to a dimension group</description>
+				<label>dimensionGroup</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_feature</code>
+				<description>information applies to a feature</description>
+				<label>feature</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_featureType</code>
+				<description>information applies to a feature type</description>
+				<label>featureType</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_propertyType</code>
+				<description>information applies to a property type</description>
+				<label>propertyType</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_fieldSession</code>
+				<description>information applies to a field session</description>
+				<label>fieldSession</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_software</code>
+				<description>information applies to a computer program or routine</description>
+				<label>software</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_service</code>
+				<description>information applies to a capability which a service provider entity makes available to a service user entity through a set of interfaces that define a behaviour, such as a use case</description>
+				<label>service</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_model</code>
+				<description>information applies to a copy or imitation of an existing or hypothetical object</description>
+				<label>model</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_tile</code>
+				<description>information applies to a tile, a spatial subset of geographic data</description>
+				<label>tile</label>				
+			</entry>			
+			<!--MX_ScopeCode extensions-->
+			<entry>
+				<code>gmx:MX_ScopeCode_initiative</code>
+				<description>The referencing entity applies to a transfer aggregate which was originally identified as an initiative (DS_Initiative)</description>
+				<label>initiative</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_stereomate</code>
+				<description>The referencing entity applies to a transfer aggregate which was originally identified as a stereo mate (DS_StereoMate)</description>
+				<label>stereomate</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_sensor</code>
+				<description>The referencing entity applies to a transfer aggregate which was originally identified as a sensor (DS_Sensor)</description>
+				<label>sensor</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_platformSeries</code>
+				<description>The referencing entity applies to a transfer aggregate which was originally identified as a platform series (DS_PlatformSeries)</description>
+				<label>platformSeries</label>
+				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_sensorSeries</code>
+				<description>The referencing entity applies to a transfer aggregate which was originally identified as a sensor series (DS_SensorSeries)</description>
+				<label>sensorSeries</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_productionSeries</code>
+				<description>The referencing entity applies to a transfer aggregate which was originally identified as a production series (DS_ProductionSeries)</description>
+				<label>productionSeries</label>
+				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_transferAggregate</code>
+				<description>The referencing entity applies to a transfer aggregate which has no existence outside of the transfer context</description>
+				<label>transferAggregate</label>				
+			</entry>
+			<entry>
+				<code>gmx:MX_ScopeCode_otherAggregate</code>
+				<description>The referencing entity applies to a transfer aggregate which has an existence outside of the transfer context, but which does not pertains to a specific aggregate type.</description>
+				<label>otherAggregate</label>				
+			</entry>
+		</codelist>	
+	<!-- ===DCPList== -->	
+		<codelist name="gmd:DCPList">
+			<entry>
+				<code>gmd:DCPList_COM</code>
+				<description>component object model - Microsoft's framework for developing and supporting program component objects </description>
+				<label>COM</label>				
+			</entry>
+			<entry>
+				<code>gmd:DCPList_CORBA</code>
+				<description>common object request broker architecture</description>
+				<label>CORBA</label>				
+			</entry>
+			<entry>
+				<code>gmd:DCPList_JAVA</code>
+				<description>JAVA programming language</description>
+				<label>JAVA</label>				
+			</entry>
+			<entry>
+				<code>gmd:DCPList_SQL</code>
+				<description>structured query language - a standard interactive and programming language for getting information from and updating a database </description>
+				<label>SQL</label>				
+			</entry>
+			<entry>
+				<code>gmd:DCPList_WebServices</code>
+				<description>Web based services</description>
+				<label>WebServices</label>				
+			</entry>
+			<entry>
+				<code>gmd:DCPList_XML</code>
+				<description>extensible markup language</description>
+				<label>XML</label>				
+			</entry>
+		</codelist>	
+	<!-- Darwin Core additions -->	
+		<codelist name="dwc:BasisOfRecordList">
+			<entry>
+				<code>dwc:BasisOfRecordList_MaterialSample</code>
+				<description>A physical results of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed.</description>
+				<label>MaterialSample</label>				
+			</entry>
+			<entry>
+				<code>dwc:BasisOfRecordList_LivingSpecimen</code>
+				<description>A specimen that is alive.</description>
+				<label>LivingSpecimen</label>				
+			</entry>
+			<entry>
+				<code>dwc:BasisOfRecordList_PreservedSpecimen</code>
+				<description>A specimen that has been preserved.</description>
+				<label>PreservedSpecimen</label>				
+			</entry>
+			<entry>
+				<code>dwc:BasisOfRecordList_FossilSpecimen</code>
+				<description>A preserved specimen that is a fossil.</description>
+				<label>FossilSpecimen</label>				
+			</entry>
+			<entry>
+				<code>dwc:BasisOfRecordList_HumanObservation</code>
+				<description>An output of a human observation process.</description>
+				<label>HumanObservation</label>			
+			</entry>
+			<entry>
+				<code>dwc:BasisOfRecordList_MachineObservation</code>
+				<description>An output of a machine observation process.</description>
+				<label>MachineObservation</label>				
+			</entry>
+		</codelist>	
+		<codelist name="dwc:VerificationStatus">
+			<entry>
+				<code>dwc:VerificationStatus_0</code>
+				<description>record has not been checked by any authority</description>
+				<label>0</label>			
+			</entry>
+			<entry>
+				<code>dwc:VerificationStatus_1</code>
+				<description>name determined by comparison with other records</description>
+				<label>1</label>				
+			</entry>
+			<entry>
+				<code>dwc:VerificationStatus_2</code>
+				<description>name determined by comparison with living exemplar</description>
+				<label>2</label>				
+			</entry>
+			<entry>
+				<code>dwc:VerificationStatus_3</code>
+				<description>name determined by taxonomist in group</description>
+				<label>3</label>				
+			</entry>
+			<entry>
+				<code>dwc:VerificationStatus_4</code>
+				<description>"The record is part of type gathering or propagated from type material by asexual methods " - not recommended for acoustic measurements</description>
+				<label>4</label>				
+			</entry>
+		</codelist>	
+		<codelist name="dcterms:Type">
+			<entry>
+				<code>dcterms:Type_Collection</code>
+				<description>An aggregation of resources.</description>
+				<label>Collection</label>				
+			</entry>
+			<entry>
+				<code>dcterms:Type_Dataset</code>
+				<description>Data encoded in a defined structure, such as lists, tables, and databases.</description>
+				<label>Dataset</label>				
+			</entry>
+			<entry>
+				<code>dcterms:Type_Event</code>
+				<description>A specific, non-persistent, time-based occurrence. </description>
+				<label>Event</label>				
+			</entry>
+			<entry>
+				<code>dcterms:Type_Image</code>
+				<description>Any visual representation other than text, such as maps, slides, diagrams...</description>
+				<label>Image</label>				
+			</entry>
+			<entry>
+				<code>dcterms:Type_InteractiveResource</code>
+				<description>A resource which requires user interaction to be understood or experienced.</description>
+				<label>InteractiveResource</label>				
+			</entry>
+			<entry>
+				<code>dcterms:Type_MovingImage</code>
+				<description>A series of visuals which convey the impression of motion when shown in succession.</description>
+				<label>MovingImage</label>				
+			</entry>
+			<entry>
+				<code>dcterms:Type_PhysicalObject</code>
+				<description>An inanimate 3D object or substance.</description>
+				<label>PhysicalObject</label>				
+			</entry>
+			<entry>
+				<code>dcterms:Type_Service</code>
+				<description>A system which provides one or more functions.</description>
+				<label>Service</label>				
+			</entry>
+			<entry>
+				<code>dcterms:Type_Software</code>
+				<description>A compiled computer program.</description>
+				<label>Software</label>				
+			</entry>
+			<entry>
+				<code>dcterms:Type_Sound</code>
+				<description>A resource primarily intended to be heard.</description>
+				<label>Sound</label>				
+			</entry>
+			<entry>
+				<code>dcterms:Type_StillImage</code>
+				<description>A static visual representation. Note if the content is primarily text, assign the Text type.</description>
+				<label>StillImage</label>				
+			</entry>
+			<entry>
+				<code>dcterms:Type_Text</code>
+				<description>A resource primarily consisting of words for reading</description>
+				<label>Text</label>				
+			</entry>
+		</codelist>
+</CT_CodelistCatalogue>

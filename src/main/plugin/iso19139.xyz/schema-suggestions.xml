@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fields>
+	<field name="gmx:Anchor">
+		<suggest name="xlink:href"/>
+	</field>
+
+	<field name="gmx:FileName">
+		<suggest name="src"/>
+	</field>
+
+	<field name="gmd:polygon">
+		<suggest name="gml:Polygon"/>
+	</field>
+
+	<field name="gmd:CI_OnlineResource">
+		<suggest name="gmd:protocol"/>
+		<suggest name="gmd:name"/>
+		<suggest name="gmd:description"/>
+	</field>
+
+	<field name="gmd:CI_ResponsibleParty">
+		<suggest name="gmd:individualName"/>
+		<suggest name="gmd:organisationName"/>
+		<suggest name="gmd:positionName"/>
+		<suggest name="gmd:contactInfo"/>
+	</field>
+	
+	<field name="gmd:CI_Contact">
+		<suggest name="gmd:phone"/>
+		<suggest name="gmd:address"/>
+	</field>
+	
+	<field name="gmd:CI_Telephone">
+		<suggest name="gmd:voice"/>
+		<suggest name="gmd:facsimile"/>
+	</field>
+	
+	<field name="gmd:CI_Address">
+		<suggest name="gmd:electronicMailAddress"/>
+	</field>
+	
+	<field name="gmd:MD_Keywords">
+		<suggest name="gmd:keyword"/>
+		<suggest name="gmd:type"/>
+	</field>
+	
+  <field name="gmd:MD_Constraints">
+		<suggest name="gmd:useLimitation"/>
+	</field>
+
+  <field name="gmd:MD_SecurityConstraints">
+		<suggest name="gmd:useLimitation"/>
+		<suggest name="gmd:classification"/>
+	</field>
+
+  <field name="gmd:MD_LegalConstraints">
+		<suggest name="gmd:useLimitation"/>
+		<suggest name="gmd:accessConstraints"/>
+		<suggest name="gmd:useConstraints"/>
+	</field>
+
+	<field name="mcp:EX_TemporalExtent">
+		<suggest name="gmd:extent"/>
+	</field>
+	
+	<field name="gml:TimePeriod">
+		<suggest name="gml:beginPosition"/>
+		<suggest name="gml:endPosition"/>	
+	</field>
+	
+	<field name="gmd:EX_GeographicBoundingBox">
+		<suggest name="gmd:westBoundLongitude"/>
+		<suggest name="gmd:eastBoundLongitude"/>	
+		<suggest name="gmd:southBoundLatitude"/>
+		<suggest name="gmd:northBoundLatitude"/>
+	</field>
+
+	<field name="gmd:attributes">
+		<suggest name="uuidref"/>
+	</field>
+
+	<field name="gmd:features">
+		<suggest name="uuidref"/>
+	</field>
+
+	<field name="gmd:featureInstances">
+		<suggest name="uuidref"/>
+	</field>
+
+	<field name="gmd:attributeInstances">
+		<suggest name="uuidref"/>
+	</field>
+
+	<field name="gmd:propertyType">
+		<suggest name="uuidref"/>
+	</field>
+
+	<field name="gmd:featureType">
+		<suggest name="uuidref"/>
+	</field>
+
+	<field name="gmd:featureAttribute">
+		<suggest name="uuidref"/>
+	</field>
+
+	<field name="srv:operatesOn">
+		<suggest name="uuidref"/>
+	</field>
+
+	<field name="gml:Polygon">
+		<suggest name="srsName"/>
+	</field>
+
+	<field name="gml:descriptionReference">
+		<suggest name="xlink:href"/>
+	</field>
+	
+	<field name="gmd:MD_BrowseGraphic">
+		<suggest name="gmd:filename"/>
+		<suggest name="gmd:fileDescription"/>
+	</field>
+	
+	<field name="gmd:DQ_DataQuality">
+		<suggest name="gmd:scope"/>
+		<suggest name="gmd:lineage"/>
+	</field>
+	
+	<field name="gmd:LI_Lineage">
+		<suggest name="gmd:statement"/>
+	</field>
+	<field name="gmd:MD_MaintenanceInformation">
+		<suggest name="gmd:maintenanceAndUpdateFrequency"/>
+		<suggest name="gmd:contact"/>
+	</field>
+	<field name="gmd:MD_Distribution">
+		<suggest name="gmd:distributionFormat"/>
+	</field>
+	<field name="gmd:MD_Format">
+		<suggest name="gmd:name"/>
+		<suggest name="gmd:version"/>
+	</field>
+	<field name="gmi:MI_Instrument">
+		<suggest name="gmi:identifier"/>
+		<suggest name="gmi:type"/>
+	</field>
+	<field name="gmi:MI_Operation">
+		<suggest name="gmi:citation"/>
+		<suggest name="gmi:identifier"/>
+	</field>
+	<field name="gmi:MI_Event">
+		<suggest name="gmi:identifier"/>
+		<suggest name="gmi:trigger"/>
+		<suggest name="gmi:context"/>
+		<suggest name="gmi:sequence"/>
+		<suggest name="gmi:time"/>
+	</field>
+	<field name="gmi:MI_PlatformPass">
+		<suggest name="gmi:identifier"/>
+	</field>
+	<field name="gmi:MI_Platform">
+		<suggest name="gmi:identifier"/>
+		<suggest name="gmi:description"/>
+		<suggest name="gmi:instrument"/>
+	</field>
+	<field name="gmi:MI_Plan">
+		<suggest name="gmi:status"/>
+		<suggest name="gmi:citation"/>
+	</field>
+	<field name="gmi:MI_Objective">
+		<suggest name="gmi:identifier"/>
+		<suggest name="gmi:objectiveOccurrence"/>
+	</field>
+	<field name="gmi:MI_Requirement">
+		<suggest name="gmi;citation"/>
+		<suggest name="gmi:identifier"/>
+		<suggest name="gmi:requestor"/>
+		<suggest name="gmi:recipient"/>
+		<suggest name="gmi:priority"/>
+	</field>
+	<field name="gmi:MI_RequestedDate">
+		<suggest name="gmi:requestedDateOfCollection"/>
+		<suggest name="gmi:latestAcceptableDate"/>
+	</field>
+	<field name="gmd:MD_Resolution">
+		<suggest name="gmd:distance"/>
+	</field>
+	<field name="dwr:DarwinRecordSet">
+		<suggest name="dwc:Occurrence"/>
+		<suggest name="dcterms:Location"/>
+		<suggest name="dwc:Identification"/>
+		<suggest name="dwc:Taxon"/>
+	</field>
+	<field name="dcterms:Location">
+		<suggest name="dwc:waterBody"/>
+	</field>
+	<field name="dwc:Identification">
+		<suggest name="dwc:identifiedBy"/>
+		<suggest name="dwc:dateIdentified"/>
+		<suggest name="dwc:identificationVerificationStatus"/>
+	</field>
+	<field name="dwc:Taxon">
+		<suggest name="dwc:kingdom"/>
+		<suggest name="dwc:taxonRank"/>
+		<suggest name="dwc:vernacularName"/>
+	</field>
+</fields>
