@@ -9,12 +9,12 @@
 -->
 <conversions>
 	<converter 
-		name="xml_iso19139.MERIDIAN" 
+		name="xml_iso19115.MERIDIAN" 
 		nsUri="http://www.isotc211.org/2005/gmi/" 
 		schemaLocation="http://www.isotc211.org/2005/gmi/gmi.xsd" 
-		xslt="xml_iso19139.MERIDIAN.xsl"/>
+		xslt="xml_iso19115.MERIDIAN.xsl"/>
 	<converter 
-		name="xml_iso19139.MERIDIANTooai_dc" 
+		name="xml_iso19115.MERIDIANTooai_dc" 
 		nsUri="http://www.openarchives.org/OAI/2.0/" 
 		schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc.xsd" 
 		xslt="oai_dc.xsl"/>

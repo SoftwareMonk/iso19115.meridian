@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://geonetwork-opensource.org/schemas/schema-ident" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" .....>
-	<name>iso19139.MERIDIAN</name>
+<schema xmlns="http://geonetwork-opensource.org/schemas/schema-ident" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://geonetwork-opensource.org/schemas/schema-ident http://geonetwork-opensource.org/schemas/schema-ident/schema-ident.xsd">
+	<name>iso19115.MERIDIAN</name>
 	<id>M-E-R-1-D-1-4-N</id>
 	<version>0.2</version>
+	<appMinorVersionSupported>3.4.0</appMinorVersionSupported>
 	<schemaLocation>
 		http://rs.tdwg.org/dwc/xsd/tdwg_dwc_classes.xsd
 		http://standards.iso.org/iso/19115/-2/gmi/1.0
@@ -12,6 +13,7 @@
 		http://www.isotc211.org/2005/srv
 		http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd
 		https://drive.google.com/open?id=1fIDxA7pe6YkYiCXOsoxoTH8BXw0ETX9DHJ0ABoKkjMU
+		http://geonetwork-opensource.org/schemas/schema-ident <!-- it's whining about not having this? -->
 	</schemaLocation>
 	<autodetect xmlns:gmi="http://www.isotc211.org/2005/gmi"
 		xmlns:gmd="http://www.isotc211.org/2005/gmd"
