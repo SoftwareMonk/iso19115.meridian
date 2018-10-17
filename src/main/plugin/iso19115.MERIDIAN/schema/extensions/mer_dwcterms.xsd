@@ -118,7 +118,7 @@
             <xs:element ref="dwc:disposition" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="dwc:associatedMedia" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="dwc:associatedReferences" minOccurs="0" maxOccurs="1"/>
-            <xs:element ref="dwc:associatedSequences" minOccurs="0 maxOccurs="1"/>
+            <xs:element ref="dwc:associatedSequences" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="dwc:associatedTaxa" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="dwc:otherCatalogNumbers" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="dwc:occurrenceRemarks" minOccurs="0" maxOccurs="1"/>

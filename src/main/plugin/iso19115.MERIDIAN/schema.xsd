@@ -10,12 +10,13 @@ xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcr
 >
 <!-- is there too much stuff here? -->
 <xs:include schemaLocation="schema/extensions/MERIDIANExtensions.xsd"/>
-	<xs:import namespace="http://www.isotc211.org/2005/gmi" schemaLocation="../gmi/gmi.xsd"/>
-	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../gco/gco.xsd"/>
-	<xs:import namespace="http://www.isotc211.org/2005/gts" schemaLocation="../gts/gts.xsd"/>
-	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../gmd/gmd.xsd"/>
-	<xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="../srv/srv.xsd"/>
-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../gml/gml.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmi" schemaLocation="schema/gmi/gmi.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="schema/gco/gco.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gts" schemaLocation="schema/gts/gts.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="schema/gmd/gmd.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="schema/srv/srv.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="schema/gml/gml.xsd"/>
 	<!-- Need to adjust path/namespace most likely! -->
-	<xs:import namespace="http://rs.tdwg.org/dwc" schemaLocation="mer_dwcterms.xsd"/>
+	<xs:import namespace="http://rs.tdwg.org/dwc" schemaLocation="schema/extensions/mer_dwcterms.xsd"/>
+	
 </xs:schema>

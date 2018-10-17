@@ -158,7 +158,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
     <xs:element name="Occurrence" substitutionGroup="dwc:anyClass" minOccurs="1" maxOccurs="unbounded">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:occurrenceID" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:occurrenceID" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -172,7 +172,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
     <xs:element name="Organism" substitutionGroup="dwc:anyClass">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:organismID" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:organismID" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -186,7 +186,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
     <xs:element name="MaterialSample" substitutionGroup="dwc:anyClass">
         <xs:complexType>
 		<xs:sequence>
-				<xs:element name="dwc:materialSampleID" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:materialSampleID" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -200,7 +200,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
     <xs:element name="Event" substitutionGroup="dwc:anyClass">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:eventID" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:eventID" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -228,7 +228,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
     <xs:element name="GeologicalContext" substitutionGroup="dwc:anyClass">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:geologicalContextID" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:geologicalContextID" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -242,10 +242,10 @@ Extends the metadata element to include acquisitionInformation and metadata exte
     <xs:element name="Identification" substitutionGroup="dwc:anyClass" minOccurs="1" maxOccurs="unbounded">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:identificationID" type="dwc:nonEmptyString" minOccurs="1">
-				<xs:element name="dwc:identifiedBy" type="dwc:nonEmptyString" minOccurs="1">
-				<xs:element name="dwc:dateIdentified" type="dwc:nonEmptyString" minOccurs="1">
-				<xs:element name="dwc:identificationVerificationStatus" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:identificationID" type="dwc:nonEmptyString" minOccurs="1"/>
+				<xs:element name="dwc:identifiedBy" type="dwc:nonEmptyString" minOccurs="1"/>
+				<xs:element name="dwc:dateIdentified" type="dwc:nonEmptyString" minOccurs="1"/>
+				<xs:element name="dwc:identificationVerificationStatus" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -259,9 +259,9 @@ Extends the metadata element to include acquisitionInformation and metadata exte
     <xs:element name="Taxon" substitutionGroup="dwc:anyClass" minOccurs="1" maxOccurs="unbounded">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:taxonID" type="dwc:nonEmptyString" minOccurs="1">
-				<xs:element name="dwc:taxonRank" type="dwc:nonEmptyString" minOccurs="1">
-				<xs:element name="dwc:vernacularName" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:taxonID" type="dwc:nonEmptyString" minOccurs="1"/>
+				<xs:element name="dwc:taxonRank" type="dwc:nonEmptyString" minOccurs="1"/>
+				<xs:element name="dwc:vernacularName" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -312,7 +312,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
     </xs:annotation>
     <!-- tdwg_basetypes.xsd defines custom data types such as dateTimeISO to allow dates or the forms YYYY and YYYY-MM. -->
     <xs:include schemaLocation="tdwg_basetypes.xsd"/>
-    <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd"/>
+    <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/dcterms.xsd"/>
     <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/dc.xsd"/>
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
     <!-- ANY DWC TERM -->
@@ -412,7 +412,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
             <xs:element ref="dwc:disposition" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="dwc:associatedMedia" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="dwc:associatedReferences" minOccurs="0" maxOccurs="1"/>
-            <xs:element ref="dwc:associatedSequences" minOccurs="0 maxOccurs="1"/>
+            <xs:element ref="dwc:associatedSequences" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="dwc:associatedTaxa" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="dwc:otherCatalogNumbers" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="dwc:occurrenceRemarks" minOccurs="0" maxOccurs="1"/>
@@ -796,8 +796,9 @@ Extends the metadata element to include acquisitionInformation and metadata exte
 		</xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
-
+    
 	<xs:element name="LE_ProcessStep" substitutionGroup="gmd:LI_ProcessStep" type="gmi:LE_ProcessStep_Type"/>
+    -->
 	<!-- LE_Source 
 	<xs:complexType name="LE_Source_Type">
 	  <xs:annotation>
@@ -818,6 +819,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
 	</xs:complexType>
 
 	<xs:element name="LE_ProcessStep" substitutionGroup="gmd:LI_Source" type="gmi:LE_Source_Type"/>
+    -->
 	<!-- LE_ProcessStepReport 
 	<xs:complexType name="LE_ProcessStepReport">
 		<xs:annotation>
@@ -834,7 +836,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="LE_ProcessStepReport" type="gmi:LE_ProcessStepReport_Type"/>
-
+    -->
 	<!-- LE_Processing 
 	<xs:complexType name="LE_Processing">
 		<xs:annotation>
@@ -853,6 +855,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="LE_Processing" type="gmi:LE_Processing_Type"/>
+    -->
 	<!-- LE_NominalResolution 
 	<xs:complexType name="LE_NominalResolution">
 		<xs:annotation>
@@ -868,6 +871,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="LE_NominalResolution" type="gmi:LE_NominalResolution_Type"/>
+    -->
 	<!-- LE_Algorithm
 	<xs:complexType name="LE_Algorithm">
 		<xs:annotation>
@@ -883,6 +887,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="LE_Algorithm" type="gmi:LE_Algorithm_Type"/>
+    -->
 	<!-- MI_Georectified 
 	<xs:complexType name="MI_Georectified_Type">
 	  <xs:annotation>
@@ -899,8 +904,9 @@ Extends the metadata element to include acquisitionInformation and metadata exte
 		</xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
-
+    
 	<xs:element name="MI_Georectified" substitutionGroup="gmd:MD_Georectified" type="gmi:MI_Georectified_Type"/>
+    -->
 	<!-- MI_Georeferencable 
 	<xs:complexType name="MI_Georeferencable_Type">
 	  <xs:annotation>
@@ -920,6 +926,7 @@ Extends the metadata element to include acquisitionInformation and metadata exte
 	</xs:complexType>
 
 	<xs:element name="MI_Georeferencable" substitutionGroup="gmd:MD_Georeferencable" type="gmi:MI_Georeferencable_Type"/>
+    -->
 	<!-- MI_CoverageDescription -->
 	<!-- MI_ImageDescription -->
 	<!-- MI_Band -->
