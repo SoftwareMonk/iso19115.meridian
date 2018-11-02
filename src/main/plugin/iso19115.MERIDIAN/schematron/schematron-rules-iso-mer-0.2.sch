@@ -5,7 +5,7 @@
 This Schematron schema merges three sets of Schematron rules
 1. Schematron rules embedded in the GML 3.2 schema
 2. Schematron rules implementing the Additional Constraints described in 
-   ISO 19139 Table A.1
+ ISO 19139 Table A.1
 3. INSPIRE IR on metadata for datasets and services.
 This script was written by CSIRO for the Australia-New Zealand Land 
 Information Council (ANZLIC) as part of a project to develop an XML 
@@ -28,7 +28,7 @@ Kim Mortimer
 September 24, 2018
 This work is licensed under the Creative Commons Attribution 2.5 License. 
 To view a copy of this license, visit 
-    http://creativecommons.org/licenses/by/2.5/au/ 
+http://creativecommons.org/licenses/by/2.5/au/ 
 or send a letter to:
 Creative Commons, 
 543 Howard Street, 5th Floor, 
@@ -638,14 +638,14 @@ USA.
 	<sch:pattern>
 		<sch:title>MD_Band requires either a sequenceIdentifier or a description.</sch:title>
 		<sch:rule context="//gmi:MD_Band">
-			<sch:report test="count(gmd:sequenceIdentifier)+count(gmd:descriptor)>=1">Provide at least one of sequenceIdentifier, descriptor</sch:rule>
+			<sch:report test="count(gmd:sequenceIdentifier)+count(gmd:descriptor)>=1">Provide at least one of sequenceIdentifier, descriptor</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	<!-- MI_Band -->
 	<sch:pattern>
 		<sch:title>MI_Band requires either a sequenceIdentifier or a description.</sch:title>
 		<sch:rule context="//gmi:MI_Band">
-			<sch:report test="count(gmd:sequenceIdentifier)+count(gmd:descriptor)>=1">Provide at least one of sequenceIdentifier, descriptor</sch:rule>
+			<sch:report test="count(gmd:sequenceIdentifier)+count(gmd:descriptor)>=1">Provide at least one of sequenceIdentifier, descriptor</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
