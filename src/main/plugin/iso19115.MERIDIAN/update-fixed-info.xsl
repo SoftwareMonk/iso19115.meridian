@@ -8,6 +8,7 @@ xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gss="http://www.isotc211.org/
 xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml" 
 xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:dcterms="http://purl.org/dc/terms/" 
 xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/"
+xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 						exclude-result-prefixes="#all">
 	<!-- **TODO: create templates to autocomplete Darwin Core elements-->
 	<xsl:include href="../iso19139/convert/functions.xsl"/>
@@ -130,7 +131,7 @@ xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcr
 		<!-- adding in fixed elements here -->
 		<!-- TODO: **check if this works.-->
 		<gmd:hierarchyLevelName>
-			<gco:characterString><xsl:value-of select="gmd:hierarchyLevel/gmd:MD_ScopeCode:codeListValue"/></gco:characterString>
+			<gco:CharacterString><xsl:value-of select="gmd:hierarchyLevel/gmd:MD_ScopeCode"/></gco:CharacterString>
 		</gmd:hierarchyLevelName>
 	<gmd:contact>
 	<gmd:CI_ResponsibleParty>
@@ -171,7 +172,6 @@ xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcr
 			</gmd:role>
 		</gmd:CI_ResponsibleParty>
 	</gmd:contact>
-	<gmd:metadataMaintenance>
 	<gmd:MD_MaintenanceInformation>
 			<gmd:maintenanceAndUpdateFrequency>
 				<gmd:MD_MaintenanceFrequencyCode codeList="gmxCodeLists-MERIDIAN.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">asNeeded</gmd:MD_MaintenanceFrequencyCode>
@@ -215,8 +215,8 @@ xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcr
 					</gmd:role>
 				</gmd:CI_ResponsibleParty>
 			</gmd:contact>
-	</gmd:metadataMaintenance>
-	<gmd:MD_MetadataExtensionInfo>
+	</gmd:MD_MaintenanceInformation>
+	<gmd:MD_MetadataExtensionInformation>
 		<gmd:extensionOnLineResource>
 			<gmd:CI_OnlineResource>
 				<gmd:linkage>
@@ -244,9 +244,9 @@ xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcr
 				<gmd:dataType>
 					<gmd:MD_DatatypeCode codelist="gmxCodeLists-MERIDIAN.xml#MD_DatatypeCode" codeListValue="metaClass" codeSpace="001">metaClass</gmd:MD_DatatypeCode>
 				</gmd:dataType>
-				<gmd:ParentEntity>
+				<gmd:parentEntity>
 					<gco:CharacterString>MD_DataIdentification</gco:CharacterString>
-				</gmd:ParentEntity>
+				</gmd:parentEntity>
 				<gmd:rule>
 					<gco:CharacterString>New metadata elements as a class to MD_Identification</gco:CharacterString>
 				</gmd:rule>
@@ -257,15 +257,15 @@ xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcr
 						</gmd:organisationName>
 					</gmd:CI_ResponsibleParty>
 				</gmd:source>
-				<gmd:minimumOccurence>
+				<!--gmd:minimumOccurrence>
 					<gco:CharacterString>0</gco:CharacterString>
-				</gmd:minimumOccurence>
-				<gmd:maximumOccurence>
+				</gmd:minimumOccurrence-->
+				<gmd:maximumOccurrence>
 				    <gco:CharacterString>unbounded</gco:CharacterString>
-				</gmd:maximumOccurence>
+				</gmd:maximumOccurrence>
 			</gmd:MD_ExtendedElementInformation>
 		</gmd:extendedElementInformation>
-	</gmd:MD_MetadataExtensionInfo>
+	</gmd:MD_MetadataExtensionInformation>
 
 		</xsl:copy>
 	</xsl:template>

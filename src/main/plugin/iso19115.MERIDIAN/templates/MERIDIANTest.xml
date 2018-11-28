@@ -1,32 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<gmi:MI_Metadata xmlns:gmi="http://www.isotc211.org/2005/gmi" 
-	xmlns:gmd="http://www.isotc211.org/2005/gmd" 
-	xmlns:gco="http://www.isotc211.org/2005/gco" 
-	xmlns:xlink="http://www.w3.org/1999/xlink" 
-	xmlns:gml="http://www.opengis.net/gml/3.2" 
-	xmlns:srv="http://www.isotc211.org/2005/srv" 
-	xmlns:gmx="http://www.isotc211.org/2005/gmx" 
-	xmlns:gss="http://www.isotc211.org/2005/gss" 
-	xmlns:gsr="http://www.isotc211.org/2005/gsr" 
-	xmlns:gts="http://www.isotc211.org/2005/gts" 
-	xmlns:dcterms="http://purl.org/dc/terms/" 
-	xmlns:dwc="http://rs.tdwg.org/dwc/terms/" 
-	xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.iso.org/iso/19115/-2/gmi/1.0 http://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd  http://rs.tdwg.org/dwc/dwcrecord/   http://rs.tdwg.org/dwc/xsd/tdwg_dwc_classes.xsd">
-	<gmd:fileIdentifier>
-		<gco:CharacterString>Provided by MERIDIAN</gco:CharacterString>
-	</gmd:fileIdentifier>
+<!--<gmd:metadataStandardName>
+Modified into a template
+2018-11-20
+MERIDIAN metadata convention.
+2018-09-12
+Based on:
+METADATA CONVENTION FOR IOOS PASSIVE ACOUSTIC RECORDINGS version 1 (2013-08-13)
+DARWIN CORE
+SeaDataNet CDI 
+And more...
+-->
+<?xml-stylesheet type="text/css" href="http://www.ngdc.noaa.gov/metadata/published/views/ISO.css"?>
+<gmi:MI_Metadata xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:gmd="http://www.isotc211.org/2005/gmd"
+xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:srv="http://www.isotc211.org/2005/srv"
+xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gss="http://www.isotc211.org/2005/gss" 
+xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gts="http://www.isotc211.org/2005/gts"
+xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
+xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://standards.iso.org/iso/19115/-2/gmi/1.0
+http://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd 
+http://rs.tdwg.org/dwc/dwcrecord/  
+http://rs.tdwg.org/dwc/xsd/tdwg_dwc_classes.xsd">
+
 	<gmd:language>
-		<gco:CharacterString>Primary language that the metadata is provided in (Preferred: Eng; CAN, acceptable: Fra; CAN)</gco:CharacterString>
+		<gco:CharacterString>Eng; CAN)</gco:CharacterString>
 	</gmd:language>
+
 	<gmd:characterSet>
 		<gmd:MD_CharacterSetCode codeList="gmxCodeLists-MERIDIAN.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</gmd:MD_CharacterSetCode>
 	</gmd:characterSet>
 	<gmd:hierarchyLevel>
-		<gmd:MD_ScopeCode codeList="gmxCodeLists-MERIDIAN.xml#MD_MetadataScopeCode" codeListValue="###">###</gmd:MD_ScopeCode>
+		<gmd:MD_ScopeCode codeList="gmxCodeLists-MERIDIAN.xml#MD_MetadataScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
 	</gmd:hierarchyLevel>
 	<gmd:hierarchyLevelName>
-		<gco:CharacterString>!!Fill in value from above entry</gco:CharacterString>
+		<gco:CharacterString>dataset</gco:CharacterString>
 	</gmd:hierarchyLevelName>
 	<gmd:contact>
 		<gmd:CI_ResponsibleParty>
@@ -41,12 +48,13 @@
 					<gmd:phone>
 						<gmd:CI_Telephone>
 							<gmd:voice>
-								<gco:CharacterString>optional phone #</gco:CharacterString>
+								<gco:CharacterString>999-123-4567</gco:CharacterString>
 							</gmd:voice>
 						</gmd:CI_Telephone>
 					</gmd:phone>
 					<gmd:address>
 						<gmd:CI_Address>
+						<!-- recommended but optional to provide physical address-->
 							<gmd:deliveryPoint>
 								<gco:CharacterString>Optional Local address</gco:CharacterString>
 							</gmd:deliveryPoint>
@@ -54,7 +62,7 @@
 								<gco:CharacterString>Optional City</gco:CharacterString>
 							</gmd:city>
 							<gmd:administrativeArea>
-								<gco:CharacterString>Optional Admin area (e.g., province)</gco:CharacterString>
+								<gco:CharacterString>Optional Admin area </gco:CharacterString>
 							</gmd:administrativeArea>
 							<gmd:postalCode>
 								<gco:CharacterString>Optional Postal Code</gco:CharacterString>
@@ -63,7 +71,8 @@
 								<gco:CharacterString>Country</gco:CharacterString>
 							</gmd:country>
 							<gmd:electronicMailAddress>
-								<gco:CharacterString>Email address</gco:CharacterString>
+								<!-- if no other details are provided, an email is mandatory -->
+								<gco:CharacterString>Email_address@meridian.ca</gco:CharacterString>
 							</gmd:electronicMailAddress>
 						</gmd:CI_Address>
 					</gmd:address>
@@ -82,24 +91,62 @@
 			<gmd:maintenanceNote>
 				<gco:CharacterString>metadata_update_note</gco:CharacterString>
 			</gmd:maintenanceNote>
+			<gmd:contact>
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString>MERIDIAN personnel responsible for approval</gco:CharacterString>
+					</gmd:individualName>
+					<gmd:organisationName>
+						<gco:CharacterString>MERIDIAN - Marine Environmental Research Infrastructure for Data Integration and Application Network</gco:CharacterString>
+					</gmd:organisationName>
+					<gmd:contactInfo>
+						<gmd:CI_Contact>
+							<gmd:address>
+								<gmd:CI_Address>
+									<gmd:deliveryPoint>
+										<gco:CharacterString>6050 University Avenue</gco:CharacterString>
+									</gmd:deliveryPoint>
+									<gmd:city>
+										<gco:CharacterString>Halifax</gco:CharacterString>
+									</gmd:city>
+									<gmd:administrativeArea>
+										<gco:CharacterString>N.S.</gco:CharacterString>
+									</gmd:administrativeArea>
+									<gmd:postalCode>
+										<gco:CharacterString>B3H 4R2</gco:CharacterString>
+									</gmd:postalCode>
+									<gmd:country>
+										<gco:CharacterString>Canada</gco:CharacterString>
+									</gmd:country>
+									<gmd:electronicMailAddress>
+										<gco:CharacterString>meridian@test.test</gco:CharacterString>
+									</gmd:electronicMailAddress>
+								</gmd:CI_Address>
+							</gmd:address>
+						</gmd:CI_Contact>
+					</gmd:contactInfo>
+					<gmd:role>
+						<gmd:CI_RoleCode codeList="gmxCodeLists-MERIDIAN.xml#CI_RoleCode" codeListValue="processor">processor</gmd:CI_RoleCode>
+					</gmd:role>
+				</gmd:CI_ResponsibleParty>
+			</gmd:contact>
 		</gmd:MD_MaintenanceInformation>
 	</gmd:metadataMaintenance>
 	<gmd:dateStamp>
-		<gco:Date>Date of metadata creation/upload (NOT revision) in ISO8601</gco:Date>
-	</gmd:dateStamp>
-	<!-- !!Prefilled standard details, hidden from user -->
+		<gco:Date>2018-01-02</gco:Date>
+	</gmd:dateStamp>	
 	<gmd:metadataStandardName>
-		<gco:CharacterString>Custom combination of ISO 19115-2 and Darwin Core</gco:CharacterString>
+		<gco:CharacterString>MERIDIAN profile</gco:CharacterString>
 	</gmd:metadataStandardName>
 	<gmd:metadataStandardVersion>
-		<gco:CharacterString>Beta</gco:CharacterString>
-	</gmd:metadataStandardVersion>
+		<gco:CharacterString>v0.3</gco:CharacterString>
+	</gmd:metadataStandardVersion>	
 	<gmd:dataQualityInfo>
 		<gmd:DQ_DataQuality>
 			<gmd:scope>
 				<gmd:DQ_Scope>
 					<gmd:level>
-						<gmd:MD_ScopeCode codeList="gmxCodeLists-MERIDIAN.xml#MD_ScopeCode" codeListValue="###">Select appropriate value for the scope to which this data quality information applies. Ideally, this would be the same level as your hierachy level selected earlier.</gmd:MD_ScopeCode>
+						<gmd:MD_ScopeCode codeList="gmxCodeLists-MERIDIAN.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
 					</gmd:level>
 				</gmd:DQ_Scope>
 			</gmd:scope>
@@ -122,7 +169,7 @@
 					<gmd:date>
 						<gmd:CI_Date>
 							<gmd:date>
-								<gco:Date>Data creation date in ISO8601</gco:Date>
+								<gco:Date>2018-02-03</gco:Date>
 							</gmd:date>
 							<gmd:dateType>
 								<gmd:CI_DateTypeCode codeList="gmxCodeLists-MERIDIAN.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode>
@@ -132,7 +179,7 @@
 					<gmd:date>
 						<gmd:CI_Date>
 							<gmd:date>
-								<gco:Date>Last revision date in ISO8601</gco:Date>
+								<gco:Date>2018-03-04</gco:Date>
 							</gmd:date>
 							<gmd:dateType>
 								<gmd:CI_DateTypeCode codeList="gmxCodeLists-MERIDIAN.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode>
@@ -140,16 +187,18 @@
 						</gmd:CI_Date>
 					</gmd:date>
 					<gmd:citedResponsibleParty>
+						<!-- repeat as needed-->
 						<gmd:CI_ResponsibleParty>
 							<gmd:organisationName>
 								<gco:CharacterString>First author of the data (in a citation)</gco:CharacterString>
 							</gmd:organisationName>
+							<!--strongly recommend completing contact info for PI only-->
 							<gmd:contactInfo>
 								<gmd:CI_Contact>
 									<gmd:phone>
 										<gmd:CI_Telephone>
 											<gmd:voice>
-												<gco:CharacterString>Optional phone number</gco:CharacterString>
+												<gco:CharacterString>999-123-4567</gco:CharacterString>
 											</gmd:voice>
 										</gmd:CI_Telephone>
 									</gmd:phone>
@@ -171,14 +220,14 @@
 												<gco:CharacterString>Optional Country</gco:CharacterString>
 											</gmd:country>
 											<gmd:electronicMailAddress>
-												<gco:CharacterString>Email address</gco:CharacterString>
+												<gco:CharacterString>test@test.test</gco:CharacterString>
 											</gmd:electronicMailAddress>
 										</gmd:CI_Address>
 									</gmd:address>
 									<gmd:onlineResource>
 										<gmd:CI_OnlineResource>
 											<gmd:linkage>
-												<URL>URL</URL>
+												<gmd:URL>http://orcid.org/0000-0003-2369-6955</gmd:URL>
 											</gmd:linkage>
 											<gmd:protocol>
 												<gco:CharacterString>HTTPS</gco:CharacterString>
@@ -204,7 +253,7 @@
 				<gco:CharacterString>Optional - Project purpose - the why (for simulations, please include details on why certain frequency, physics, realization... were chosen)</gco:CharacterString>
 			</gmd:purpose>
 			<gmd:status>
-				<gmd:MD_ProgressCode codeList="gmxCodeLists-MERIDIAN.xml#MD_ProgressCode" codeListValue="###">###</gmd:MD_ProgressCode>
+				<gmd:MD_ProgressCode codeList="gmxCodeLists-MERIDIAN.xml#MD_ProgressCode" codeListValue="proposed">proposed</gmd:MD_ProgressCode>
 			</gmd:status>
 			<gmd:pointOfContact>
 				<gmd:CI_ResponsibleParty>
@@ -241,7 +290,7 @@
 										<gco:CharacterString>Optional principal_investigator_country</gco:CharacterString>
 									</gmd:country>
 									<gmd:electronicMailAddress>
-										<gco:CharacterString>Optional principal_investigator_address</gco:CharacterString>
+										<gco:CharacterString>pi_email@pi.test</gco:CharacterString>
 									</gmd:electronicMailAddress>
 								</gmd:CI_Address>
 							</gmd:address>
@@ -276,7 +325,7 @@
 									<gmd:phone>
 										<gmd:CI_Telephone>
 											<gmd:voice>
-												<gco:CharacterString>Optional data_center_phone</gco:CharacterString>
+												<gco:CharacterString>999-123-4567</gco:CharacterString>
 											</gmd:voice>
 										</gmd:CI_Telephone>
 									</gmd:phone>
@@ -298,14 +347,14 @@
 												<gco:CharacterString>Optional data_center_country</gco:CharacterString>
 											</gmd:country>
 											<gmd:electronicMailAddress>
-												<gco:CharacterString>data_center_address</gco:CharacterString>
+												<gco:CharacterString>data_center@test.test</gco:CharacterString>
 											</gmd:electronicMailAddress>
 										</gmd:CI_Address>
 									</gmd:address>
 									<gmd:onlineResource>
 										<gmd:CI_OnlineResource>
 											<gmd:linkage>
-												<gmd:URL>data_center_website</gmd:URL>
+												<gmd:URL>https://meridian.cs.dal.ca/</gmd:URL>
 											</gmd:linkage>
 										</gmd:CI_OnlineResource>
 									</gmd:onlineResource>
@@ -336,12 +385,14 @@
 			</gmd:resourceFormat>
 			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
+				    <!--!! How can we use a controlled vocabulary for the keywords proper?-->
 					<gmd:keyword>
 						<gco:CharacterString>PLACE KEYWORDS</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:type>
-						<gmd:MD_KeywordTypeCode codeList="gmxCodeLists-MERIDIAN.xml#MD_KeywordTypeCode" codeListValue="place">place</gmd:MD_KeywordTypeCode>
+						<gmd:MD_KeywordTypeCode codeList="gmxCodeLists-MERIDIAN.xml#MD_KeywordTypeCode" codeListValue="place" >place</gmd:MD_KeywordTypeCode>
 					</gmd:type>
+
 					<gmd:thesaurusName>
 						<gmd:CI_Citation>
 							<gmd:title>
@@ -362,14 +413,16 @@
 							</gmd:presentationForm>
 						</gmd:CI_Citation>
 					</gmd:thesaurusName>
+
 				</gmd:MD_Keywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
 						<gco:CharacterString>PLATFORM KEYWORDS</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:type>
-						<gmd:MD_KeywordTypeCode codeList="gmxCodeLists-MERIDIAN.xml#MD_KeywordTypeCode" codeListValue="platform">platform</gmd:MD_KeywordTypeCode>
+						<gmd:MD_KeywordTypeCode codeList="gmxCodeLists-MERIDIAN.xml#MD_KeywordTypeCode" codeListValue="platform" >platform</gmd:MD_KeywordTypeCode>
 					</gmd:type>
+
 					<gmd:thesaurusName>
 						<gmd:CI_Citation>
 							<gmd:title>
@@ -390,14 +443,16 @@
 							</gmd:presentationForm>
 						</gmd:CI_Citation>
 					</gmd:thesaurusName>
+
 				</gmd:MD_Keywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
 						<gco:CharacterString>PARAMETER KEYWORDS</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:type>
-						<gmd:MD_KeywordTypeCode codeList="gmxCodeLists-MERIDIAN.xml#MD_KeywordTypeCode" codeListValue="product">product</gmd:MD_KeywordTypeCode>
+						<gmd:MD_KeywordTypeCode codeList="gmxCodeLists-MERIDIAN.xml#MD_KeywordTypeCode" codeListValue="product" >product</gmd:MD_KeywordTypeCode>
 					</gmd:type>
+
 					<gmd:thesaurusName>
 						<gmd:CI_Citation>
 							<gmd:title>
@@ -406,7 +461,7 @@
 							<gmd:date>
 								<gco:Date>2013-02-28</gco:Date>
 							</gmd:date>
-							<gmd:identifier>
+								<gmd:identifier>
 								<gmd:MD_Identifier>
 									<gmd:code>
 										<gco:CharacterString>http://mmisw.org/ont/ioos/parameter</gco:CharacterString>
@@ -418,12 +473,17 @@
 							</gmd:presentationForm>
 						</gmd:CI_Citation>
 					</gmd:thesaurusName>
+
+				</gmd:MD_Keywords>
+				<!-- !!this one is custom, so we need to create it-->
+				<gmd:MD_Keywords>
 					<gmd:keyword>
 						<gco:CharacterString>DATATYPE KEYWORD</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:type>
 						<gmd:MD_KeywordTypeCode codeList="gmxCodeLists-MERIDIAN.xml#MD_KeywordTypeCode" codeListValue="subTopicCategory">subTopicCategory</gmd:MD_KeywordTypeCode>
 					</gmd:type>
+
 					<gmd:thesaurusName>
 						<gmd:CI_Citation>
 							<gmd:title>
@@ -434,7 +494,8 @@
 							</gmd:date>
 						</gmd:CI_Citation>
 					</gmd:thesaurusName>
-				</gmd:MD_Keywords>
+
+				</gmd:MD_Keywords>				
 			</gmd:descriptiveKeywords>
 			<gmd:resourceConstraints>
 				<gmd:MD_Constraints>
@@ -447,9 +508,10 @@
 				<gco:CharacterString>Primary language and locale that the data is provided in (Preferred: Eng; CAN, acceptable: FRA; CAN)</gco:CharacterString>
 			</gmd:language>
 			<gmd:characterSet>
-				<gmd:MD_CharacterSetCode codeList="gmxCodeLists-MERIDIAN.xml#MD_CharacterSetCode" codeListValue="###">###</gmd:MD_CharacterSetCode>
+				<gmd:MD_CharacterSetCode codeList="gmxCodeLists-MERIDIAN.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</gmd:MD_CharacterSetCode>
 			</gmd:characterSet>
 			<gmd:topicCategory>
+			<!-- !!repeat as needed-->
 				<gmd:MD_TopicCategoryCode>oceans</gmd:MD_TopicCategoryCode>
 			</gmd:topicCategory>
 			<gmd:extent>
@@ -477,66 +539,22 @@
 						<gmd:EX_TemporalExtent id="boundingTemporalExtent">
 							<gmd:extent>
 								<gml:TimePeriod>
+									<!-- optional description, name-->
+									<!--project_start_date-->
 									<gml:beginPosition>2010-02-03</gml:beginPosition>
+									<!--project_end_date-->
 									<gml:endPosition>2030-04-05</gml:endPosition>
 								</gml:TimePeriod>
 							</gmd:extent>
 						</gmd:EX_TemporalExtent>
 					</gmd:temporalElement>
+				<!-- optional vertical extent goes here-->
 				</gmd:EX_Extent>
 			</gmd:extent>
 			<gmd:supplementalInformation>
 				<gco:CharacterString>Optional supplemental_info. Any other details which could be useful to discover or understand the data.</gco:CharacterString>
 			</gmd:supplementalInformation>
-			<dwr:DarwinRecordSet>
-				<dcterms:Location>
-					<dcterms:type codeList="gmxCodeLists-MERIDIAN.xml#DCMIType" codeListValue="###">###</dcterms:type>
-					<dcterms:modified>created from other entries</dcterms:modified>
-					<dcterms:language>created from other entries</dcterms:language>
-					<dwc:basisOfRecord codeList="gmxCodeLists-MERIDIAN.xml#dwc:BasisOfRecordList" codeListValue="###">###</dwc:basisOfRecord>
-					<dcterms:license>created from other entries</dcterms:license>
-					<dcterms:bibliographicCitation>created from other entries</dcterms:bibliographicCitation>
-					<dwc:datasetID>created by MERIDIAN</dwc:datasetID>
-					<dwc:datasetName>created from other entries</dwc:datasetName>
-					<dwc:locationID>###Loc</dwc:locationID>
-					<dwc:waterBody>waterBody</dwc:waterBody>
-					<dwc:decimalLatitude>0</dwc:decimalLatitude>
-					<dwc:decimalLongitude>0</dwc:decimalLongitude>
-					<dwc:coordinatePrecision>0</dwc:coordinatePrecision>
-					<dwc:footprintWKT>footprint in WKT</dwc:footprintWKT>
-				</dcterms:Location>
-				<dwc:Occurrence>
-					<dwc:occurrenceID>###Occ</dwc:occurrenceID>
-					<dwc:recordedBy>List of people who recorded the occurrence, with entries separated by a vertical bar |</dwc:recordedBy>
-					<dwc:locationID>###Loc</dwc:locationID>
-				</dwc:Occurrence>
-				<dwc:Identification>
-					<dwc:identificationID>###Identi</dwc:identificationID>
-					<dwc:identifiedBy>NAME</dwc:identifiedBy>
-					<dwc:dateIdentified>2002-04-05</dwc:dateIdentified>
-					<dwc:identificationQualifier>OPTIONAL qualification on identification</dwc:identificationQualifier>
-					<dwc:identificationReferences>OPTIONAL plaintext references</dwc:identificationReferences>
-					<dwc:identificationVerificationStatus codeList="gmxCodeLists-MERIDIAN.xml#dwc:VerificationStatus" codeListValue="###">SELECT FROM CODELIST</dwc:identificationVerificationStatus>
-					<dwc:occurrenceID>###Occ</dwc:occurrenceID>
-					<dwc:taxonID>###Tax</dwc:taxonID>
-				</dwc:Identification>
-				<dwc:Taxon>
-					<dwc:taxonID>###Tax</dwc:taxonID>
-					<dwc:scientificName>Scientific name (provide at minimum either common or scientific name)</dwc:scientificName>
-					<dwc:scientificNameAuthorship>Optional source of scientific name</dwc:scientificNameAuthorship>
-					<dwc:taxonRank>Most specific taxon rank available in scientificName</dwc:taxonRank>
-					<dwc:kingdom>Optional kingdom</dwc:kingdom>
-					<dwc:phylum>Optional phylum</dwc:phylum>
-					<dwc:class>Optional class</dwc:class>
-					<dwc:order>Optional order</dwc:order>
-					<dwc:family>Optional family</dwc:family>
-					<dwc:genus>Optional genus</dwc:genus>
-					<dwc:subgenus>optional subgenus</dwc:subgenus>
-					<dwc:specificEpithet>Optional epithet</dwc:specificEpithet>
-					<dwc:vernacularName>vernacular (common) name </dwc:vernacularName>
-					<dwc:taxonRemarks>Optional comments on the classification</dwc:taxonRemarks>
-				</dwc:Taxon>
-			</dwr:DarwinRecordSet>
+			
 		</gmd:MD_DataIdentification>
 	</gmd:identificationInfo>
 	<gmi:acquisitionInformation>
@@ -570,73 +588,11 @@
 							</gmi:description>
 						</gmi:MI_Instrument>
 					</gmi:instrument>
+					<!--!! repeat for other instruments on platform-->
 				</gmi:MI_Platform>
 			</gmi:platform>
 		</gmi:MI_AcquisitionInformation>
 	</gmi:acquisitionInformation>
-	<gmd:MD_MetadataExtensionInfo>
-		<gmd:extensionOnLineResource>
-			<gmd:CI_OnlineResource>
-				<gmd:linkage>
-					<gco:CharacterString>rs.tdwg.org/dwc/terms/guides/xml/index.htm</gco:CharacterString>
-				</gmd:linkage>
-				<gmd:protocol>
-					<gco:CharacterString>http</gco:CharacterString>
-				</gmd:protocol>
-				<gmd:name>
-					<gco:CharacterString>Darwin Core XML Guide</gco:CharacterString>
-				</gmd:name>
-			</gmd:CI_OnlineResource>
-		</gmd:extensionOnLineResource>
-		<gmd:extendedElementInformation>
-			<gmd:MD_ExtendedElementInformation>
-				<gmd:name>
-					<gco:CharacterString>dwr:DarwinRecordSet</gco:CharacterString>
-				</gmd:name>
-				<gmd:definition>
-					<gco:CharacterString>Darwin Core style information for taxonomic/species information contained in information.</gco:CharacterString>
-				</gmd:definition>
-				<gmd:obligation>
-					<gmd:MD_ObligationCode>optional</gmd:MD_ObligationCode>
-				</gmd:obligation>
-				<gmd:dataType>
-					<gmd:MD_DatatypeCode codelist="gmxCodeLists-MERIDIAN.xml#MD_DatatypeCode" codeListValue="metaClass" codeSpace="001">metaClass</gmd:MD_DatatypeCode>
-				</gmd:dataType>
-				<gmd:ParentEntity>
-					<gco:CharacterString>MD_DataIdentification</gco:CharacterString>
-				</gmd:ParentEntity>
-				<gmd:rule>
-					<gco:CharacterString>New metadata elements as a class to MD_Identification</gco:CharacterString>
-				</gmd:rule>
-				<gmd:source>
-					<gmd:CI_ResponsibleParty>
-						<gmd:organisationName>
-							<gco:CharacterString>Darwin Core</gco:CharacterString>
-						</gmd:organisationName>
-					</gmd:CI_ResponsibleParty>
-				</gmd:source>
-				<gmd:minimumOccurence>
-					<gco:CharacterString>0</gco:CharacterString>
-				</gmd:minimumOccurence>
-				<gmd:maximumOccurence>
-					<gco:CharacterString>unbounded</gco:CharacterString>
-				</gmd:maximumOccurence>
-			</gmd:MD_ExtendedElementInformation>
-		</gmd:extendedElementInformation>
-	</gmd:MD_MetadataExtensionInfo>
-	<gmd:MD_MetadataExtensionInfo>
-		<gmd:extensionOnLineResource>
-			<gmd:CI_OnlineResource>
-				<gmd:linkage>
-					<gco:CharacterString>docs.google.com/document/d/1fIDxA7pe6YkYiCXOsoxoTH8BXw0ETX9DHJ0ABoKkjMU/edit#</gco:CharacterString>
-				</gmd:linkage>
-				<gmd:protocol>
-					<gco:CharacterString>https</gco:CharacterString>
-				</gmd:protocol>
-				<gmd:name>
-					<gco:CharacterString>MERIDIAN metadata schema document</gco:CharacterString>
-				</gmd:name>
-			</gmd:CI_OnlineResource>
-		</gmd:extensionOnLineResource>
-	</gmd:MD_MetadataExtensionInfo>
+
 </gmi:MI_Metadata>
+

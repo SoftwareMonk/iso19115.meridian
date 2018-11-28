@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet   
-xmlns:gmi="http://www.isotc211.org/2005/gmi"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:gmi="http://www.isotc211.org/2005/gmi"
 xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" 
 xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gco="http://www.isotc211.org/2005/gco" 
 xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gss="http://www.isotc211.org/2005/gss" 

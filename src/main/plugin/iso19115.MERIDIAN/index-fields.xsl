@@ -8,6 +8,7 @@ xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/g
 xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:dcterms="http://purl.org/dc/terms/" 
 xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/"
 xmlns:geonet="http://www.fao.org/geonetwork" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:gmx="http://www.isotc211.org/2005/gmx"
 			exclude-result-prefixes="gmd gmx gco gml srv geonet gmi xlink xsl">
 
 
@@ -48,12 +49,13 @@ xmlns:geonet="http://www.fao.org/geonetwork" xmlns:xsl="http://www.w3.org/1999/X
 		<xsl:if test="$thesaurusId!=''">
 			<Field name="thesaurusName" string="{string($thesaurusId)}" store="true" index="true"/>
 		</xsl:if>
-
+-->
 		<!-- index keyword codes under lucene index field with name same
 				 as thesaurus that contains the keyword codes -->
 	<!--
 		<xsl:for-each select="gmd:keyword/*">
 			<xsl:if test="name()='gmx:Anchor' and $thesaurusId!=''">
+-->
 				<!-- expecting something like 
 							    	<gmx:Anchor 
 									  	xlink:href="http://localhost:8080/geonetwork/srv/en/xml.keyword.get?thesaurus=register.theme.urn:marine.csiro.au:marlin:keywords:standardDataType&id=urn:marine.csiro.au:marlin:keywords:standardDataTypes:concept:3510">CMAR Vessel Data: ADCP</gmx:Anchor>
