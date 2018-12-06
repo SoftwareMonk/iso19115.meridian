@@ -6,8 +6,9 @@
 	<field name="gco:CharacterString">
 	</field> -->
 
-	<field name="gmd:MD_Metadata">
-		<substitute name="gmi:MI_Metadata"/>
+<!-- offer just data identification -->
+	<field name="gmd:AbstractMD_Identification">
+		<substitute name="mcp:MD_DataIdentification"/>
 	</field>
 
 </fields>
