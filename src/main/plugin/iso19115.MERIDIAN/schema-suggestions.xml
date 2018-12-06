@@ -60,6 +60,9 @@
 		<suggest name="gmd:useConstraints"/>
 	</field>
 
+	<field name="mcp:EX_TemporalExtent">
+		<suggest name="gmd:extent"/>
+	</field>
 	
 	<field name="gml:TimePeriod">
 		<suggest name="gml:beginPosition"/>
@@ -182,5 +185,23 @@
 	<field name="gmd:MD_Resolution">
 		<suggest name="gmd:distance"/>
 	</field>
-
+	<field name="dwr:DarwinRecordSet">
+		<suggest name="dwc:Occurrence"/>
+		<suggest name="dcterms:Location"/>
+		<suggest name="dwc:Identification"/>
+		<suggest name="dwc:Taxon"/>
+	</field>
+	<field name="dcterms:Location">
+		<suggest name="dwc:waterBody"/>
+	</field>
+	<field name="dwc:Identification">
+		<suggest name="dwc:identifiedBy"/>
+		<suggest name="dwc:dateIdentified"/>
+		<suggest name="dwc:identificationVerificationStatus"/>
+	</field>
+	<field name="dwc:Taxon">
+		<suggest name="dwc:kingdom"/>
+		<suggest name="dwc:taxonRank"/>
+		<suggest name="dwc:vernacularName"/>
+	</field>
 </fields>
