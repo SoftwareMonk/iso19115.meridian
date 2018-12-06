@@ -5,7 +5,8 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/
 xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gco="http://www.isotc211.org/2005/gco" 
 xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gss="http://www.isotc211.org/2005/gss" 
 xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" 
-
+xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:dcterms="http://purl.org/dc/terms/" 
+xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/"
 xmlns:geonet="http://www.fao.org/geonetwork" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 xmlns:gmx="http://www.isotc211.org/2005/gmx"
 			exclude-result-prefixes="gmd gmx gco gml srv geonet gmi xlink xsl">
@@ -14,6 +15,23 @@ xmlns:gmx="http://www.isotc211.org/2005/gmx"
 	<xsl:import href="../iso19139/index-fields/default.xsl"/>
 	<xsl:include href="../iso19139/convert/functions.xsl"/>
 
+	<!-- this for the MCP-custom DataParameter section.
+	<xsl:template mode="index" match="mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter">
+		<xsl:for-each select="mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term">
+			<xsl:variable name="term" select="mcp:term/*"/>
+			<Field name="dataparam" string="{$term}" store="true" index="true"/>
+			<xsl:if test="mcp:type/mcp:DP_TypeCode/@codeListValue='longName'">
+				<Field name="longParamName" string="{$term}" store="true" index="true"/>
+			</xsl:if>
+			<xsl:for-each select="mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship">
+				<Field name="vocabTerm" string="{mcp:vocabularyTermURL/gmd:URL}" store="true" index="true"/>
+				<Field name="vocabTermList" string="{mcp:vocabularyListURL/gmd:URL}" store="true" index="true"/>
+			</xsl:for-each>
+		</xsl:for-each>
+
+		<xsl:apply-templates mode="index" select="*"/>
+	</xsl:template>
+-->	
 	<!-- Commenting out - unclear if the basic index-fields handles this.		
 	<xsl:template mode="index" match="gmd:dateStamp/gco:Date">
 
