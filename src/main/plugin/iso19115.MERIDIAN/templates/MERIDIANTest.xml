@@ -15,12 +15,9 @@ xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999
 xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:srv="http://www.isotc211.org/2005/srv"
 xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gss="http://www.isotc211.org/2005/gss" 
 xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gts="http://www.isotc211.org/2005/gts"
-xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
-xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://standards.iso.org/iso/19115/-2/gmi/1.0
-http://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd 
-http://rs.tdwg.org/dwc/dwcrecord/  
-http://rs.tdwg.org/dwc/xsd/tdwg_dwc_classes.xsd">
+http://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd">
 
 	<gmd:language>
 		<gco:CharacterString>Eng; CAN)</gco:CharacterString>
@@ -413,8 +410,10 @@ http://rs.tdwg.org/dwc/xsd/tdwg_dwc_classes.xsd">
 							</gmd:presentationForm>
 						</gmd:CI_Citation>
 					</gmd:thesaurusName>
-
+            
 				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
 						<gco:CharacterString>PLATFORM KEYWORDS</gco:CharacterString>
@@ -445,6 +444,8 @@ http://rs.tdwg.org/dwc/xsd/tdwg_dwc_classes.xsd">
 					</gmd:thesaurusName>
 
 				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
 						<gco:CharacterString>PARAMETER KEYWORDS</gco:CharacterString>
@@ -475,6 +476,8 @@ http://rs.tdwg.org/dwc/xsd/tdwg_dwc_classes.xsd">
 					</gmd:thesaurusName>
 
 				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
 				<!-- !!this one is custom, so we need to create it-->
 				<gmd:MD_Keywords>
 					<gmd:keyword>
