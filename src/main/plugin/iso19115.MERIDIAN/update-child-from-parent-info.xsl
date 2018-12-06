@@ -6,6 +6,8 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/
 xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gco="http://www.isotc211.org/2005/gco" 
 xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gss="http://www.isotc211.org/2005/gss" 
 xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:dcterms="http://purl.org/dc/terms/" 
+xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/"
     xmlns:geonet="http://www.fao.org/geonetwork" exclude-result-prefixes="gmd srv gmi">
 
 
@@ -137,7 +139,9 @@ xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/g
 	                    <xsl:copy-of select="/root/update/parent/gmi:MI_Metadata/gmd:identificationInfo/*/gmd:supplementalInformation"/>
 		            	<xsl:copy-of select="srv:*"/>
 		            
-
+									<!-- copy any dwr elements at the end of the 
+									     identificationInfo/* -->
+			            <xsl:copy-of select="dwr:*"/>
 	            	</xsl:copy>
 	            </xsl:for-each>
 	        </gmd:identificationInfo>
