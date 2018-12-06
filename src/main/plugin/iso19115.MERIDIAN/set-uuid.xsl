@@ -2,7 +2,7 @@
 
 <xsl:stylesheet   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
 						xmlns:gco="http://www.isotc211.org/2005/gco"
-						xmlns:gmi="http://www.isotc211.org/2005/gmi"
+						xmlns:mcp="http://schemas.aodn.org.au/mcp-2.0"
 						xmlns:gmd="http://www.isotc211.org/2005/gmd" exclude-result-prefixes="gmd">
 
 	<!-- ================================================================= -->
