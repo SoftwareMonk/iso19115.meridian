@@ -44,6 +44,9 @@ USA.
 	<sch:ns prefix="geonet" uri="http://www.fao.org/geonetwork"/>
 	<sch:ns prefix="xlink" uri="http://www.w3.org/1999/xlink"/>
 	<sch:ns prefix="gmi" uri="http://standards.iso.org/iso/19115/-2/gmi/1.0"/>
+	<sch:ns prefix="dwc" uri="http://rs.tdwg.org/dwc/terms/"/>
+	<sch:ns prefix="dwr" uri="http://rs.tdwg.org/dwc/dwcrecord/"/>
+	<sch:ns prefix="dcterms" uri="http://purl.org/dc/terms/"/>
 	<sch:ns prefix="gmx" uri="http://www.isotc211.org/2005/gmx"/>
 	<sch:ns prefix="gss" uri="http://www.isotc211.org/2005/gss"/>
 	<sch:ns prefix="gsr" uri="http://www.isotc211.org/2005/gsr"/>
@@ -737,5 +740,41 @@ USA.
 		</sch:rule>
 	</sch:pattern>
 	
-
+	<!-- DarwinRecordSet -->
+	<sch:pattern>
+		<sch:title>A DarwinRecordSet must be composed of at least an Occurrence, Location, identification, and Taxon.</sch:title>
+		<sch:rule context="//dwr:DarwinRecordSet">
+			<sch:report test="count(dwc:Occurrence)>=1">A DarwinRecordSet must contain at least one Occurrence.</sch:report>
+			<sch:report test="count(dcterms:Location)>=1">A DarwinRecordSet must contain at least one Location.</sch:report>
+			<sch:report test="count(dwc:Identification)>=1">A DarwinRecordSet must contain at least one Identification.</sch:report>
+			<sch:report test="count(dwc:Taxon)>=1">A DarwinRecordSet must contain at least one Taxon.</sch:report>
+		</sch:rule>
+	</sch:pattern>
+	<!-- Do we need to add most M-1 rules if they are already in the DWC definition? -->
+	<!-- Occurrence -->
+	<sch:pattern>
+		<sch:title>When organismQuantity is reported, an organismQuantityType is required.</sch:title>
+		<sch:rule context="//dwc:Occurrence">
+			<sch:report test="(count(dwc:organismQuantity)=1 and count(dwc:organismQuantityType)=1) or (count(dwc:organismQuantity)=0 and count(dwc:organismQuantityType)=0)">A single organismQuantityType must be matched with a single organismQuantity in an Occurrence.</sch:report>
+		</sch:rule>
+	</sch:pattern>
+	<!-- Events -->
+	<sch:pattern>
+		<sch:title>When a sampleSizeValue is report, a sampleSizeUnit is required.</sch:title>
+		<sch:rule context="//dwc:Event">
+			<sch:report test="(count(dwc:sampleSizeUnit)=1 and count(dwc:sampleSizeValue)=1) or (count(dwc:sampleSizeUnit)=0 and count(dwc:sampleSizeValue)=0)">When sampleSizeValue is recorded, record a sampleSizeUnit.</sch:report>
+		</sch:rule>
+	</sch:pattern>
+		<sch:pattern>
+		<sch:title>When a sampleSizeValue is report, a sampleSizeUnit is required.</sch:title>
+		<sch:rule context="//dwc:HumanObservation">
+			<sch:report test="(count(dwc:sampleSizeUnit)=1 and count(dwc:sampleSizeValue)=1) or (count(dwc:sampleSizeUnit)=0 and count(dwc:sampleSizeValue)=0)">When sampleSizeValue is recorded, record a sampleSizeUnit.</sch:report>
+		</sch:rule>
+	</sch:pattern>
+		<sch:pattern>
+		<sch:title>When a sampleSizeValue is report, a sampleSizeUnit is required.</sch:title>
+		<sch:rule context="//dwc:MachineObservation">
+			<sch:report test="(count(dwc:sampleSizeUnit)=1 and count(dwc:sampleSizeValue)=1) or (count(dwc:sampleSizeUnit)=0 and count(dwc:sampleSizeValue)=0)">When sampleSizeValue is recorded, record a sampleSizeUnit.</sch:report>
+		</sch:rule>
+	</sch:pattern>
 </sch:schema>
