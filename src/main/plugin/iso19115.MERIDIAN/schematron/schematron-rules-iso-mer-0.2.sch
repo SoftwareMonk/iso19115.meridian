@@ -37,13 +37,13 @@ USA.
 -->
 
 	<sch:title xmlns="http://www.w3.org/2001/XMLSchema">Schematron validation for MERIDIAN profile version 0.2 of ISO 19115-2(19139-2)</sch:title>
-	<sch:ns prefix="gml" uri="http://www.opengis.net/gml"/>
+	<sch:ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
 	<sch:ns prefix="gmd" uri="http://www.isotc211.org/2005/gmd"/>
 	<sch:ns prefix="srv" uri="http://www.isotc211.org/2005/srv"/>
 	<sch:ns prefix="gco" uri="http://www.isotc211.org/2005/gco"/>
 	<sch:ns prefix="geonet" uri="http://www.fao.org/geonetwork"/>
 	<sch:ns prefix="xlink" uri="http://www.w3.org/1999/xlink"/>
-	<sch:ns prefix="gmi" uri="http://www.isotc211.org/2005/gmi"/>
+	<sch:ns prefix="gmi" uri="http://standards.iso.org/iso/19115/-2/gmi/1.0"/>
 	<sch:ns prefix="dwc" uri="http://rs.tdwg.org/dwc/terms/"/>
 	<sch:ns prefix="dwr" uri="http://rs.tdwg.org/dwc/dwcrecord/"/>
 	<sch:ns prefix="dcterms" uri="http://purl.org/dc/terms/"/>

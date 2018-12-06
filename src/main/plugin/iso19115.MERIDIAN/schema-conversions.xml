@@ -10,8 +10,8 @@
 <conversions>
 	<converter 
 		name="xml_iso19115.MERIDIAN" 
-		nsUri="http://www.isotc211.org/2005/gmi/" 
-		schemaLocation="http://www.isotc211.org/2005/gmi/gmi.xsd" 
+		nsUri="http://standards.iso.org/iso/19115/-2/gmi/1.0/" 
+		schemaLocation="http://standards.iso.org/iso/19115/-2/gmi/1.0/gmi.xsd" 
 		xslt="xml_iso19115.MERIDIAN.xsl"/>
 	<converter 
 		name="xml_iso19115.MERIDIANTooai_dc" 

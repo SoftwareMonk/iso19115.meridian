@@ -15,7 +15,7 @@
 		https://drive.google.com/open?id=1fIDxA7pe6YkYiCXOsoxoTH8BXw0ETX9DHJ0ABoKkjMU
 		http://geonetwork-opensource.org/schemas/schema-ident <!-- it's whining about not having this? -->
 	</schemaLocation>
-	<autodetect xmlns:gmi="http://www.isotc211.org/2005/gmi"
+	<autodetect xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
 		xmlns:gmd="http://www.isotc211.org/2005/gmd"
 		xmlns:gco="http://www.isotc211.org/2005/gco">
 		<!-- xmlns:dcterms="http://purl.org/dc/terms/" 
@@ -24,17 +24,18 @@
 		Geonetwork requires that all namespaces be present to be recognized, and since some records
 		may not have Darwin Core elements, these have to be commented out-->
 		<elements type="root">
-			<gmi:MI_Metadata/>
-			<gmd:metadataStandardName>
-				<gco:CharacterString>
-					.*MERIDIAN.*
-				</gco:CharacterString>
-			</gmd:metadataStandardName>
-			<gmd:metadataStandardVersion>
-				<gco:CharacterString>
-					.*0.3$
-				</gco:CharacterString>
-			</gmd:metadataStandardVersion>
+			<gmi:MI_Metadata>
+				<gmd:metadataStandardName>
+					<gco:CharacterString>
+						.*MERIDIAN.*
+					</gco:CharacterString>
+				</gmd:metadataStandardName>
+				<gmd:metadataStandardVersion>
+					<gco:CharacterString>
+						.*0.3$
+					</gco:CharacterString>
+				</gmd:metadataStandardVersion>
+			</gmi:MI_Metadata>
 		</elements>
 	</autodetect>
 </schema>

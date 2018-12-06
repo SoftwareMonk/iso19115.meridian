@@ -3,7 +3,7 @@
   xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco"
   xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gn="http://www.fao.org/geonetwork"
   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-  xmlns:gmi="http://www.isotc211.org/2005/gmi"
+  xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
   exclude-result-prefixes="#all">
 <!-- TODO - **check how many prefixes we need to include in stylesheet here -->
   <xsl:include href="utility-tpl-multilingual.xsl"/>
