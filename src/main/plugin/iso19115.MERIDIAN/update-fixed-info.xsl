@@ -6,6 +6,8 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/
 xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gco="http://www.isotc211.org/2005/gco" 
 xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gss="http://www.isotc211.org/2005/gss" 
 xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:dcterms="http://purl.org/dc/terms/" 
+xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/"
 xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 						exclude-result-prefixes="#all">
 	<!-- **TODO: create templates to autocomplete Darwin Core elements-->
@@ -214,7 +216,56 @@ xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:xsi="http://www.w3.org/2001/X
 				</gmd:CI_ResponsibleParty>
 			</gmd:contact>
 	</gmd:MD_MaintenanceInformation>
-
+	<gmd:MD_MetadataExtensionInformation>
+		<gmd:extensionOnLineResource>
+			<gmd:CI_OnlineResource>
+				<gmd:linkage>
+					<gco:CharacterString>rs.tdwg.org/dwc/terms/guides/xml/index.htm</gco:CharacterString>
+				</gmd:linkage>
+				<gmd:protocol>
+					<gco:CharacterString>http</gco:CharacterString>
+				</gmd:protocol>
+				<gmd:name>
+					<gco:CharacterString>Darwin Core XML Guide</gco:CharacterString>
+				</gmd:name>
+			</gmd:CI_OnlineResource>
+		</gmd:extensionOnLineResource>
+		<gmd:extendedElementInformation>
+			<gmd:MD_ExtendedElementInformation>
+				<gmd:name>
+					<gco:CharacterString>dwr:DarwinRecordSet</gco:CharacterString>
+				</gmd:name>
+				<gmd:definition>
+					<gco:CharacterString>Darwin Core style information for taxonomic/species information contained in information.</gco:CharacterString>
+				</gmd:definition>
+				<gmd:obligation>
+					<gmd:MD_ObligationCode>optional</gmd:MD_ObligationCode>
+				</gmd:obligation>
+				<gmd:dataType>
+					<gmd:MD_DatatypeCode codelist="gmxCodeLists-MERIDIAN.xml#MD_DatatypeCode" codeListValue="metaClass" codeSpace="001">metaClass</gmd:MD_DatatypeCode>
+				</gmd:dataType>
+				<gmd:parentEntity>
+					<gco:CharacterString>MD_DataIdentification</gco:CharacterString>
+				</gmd:parentEntity>
+				<gmd:rule>
+					<gco:CharacterString>New metadata elements as a class to MD_Identification</gco:CharacterString>
+				</gmd:rule>
+				<gmd:source>
+					<gmd:CI_ResponsibleParty>
+						<gmd:organisationName>
+							<gco:CharacterString>Darwin Core</gco:CharacterString>
+						</gmd:organisationName>
+					</gmd:CI_ResponsibleParty>
+				</gmd:source>
+				<!--gmd:minimumOccurrence>
+					<gco:CharacterString>0</gco:CharacterString>
+				</gmd:minimumOccurrence-->
+				<gmd:maximumOccurrence>
+				    <gco:CharacterString>unbounded</gco:CharacterString>
+				</gmd:maximumOccurrence>
+			</gmd:MD_ExtendedElementInformation>
+		</gmd:extendedElementInformation>
+	</gmd:MD_MetadataExtensionInformation>
 
 		</xsl:copy>
 	</xsl:template>
