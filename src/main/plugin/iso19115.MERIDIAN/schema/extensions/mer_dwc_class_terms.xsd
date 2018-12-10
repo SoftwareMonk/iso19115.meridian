@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema version="2014-11-08" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rs.tdwg.org/dwc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
-    <xs:include schemaLocation="mer_dwcterms.xsd"/>
+    <xs:import namespace="http://rs.tdwg.org/dwc/terms/" schemaLocation="mer_dwcterms.xsd"/>
     
     <xs:annotation>
         <xs:documentation>
@@ -14,7 +14,7 @@
     <xs:element name="Occurrence" substitutionGroup="dwc:anyClass" minOccurs="1" maxOccurs="unbounded">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:occurrenceID" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:occurrenceID" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -28,7 +28,7 @@
     <xs:element name="Organism" substitutionGroup="dwc:anyClass">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:organismID" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:organismID" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -42,7 +42,7 @@
     <xs:element name="MaterialSample" substitutionGroup="dwc:anyClass">
         <xs:complexType>
 		<xs:sequence>
-				<xs:element name="dwc:materialSampleID" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:materialSampleID" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -56,7 +56,7 @@
     <xs:element name="Event" substitutionGroup="dwc:anyClass">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:eventID" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:eventID" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -84,7 +84,7 @@
     <xs:element name="GeologicalContext" substitutionGroup="dwc:anyClass">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:geologicalContextID" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:geologicalContextID" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -98,10 +98,10 @@
     <xs:element name="Identification" substitutionGroup="dwc:anyClass" minOccurs="1" maxOccurs="unbounded">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:identificationID" type="dwc:nonEmptyString" minOccurs="1">
-				<xs:element name="dwc:identifiedBy" type="dwc:nonEmptyString" minOccurs="1">
-				<xs:element name="dwc:dateIdentified" type="dwc:nonEmptyString" minOccurs="1">
-				<xs:element name="dwc:identificationVerificationStatus" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:identificationID" type="dwc:nonEmptyString" minOccurs="1"/>
+				<xs:element name="dwc:identifiedBy" type="dwc:nonEmptyString" minOccurs="1"/>
+				<xs:element name="dwc:dateIdentified" type="dwc:nonEmptyString" minOccurs="1"/>
+				<xs:element name="dwc:identificationVerificationStatus" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
@@ -115,9 +115,9 @@
     <xs:element name="Taxon" substitutionGroup="dwc:anyClass" minOccurs="1" maxOccurs="unbounded">
         <xs:complexType>
 			<xs:sequence>
-				<xs:element name="dwc:taxonID" type="dwc:nonEmptyString" minOccurs="1">
-				<xs:element name="dwc:taxonRank" type="dwc:nonEmptyString" minOccurs="1">
-				<xs:element name="dwc:vernacularName" type="dwc:nonEmptyString" minOccurs="1">
+				<xs:element name="dwc:taxonID" type="dwc:nonEmptyString" minOccurs="1"/>
+				<xs:element name="dwc:taxonRank" type="dwc:nonEmptyString" minOccurs="1"/>
+				<xs:element name="dwc:vernacularName" type="dwc:nonEmptyString" minOccurs="1"/>
 			</xs:sequence>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
