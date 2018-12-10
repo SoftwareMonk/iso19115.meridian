@@ -10,7 +10,7 @@ xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcr
 >
 <!-- is there too much stuff here? -->
 <xs:include schemaLocation="schema/extensions/MERIDIANExtensions.xsd"/>
-	<xs:include schemaLocation="schema/gmi/gmi.xsd"/>
+	<xs:import namespace ="http://standards.iso.org/iso/19115/-2/gmi/1.0" schemaLocation="schema/gmi/gmi.xsd"/>
 	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="schema/gco/gco.xsd"/>
 	<xs:import namespace="http://www.isotc211.org/2005/gts" schemaLocation="schema/gts/gts.xsd"/>
 	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="schema/gmd/gmd.xsd"/>
