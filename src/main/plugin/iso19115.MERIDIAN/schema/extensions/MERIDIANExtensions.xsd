@@ -8,13 +8,13 @@ xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/g
 xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:dcterms="http://purl.org/dc/terms/" 
 xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/"
 >
-	<xs:include schemaLocation="../gmi/gmi.xsd"/>
+	<!--xs:include schemaLocation="../gmi/gmi.xsd"/-->
 	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../gco/gco.xsd"/>
 	<xs:import namespace="http://www.isotc211.org/2005/gts" schemaLocation="../gts/gts.xsd"/>
 	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../gmd/gmd.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../gml/gml.xsd"/>
 	<!-- Need to adjust path/namespace most likely! -->
-	<xs:import namespace="http://rs.tdwg.org/dwc" schemaLocation="mer_dwcterms.xsd"/>
+	<xs:import namespace="http://rs.tdwg.org/dwc/terms/" schemaLocation="mer_dwcterms.xsd"/>
 
 	<xs:annotation>
 		<xs:documentation>
@@ -74,40 +74,6 @@ Revised to serve MERIDIAN
 	<xs:complexType name="MD_DataIdentification_PropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="mcp:MD_DataIdentification"/>
-		</xs:sequence>
-		<xs:attributeGroup ref="gco:ObjectReference"/>
-		<xs:attribute ref="gco:nilReason"/>
-	</xs:complexType>
-
-
-<!-- ====================================================================== -->
-<!-- Add acquisitionInformation (ISO 19115-2) to gmd:MD_Metadata -->
-<!-- ====================================================================== -->
-<!-- the fact we're changing namespaces here seems a little weird. Might cause problems -->
-	<xs:complexType name="MI_Metadata_Type">
-		<xs:annotation>
-			<xs:documentation>
-Extends the metadata element to include acquisitionInformation and metadata extension info
-			</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="gmd:MD_Metadata_Type">
-				<xs:sequence>
-					<xs:element name="acquisitionInformation" type="gmi:MI_AcquisitionInformation" minOccurs="0" maxOccurs="unbounded"/>
-					<!-- this might not be the right place for this, since it isn't 'new'
-					<xs:element name="metadataExtensionInformation" type="gmd:MD_MetadataExtensionInformation" minOccurs="1" maxOccurs="unbounded"/>
-					-->
-				</xs:sequence>
-				<xs:attribute ref="gco:isoType" use="required" fixed="gmd:MD_Metadata"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	
-	<xs:element name="MI_Metadata" substitutionGroup="gmd:MD_Metadata" type="gmi:MI_Metadata_Type"/>
-
-	<xs:complexType name="MD_Metadata_PropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="gmi:MI_Metadata"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gco:ObjectReference"/>
 		<xs:attribute ref="gco:nilReason"/>

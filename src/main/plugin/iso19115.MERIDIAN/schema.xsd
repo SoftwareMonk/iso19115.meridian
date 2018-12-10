@@ -17,6 +17,6 @@ xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcr
 	<xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="schema/srv/srv.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="schema/gml/gml.xsd"/>
 	<!-- Need to adjust path/namespace most likely! -->
-	<xs:import namespace="http://rs.tdwg.org/dwc" schemaLocation="schema/extensions/mer_dwcterms.xsd"/>
+	<xs:import namespace="http://rs.tdwg.org/dwc/terms/" schemaLocation="schema/extensions/mer_dwcterms.xsd"/>
 	
 </xs:schema>
