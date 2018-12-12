@@ -79,7 +79,7 @@ Revised to serve MERIDIAN
 
 	<xs:complexType name="MD_DataIdentification_PropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="mcp:MD_DataIdentification"/>
+			<xs:element ref="gmd:MD_DataIdentification"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gco:ObjectReference"/>
 		<xs:attribute ref="gco:nilReason"/>
