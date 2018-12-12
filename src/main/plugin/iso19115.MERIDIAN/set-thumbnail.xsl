@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xsl:stylesheet   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" 
@@ -40,9 +39,9 @@ xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcr
 			<xsl:choose>
 				<xsl:when test="not(gmd:identificationInfo)">
 		 			<gmd:identificationInfo>
-						<mcp:MD_DataIdentification gco:isoType="gmd:MD_DataIdentification">
+						<gmd:MD_DataIdentification gco:isoType="gmd:MD_DataIdentification">
 							<xsl:call-template name="fill"/>
-						</mcp:MD_DataIdentification>
+						</gmd:MD_DataIdentification>
 					</gmd:identificationInfo>
 				</xsl:when>
 				
