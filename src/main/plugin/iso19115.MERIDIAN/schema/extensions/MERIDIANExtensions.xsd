@@ -17,6 +17,8 @@ xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcr
 	<xs:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/dcterms.xsd"/>
     <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/dc.xsd"/>
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
+    <xs:import namespace="http://rs.tdwg.org/dwc/dwcrecord/" schemaLocation="mer_dwc_classes.xsd"/>
+    <!-- is this last namespace going to work when the url is dead? -->
     <!--xs:include schemaLocation="../gmi/gmi.xsd"/-->
     <!-- Need to adjust path/namespace most likely! -->
 	<xs:annotation>
