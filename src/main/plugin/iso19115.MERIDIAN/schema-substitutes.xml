@@ -8,7 +8,7 @@
 
 <!-- offer just data identification -->
 	<field name="gmd:AbstractMD_Identification">
-		<substitute name="mcp:MD_DataIdentification"/>
+		<substitute name="gmd:MD_DataIdentification"/>
 	</field>
 
 </fields>
