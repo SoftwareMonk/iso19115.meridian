@@ -87,35 +87,7 @@ Revised to serve MERIDIAN
 <!-- ====================================================================== -->
 <!-- Darwin Core Definitions -->
 <!-- ====================================================================== -->
-	<!-- begin mer_dwc_classes -->
-        
-    <xs:annotation>
-        <xs:documentation>
-            This schema defines a container for all darwin core classes with no notion of a record per se.
-            All classes are treated equally.
-        </xs:documentation>
-    </xs:annotation>
-
-
-	<xs:complexType name="DarwinRecordSet_PropertyType">
-		<xs:annotation>
-			<xs:documentation>
-				Biologically relevant data can be stored as a Darwin Core record. 
-			</xs:documentation>
-		</xs:annotation>
-            <xs:sequence>
-				<xs:element ref="dcterms:location" minOccurs="1"/>
-				<xs:element ref="dwc:Occurrence" minOccurs="1"/>
-				<xs:element ref="dwc:Identification" minOccurs="1"/>
-				<xs:element ref="dwc:Taxon" minOccurs="1"/>
-                <xs:element ref="dwc:anyClass" maxOccurs="unbounded" minOccurs="0"/>
-            </xs:sequence>
-		<xs:attributeGroup ref="gco:ObjectReference"/>
-	</xs:complexType>
-	<xs:element name="DarwinRecordSet" type="dwr:DarwinRecordSet_Type"/>
-	
-
-	<!-- end mer_dwc_classes -->
+	<!-- imported mer_dwc_classes -->
     <!-- begin mer_dwc_class_terms -->
     <xs:annotation>
         <xs:documentation>
