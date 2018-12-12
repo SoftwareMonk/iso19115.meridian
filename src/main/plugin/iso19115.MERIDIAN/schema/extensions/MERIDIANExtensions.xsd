@@ -95,7 +95,7 @@ Revised to serve MERIDIAN
     </xs:annotation>
 
 
-	<xs:complexType name="dwr:DarwinRecordSet_PropertyType">
+	<xs:complexType name="DarwinRecordSet_PropertyType">
 		<xs:annotation>
 			<xs:documentation>
 				Biologically relevant data can be stored as a Darwin Core record. 
@@ -110,7 +110,7 @@ Revised to serve MERIDIAN
             </xs:sequence>
 		<xs:attributeGroup ref="gco:ObjectReference"/>
 	</xs:complexType>
-	<xs:element name="dwr:DarwinRecordSet" type="dwr:DarwinRecordSet_Type"/>
+	<xs:element name="DarwinRecordSet" type="dwr:DarwinRecordSet_Type"/>
 	
 
 	<!-- end mer_dwc_classes -->
