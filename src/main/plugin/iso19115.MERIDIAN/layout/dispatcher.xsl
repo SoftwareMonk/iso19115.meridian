@@ -14,10 +14,10 @@
   xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"
   xmlns:saxon="http://saxon.sf.net/" extension-element-prefixes="saxon"
   exclude-result-prefixes="#all">
-  <!-- TODO** KDM - check if more namespaces need to be added-->
+
   <xsl:include href="layout.xsl"/>
   
-  
+<!-- TODO** KDM - check if more namespaces need to be added-->
   <!-- 
     Load the schema configuration for the editor.
       -->
