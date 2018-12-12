@@ -8,23 +8,22 @@
             All classes are treated equally.
         </xs:documentation>
     </xs:annotation>
-    
-    <xs:element name="DarwinRecordSet">
-        <xs:complexType name="DarwinRecordSet_PropertyType">
-    		<xs:annotation>
-    			<xs:documentation>
-    				Biologically relevant data can be stored as a Darwin Core record. 
-    			</xs:documentation>
-    		</xs:annotation>
-            <xs:sequence>
-				<xs:element ref="dcterms:location" minOccurs="1"/>
-				<xs:element ref="dwc:Occurrence" minOccurs="1"/>
-				<xs:element ref="dwc:Identification" minOccurs="1"/>
-				<xs:element ref="dwc:Taxon" minOccurs="1"/>
-                <xs:element ref="dwc:anyClass" maxOccurs="unbounded" minOccurs="0"/>
-            </xs:sequence>
-            <xs:attributeGroup ref="gco:ObjectReference"/>
-        </xs:complexType>
-    </xs:element>
+
+    <xs:complexType name="DarwinRecordSet_PropertyType">
+		<xs:annotation>
+			<xs:documentation>
+				Biologically relevant data can be stored as a Darwin Core record. 
+			</xs:documentation>
+		</xs:annotation>
+        <xs:sequence>
+			<xs:element ref="dcterms:location" minOccurs="1"/>
+			<xs:element ref="dwc:Occurrence" minOccurs="1"/>
+			<xs:element ref="dwc:Identification" minOccurs="1"/>
+			<xs:element ref="dwc:Taxon" minOccurs="1"/>
+            <xs:element ref="dwc:anyClass" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="gco:ObjectReference"/>
+    </xs:complexType>
+   
     
 </xs:schema>
