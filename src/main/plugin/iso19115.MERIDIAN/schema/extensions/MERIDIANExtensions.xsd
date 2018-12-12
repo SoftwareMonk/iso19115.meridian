@@ -14,6 +14,9 @@ xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcr
 	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../gmd/gmd.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../gml/gml.xsd"/>
 	<xs:import namespace="http://rs.tdwg.org/dwc/terms/" schemaLocation="mer_dwcterms.xsd"/>
+	<xs:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/dcterms.xsd"/>
+    <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/dc.xsd"/>
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
     <!--xs:include schemaLocation="../gmi/gmi.xsd"/-->
     <!-- Need to adjust path/namespace most likely! -->
 	<xs:annotation>
@@ -278,9 +281,7 @@ Revised to serve MERIDIAN
     </xs:annotation>
     <!-- tdwg_basetypes.xsd defines custom data types such as dateTimeISO to allow dates or the forms YYYY and YYYY-MM. -->
     <!-- <xs:include schemaLocation="tdwg_basetypes.xsd"/> -->
-    <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/dcterms.xsd"/>
-    <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/dc.xsd"/>
-    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
+    
     <!-- ANY DWC TERM -->
     <xs:element name="any" abstract="true"/>
     <!-- ANY DWC IDENTIFIER -->
