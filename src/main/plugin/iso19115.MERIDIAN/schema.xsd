@@ -8,15 +8,15 @@ xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/g
 xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:dcterms="http://purl.org/dc/terms/" 
 xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/"
 >
-<!-- is there too much stuff here? -->
+
 	<xs:include schemaLocation="schema/extensions/MERIDIANExtensions.xsd"/>
-	<!--xs:include schemaLocation="schema/gmi/gmi.xsd"/-->
 	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="schema/gco/gco.xsd"/>
 	<xs:import namespace="http://www.isotc211.org/2005/gts" schemaLocation="schema/gts/gts.xsd"/>
 	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="schema/gmd/gmd.xsd"/>
 	<xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="schema/srv/srv.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="schema/gml/gml.xsd"/>
-	<!-- Need to adjust path/namespace most likely! -->
 	<xs:import namespace="http://rs.tdwg.org/dwc/terms/" schemaLocation="schema/extensions/mer_dwcterms.xsd"/>
-	
+	<!-- is there too much stuff here? -->
+	<!-- Need to adjust path/namespace most likely! -->
+	<!--xs:include schemaLocation="schema/gmi/gmi.xsd"/-->
 </xs:schema>
