@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.isotc211.org/2005/srv" elementFormDefault="qualified" version="2013-05-24">
-	<!-- ================================= Annotation ================================ -->
 	<xs:annotation>
 		<xs:documentation>2013-05-24 Add include statement for srv.xsd to ensure that the full namespace will be imported even if it is imported using serviceMetadata.xsd instead of the root schema.</xs:documentation>
 		<xs:documentation>2013-05-24 Update of schemalocation statements to refer to ISO/TC 211 XML Schemas available on http://standards.iso.org/ittf/PubliclyAvailableStandards. This includes the adoption of W3C implementation of Xlink: ../../w3c/xlink.xsd.</xs:documentation>
@@ -13,7 +12,6 @@
 		<xs:documentation>2006-11-15 Removal of the inheritance relationships between SV_ServiceSpecification, SV_PlatformNeutralServiceSpecification and SV_PlatformSpecificServiceSpecification that were primarily intended as a way to share the two attributes name and opModel of the supertype SV_ServiceSpecification and not its relationship to SV_Interface. A new abstract type SV_AbstractServiceSpecification with two attributes name and opModel has been created; SV_ServiceSpecification, SV_PlatformNeutralServiceSpecification and SV_PlatformSpecificServiceSpecification now derive from this abstract type. The aggregation relationships between these three types are maintained.</xs:documentation>
 		<xs:documentation>2006-10-13 This file was generated from ISO TC/211 UML class diagrams. It is based on document 211n1977 (Text of ISO 19119:2005 Amd. 1, Geographic information - Services, Amendment 1), as sent to ISO for further processing. This includes the creation of 2 types (SV_CouplingType and SV_CoupledResource), the addition of 3 properties for SV_ServiceIdentification (extent, couplingType and coupledResource) and the removal of the type SV_ServiceProvider.</xs:documentation>
 	</xs:annotation>
-	<!-- ================================== Imports ================================== -->
 	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../gmd/gmd.xsd"/>
 	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../gco/gco.xsd"/>
 	<xs:include schemaLocation="serviceModel.xsd"/>
