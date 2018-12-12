@@ -10,9 +10,7 @@ xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:dcterms="http://purl.org/dc/t
 xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/"
 xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 						exclude-result-prefixes="#all">
-	<!-- **TODO: create templates to autocomplete Darwin Core elements-->
 	<xsl:include href="../iso19139/convert/functions.xsl"/>
-
 	<xsl:variable name="metadataStandardName" select="'MERIDIAN Profile of ISO 19115-2:2009/19139-2'"/>
 	<xsl:variable name="metadataStandardVersion" select="'0.3'"/>
 	<xsl:variable name="metadataProcessorName" select="'Kim Mortimer'"/>
