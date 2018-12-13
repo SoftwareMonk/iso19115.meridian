@@ -2,7 +2,7 @@
 <xs:schema version="0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rs.tdwg.org/dwc/dwcrecord/" 
 xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/" 
 xmlns:dwc="http://rs.tdwg.org/dwc/terms/" 
-dwc:schemaLocation="tdwg_dwc_class_terms.xsd"
+dwc:schemaLocation="mer_dwc_class_terms.xsd"
 xmlns:gco="http://www.isotc211.org/2005/gco"
 xmlns:dcterms="http://purl.org/dc/terms/" dcterms:schemaLocation="http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd">
     <xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../gco/gco.xsd"/>
