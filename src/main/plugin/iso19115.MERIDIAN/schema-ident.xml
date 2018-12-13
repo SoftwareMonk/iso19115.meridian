@@ -5,8 +5,8 @@
 	<version>0.2</version>
 	<appMinorVersionSupported>3.4.0</appMinorVersionSupported>
 	<schemaLocation>
-		http://rs.tdwg.org/dwc/xsd/tdwg_dwc_classes.xsd
-		http://standards.iso.org/iso/19115/-2/gmi/1.0
+        /schema/extensions/mer_dwc_classes.xsd
+        http://standards.iso.org/iso/19115/-2/gmi/1.0
 		http://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd 
 		http://www.isotc211.org/2005/gmd
 		http://www.isotc211.org/2005/gmd/gmd.xsd
