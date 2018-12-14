@@ -90,7 +90,7 @@
     <xs:element name="coverage" substitutionGroup="dc:any"/>
     <xs:element name="rights" substitutionGroup="dc:any"/>
 
-    <xs:group name="dc:elementsGroup">
+    <xs:group name="elementsGroup">
         <xs:annotation>
             <xs:documentation xml:lang="en">
     	    This group is included as a convenience for schema authors
@@ -115,7 +115,7 @@
         </xs:annotation>
 
         <xs:choice>
-            <xs:group ref="dc:elementsGroup"/>
+            <xs:group ref="elementsGroup"/>
         </xs:choice>
     </xs:complexType>
 
