@@ -117,6 +117,16 @@
     <xs:element name="license" substitutionGroup="rights"/>
 
     <xs:element name="bibliographicCitation" substitutionGroup="identifier"/>
+    <!-- moved from DWC elements, as per older dublin_core.xsd https://github.com/tdwg/dwc/blob/2011-10-26/xsd/dublin_core.xsd -->
+    <xs:element name="Location" substitutionGroup="dwc:anyClass">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="dwc:anyIdentifier"/>
+                <xs:element ref="dwc:anyLocationTerm"/>
+                <xs:element ref="dwc:anyRecordLevelTerm"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>  
 
     <xs:complexType name="LCSH">
         <xs:simpleContent>
