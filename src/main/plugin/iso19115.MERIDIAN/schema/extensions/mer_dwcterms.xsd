@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema version="2015-03-19" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rs.tdwg.org/dwc/terms/" 
-xmlns:dcterms="http://purl.org/dc/terms/" dcterms:schemaLocation="http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd" 
+xmlns:dcterms="http://purl.org/dc/terms/" dcterms:schemaLocation="dcterms.xsd" 
 xmlns:dcelem="http://purl.org/dc/elements/1.1/" dcelem:schemaLocation="http://dublincore.org/schemas/xmls/qdc/dc.xsd" 
 xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
     <xs:annotation>
