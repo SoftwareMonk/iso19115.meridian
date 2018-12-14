@@ -70,7 +70,7 @@ xmlns:dcterms="http://purl.org/dc/terms/" dcterms:schemaLocation="http://dublinc
     <!-- LOCATION domain -->
     <!-- reuses the dcterms:location term, so see dublin_core.xsd for definition -->
     
-    <xs:element name="Location" substitutionGroup="dwc:anyClass">
+    <xs:element name="dcterms:Location" substitutionGroup="dwc:anyClass">
         <xs:complexType>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="dwc:anyIdentifier"/>
