@@ -23,7 +23,7 @@ xmlns:dcterms="http://purl.org/dc/terms/" dcterms:schemaLocation="http://dublinc
 			</xs:documentation>
 		</xs:annotation>
         <xs:sequence>
-			<xs:element ref="dcterms:location" minOccurs="1"/>
+			<xs:element ref="dcterms:Location" minOccurs="1"/>
 			<xs:element ref="dwc:Occurrence" minOccurs="1"/>
 			<xs:element ref="dwc:Identification" minOccurs="1"/>
 			<xs:element ref="dwc:Taxon" minOccurs="1"/>
