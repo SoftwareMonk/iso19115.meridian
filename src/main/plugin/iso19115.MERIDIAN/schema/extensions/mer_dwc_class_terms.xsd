@@ -69,7 +69,7 @@ xmlns:dcterms="http://purl.org/dc/terms/" dcterms:schemaLocation="http://dublinc
     
     <!-- LOCATION domain -->
     <!-- reuses the dcterms:location term, so see dublin_core.xsd for definition -->
-    <!-- 
+    
     <xs:element name="Location" substitutionGroup="dwc:anyClass">
         <xs:complexType>
             <xs:choice maxOccurs="unbounded">
@@ -79,7 +79,7 @@ xmlns:dcterms="http://purl.org/dc/terms/" dcterms:schemaLocation="http://dublinc
             </xs:choice>
         </xs:complexType>
     </xs:element>  
-    -->
+   
     
     <!-- GEOLOGICALCONTEXT domain -->
     <xs:element name="GeologicalContext" substitutionGroup="dwc:anyClass">
