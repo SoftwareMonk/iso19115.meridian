@@ -211,7 +211,7 @@
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="W3CDTF">
+    <!-- <xs:complexType name="W3CDTF">
         <xs:simpleContent>
             <xs:restriction base="dc:SimpleLiteral">
                 <xs:simpleType>
@@ -220,7 +220,7 @@
                 <xs:attribute ref="xml:lang" use="prohibited"/>
             </xs:restriction>
         </xs:simpleContent>
-    </xs:complexType>
+    </xs:complexType> -->
 
     <xs:complexType name="DCMIType">
         <xs:simpleContent>
