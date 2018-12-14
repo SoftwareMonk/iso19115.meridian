@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
     xmlns:dcmitype="http://purl.org/dc/dcmitype/" targetNamespace="http://purl.org/dc/terms/" 
     xmlns="http://purl.org/dc/terms/" elementFormDefault="qualified" attributeFormDefault="unqualified">
 
@@ -65,6 +65,8 @@
     <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="dc.xsd"/>
 
     <xs:import namespace="http://purl.org/dc/dcmitype/" schemaLocation="dcmitype.xsd"/>
+    <xs:import namespace="http://rs.tdwg.org/dwc/terms/" schemaLocation="mer_dwcterms.xsd"/>
+
 
    <xs:element name="title" substitutionGroup="dc:title"/>
    <xs:element name="creator" substitutionGroup="dc:creator"/>
