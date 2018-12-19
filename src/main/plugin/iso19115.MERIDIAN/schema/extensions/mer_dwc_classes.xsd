@@ -7,7 +7,7 @@ xmlns:gco="http://www.isotc211.org/2005/gco"
 xmlns:dcterms="http://purl.org/dc/terms/" dcterms:schemaLocation="dcterms.xsd">
     <xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../gco/gco.xsd"/>
     <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
-    <!-- <xs:import namespace="http://rs.tdwg.org/dwc/terms/" schemaLocation="tdwg_dwc_class_terms.xsd"/> -->
+    <xs:import namespace="http://rs.tdwg.org/dwc/terms/" schemaLocation="mer_dwc_class_terms.xsd"/>
         
     <xs:annotation>
         <xs:documentation>

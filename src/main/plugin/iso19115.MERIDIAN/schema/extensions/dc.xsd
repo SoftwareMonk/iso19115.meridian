@@ -115,7 +115,7 @@
         </xs:annotation>
 
         <xs:choice>
-            <xs:group ref="elementsGroup"/>
+	    <xs:group ref="dc:elementsGroup"/>
         </xs:choice>
     </xs:complexType>
 
