@@ -1790,7 +1790,7 @@
 				<label>XML</label>				
 			</entry>
 		</codelist>	
-	<!-- Darwin Core additions -->	
+	<!-- Darwin Core additions 
 		<codelist name="dwc:BasisOfRecordList">
 			<entry>
 				<code>dwc:BasisOfRecordList_MaterialSample</code>
@@ -1912,4 +1912,5 @@
 				<label>Text</label>				
 			</entry>
 		</codelist>
+		-->
 </codelists>

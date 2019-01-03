@@ -9,9 +9,6 @@
   xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
   xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"
   xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
-  xmlns:dcterms="http://purl.org/dc/terms/" 
-  xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
-  xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/" 
   xmlns:exslt="http://exslt.org/common" exclude-result-prefixes="#all">
 
 	<xsl:import href="../../iso19139/layout/layout.xsl"/>
@@ -34,10 +31,8 @@
   -->  
   <!-- todo (KDM): check if darwin core elements are grabbed appropriately -->
   <xsl:template mode="mode-iso19139" priority="2000"
-    match="*[name() = $editorConfig/editor/fieldsWithFieldset/name and namespace-uri()='TODO**INSERT URL']|
-      *[namespace-uri() != $gnUri and $isFlatMode = false() and gmi:* and not(gco:CharacterString) and not(gmd:URL)]|
-	  *[namespace-uri() != $gnUri and $isFlatMode = false() and dwr:* and not(gco:CharacterString) and not(gmd:URL)]|
-	  *[namespace-uri() != $gnUri and $isFlatMode = false() and dwc:* and not(gco:CharacterString) and not(gmd:URL)]">
+    match="*[name() = $editorConfig/editor/fieldsWithFieldset/name and namespace-uri()='TODO**INSERT URL']"      
+>
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
 

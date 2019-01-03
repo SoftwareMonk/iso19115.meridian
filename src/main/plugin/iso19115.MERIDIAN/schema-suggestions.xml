@@ -185,6 +185,7 @@
 	<field name="gmd:MD_Resolution">
 		<suggest name="gmd:distance"/>
 	</field>
+	<!--
 	<field name="dwr:DarwinRecordSet">
 		<suggest name="dwc:Occurrence"/>
 		<suggest name="dcterms:Location"/>
@@ -204,4 +205,5 @@
 		<suggest name="dwc:taxonRank"/>
 		<suggest name="dwc:vernacularName"/>
 	</field>
+	-->
 </fields>

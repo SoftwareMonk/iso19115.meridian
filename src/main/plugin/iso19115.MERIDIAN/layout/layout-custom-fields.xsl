@@ -9,9 +9,6 @@
   xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
   xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"
   xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
-  xmlns:dcterms="http://purl.org/dc/terms/" 
-  xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
-  xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/" 
   xmlns:exslt="http://exslt.org/common" exclude-result-prefixes="#all">
 <!-- TODO** KDM - check if more namespaces need to be added-->
   <!-- Readonly element 
