@@ -32,9 +32,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 			<xsl:if test="$w!='' and $e!='' and $n!='' and $s!=''">
                 <gml:Polygon>
                     <gml:exterior>
-                        <gml:posList srsDimension="2">
-                            <xsl:value-of select="$w"/>&#160;<xsl:value-of select="$n"/>&#160;<xsl:value-of select="$e"/>&#160;<xsl:value-of select="$n"/>&#160;<xsl:value-of select="$e"/>&#160;<xsl:value-of select="$s"/>&#160;<xsl:value-of select="$w"/>&#160;<xsl:value-of select="$s"/>&#160;<xsl:value-of select="$w"/>&#160;<xsl:value-of select="$n"/>
-                        </gml:posList>
+                        <gml:LinearRing>
+                            <gml:posList srsDimension="2">
+                                <xsl:value-of select="$w"/>&#160;<xsl:value-of select="$n"/>&#160;<xsl:value-of select="$e"/>&#160;<xsl:value-of select="$n"/>&#160;<xsl:value-of select="$e"/>&#160;<xsl:value-of select="$s"/>&#160;<xsl:value-of select="$w"/>&#160;<xsl:value-of select="$s"/>&#160;<xsl:value-of select="$w"/>&#160;<xsl:value-of select="$n"/>
+                            </gml:posList>
+                        </gml:LinearRing>
                     </gml:exterior>
                 </gml:Polygon>
 			</xsl:if>
