@@ -30,9 +30,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <xsl:variable name="n" select="./gmd:northBoundLatitude/gco:Decimal/text()"/>
         <xsl:variable name="s" select="./gmd:southBoundLatitude/gco:Decimal/text()"/>
 			<xsl:if test="$w!='' and $e!='' and $n!='' and $s!=''">
-                <gml:Polygon><gml:exterior>
+                <gml:Polygon>
+                    <gml:exterior>
                         <gml:LinearRing>
-                            <gml:pos><xsl:value-of select="$w"/>&#160;<xsl:value-of select="$n"/></gml:pos><gml:pos><xsl:value-of select="$e"/>&#160;<xsl:value-of select="$n"/></gml:pos><gml:pos><xsl:value-of select="$e"/>&#160;<xsl:value-of select="$s"/></gml:pos><gml:pos><xsl:value-of select="$w"/>&#160;<xsl:value-of select="$s"/></gml:pos><gml:pos><xsl:value-of select="$w"/>&#160;<xsl:value-of select="$n"/></gml:pos>
+                            <gml:pos><xsl:value-of select="$w"/>&#160;<xsl:value-of select="$n"/></gml:pos>
+                            <gml:pos><xsl:value-of select="$e"/>&#160;<xsl:value-of select="$n"/></gml:pos>
+                            <gml:pos><xsl:value-of select="$e"/>&#160;<xsl:value-of select="$s"/></gml:pos>
+                            <gml:pos><xsl:value-of select="$w"/>&#160;<xsl:value-of select="$s"/></gml:pos>
+                            <gml:pos><xsl:value-of select="$w"/>&#160;<xsl:value-of select="$n"/></gml:pos>
                         </gml:LinearRing>
                     </gml:exterior>
                 </gml:Polygon>
