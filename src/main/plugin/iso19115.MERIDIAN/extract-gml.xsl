@@ -33,7 +33,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 <gml:Polygon>
                     <gml:exterior>
                         <gml:LinearRing>
-                            <gml:posList srsDimension="2">
+                            <gml:posList srsName ="WGS 84 / World Mercator" srsDimension="2">
                                 <xsl:value-of select="$w"/>&#160;<xsl:value-of select="$n"/>&#160;<xsl:value-of select="$e"/>&#160;<xsl:value-of select="$n"/>&#160;<xsl:value-of select="$e"/>&#160;<xsl:value-of select="$s"/>&#160;<xsl:value-of select="$w"/>&#160;<xsl:value-of select="$s"/>&#160;<xsl:value-of select="$w"/>&#160;<xsl:value-of select="$n"/>
                             </gml:posList>
                         </gml:LinearRing>
