@@ -97,8 +97,8 @@ TODO: Update to current ruleset.
 			<sch:let name="count" value="(count(gmd:CI_ResponsibleParty/gmd:individualName[@gco:nilReason!='missing' or not(@gco:nilReason)]) 
 				+ count(gmd:CI_ResponsibleParty/gmd:organisationName[@gco:nilReason!='missing' or not(@gco:nilReason)])
 				+ count(gmd:CI_ResponsibleParty/gmd:positionName[@gco:nilReason!='missing' or not(@gco:nilReason)]))"/>
-			<sch:assert	test="$count > 0">$loc/strings/alert.M8</sch:assert>
-			<sch:report	test="$count > 0">
+			<sch:assert	test="$count &gt; 0">$loc/strings/alert.M8</sch:assert>
+			<sch:report	test="$count &gt; 0">
 				<sch:value-of select="$loc/strings/report.M8"/> 
 				<sch:value-of select="gmd:CI_ResponsibleParty/gmd:organisationName"/>-
 				<sch:value-of select="gmd:CI_ResponsibleParty/gmd:individualName"/>
@@ -127,13 +127,11 @@ TODO: Update to current ruleset.
 		<sch:rule context="//gmd:MD_LegalConstraints[gmd:useConstraints/gmd:MD_RestrictionCode/@codeListValue='otherRestrictions']
 			|//*[@gco:isoType='gmd:MD_LegalConstraints' and gmd:accessConstraints/gmd:MD_RestrictionCode/@codeListValue='otherRestrictions']">
 			<sch:let name="use" value="(not(gmd:otherConstraints) or gmd:otherConstraints/@gco:nilReason='missing')"/>
-			<sch:assert
-				test="$use = false()"
-				><sch:value-of select="$loc/strings/alert.M9.use"/>
+			<sch:assert	test="$use = false()">
+				<sch:value-of select="$loc/strings/alert.M9.use"/>
 			</sch:assert>
-			<sch:report
-				test="$use = false()"
-				><sch:value-of select="$loc/strings/report.M9"/>
+			<sch:report	test="$use = false()">
+				<sch:value-of select="$loc/strings/report.M9"/>
 				<sch:value-of select="gmd:otherConstraints/gco:CharacterString"/>
 			</sch:report>
 		</sch:rule>
@@ -146,11 +144,10 @@ TODO: Update to current ruleset.
 			<sch:let name="values" value="(gmd:maxValue[@gco:nilReason!='missing' or not(@gco:nilReason)]
 				or gmd:minValue[@gco:nilReason!='missing' or not(@gco:nilReason)]) 
 				and not(gmd:units)"/>
-			<sch:assert test="$values = false()"
-				><sch:value-of select="$loc/strings/alert.M10"/>
+			<sch:assert test="$values = false()">
+				<sch:value-of select="$loc/strings/alert.M10"/>
 			</sch:assert>
-			<sch:report test="$values = false()"
-				>
+			<sch:report test="$values = false()">
 				<sch:value-of select="$loc/strings/report.M10.min"/>
 				<sch:value-of select="gmd:minValue"/> / 
 				<sch:value-of select="$loc/strings/report.M10.max"/>
@@ -167,11 +164,10 @@ TODO: Update to current ruleset.
 			<sch:let name="values" value="(gmd:maxValue[@gco:nilReason!='missing' or not(@gco:nilReason)]
 				or gmd:minValue[@gco:nilReason!='missing' or not(@gco:nilReason)]) 
 				and not(gmd:units)"/>
-			<sch:assert test="$values = false()"
-				><sch:value-of select="$loc/strings/alert.M10"/>
+			<sch:assert test="$values = false()">
+				<sch:value-of select="$loc/strings/alert.M10"/>
 			</sch:assert>
-			<sch:report test="$values = false()"
-				>
+			<sch:report test="$values = false()">
 				<sch:value-of select="$loc/strings/report.M10.min"/>
 				<sch:value-of select="gmd:minValue"/> / 
 				<sch:value-of select="$loc/strings/report.M10.max"/>
@@ -552,20 +548,20 @@ TODO: Update to current ruleset.
 		<sch:rule context="//gmd:MD_DataIdentification">
 			<sch:assert test="count(gmd:citation) = 1">MD_DataIdentification must have a single citation.</sch:assert>
 			<sch:assert test="count(gmd:abstract) = 1">MD_DataIdentification must have a single abstract.</sch:assert>
-			<sch:assert test="count(gmd:status) >= 1">MD_DataIdentification is missing its current status.</sch:assert>
-			<sch:assert test="count(gmd:pointOfContact) >= 1">MD_DataIdentification is missing a point of contact.</sch:assert>
-			<sch:assert test="count(gmd:characterSet) >= 1">MD_DataIdentification is missing a defined character set.</sch:assert>
-			<sch:assert test="count(gmd:topicCategory) >= 1">MD_DataIdentification is missing topic category.</sch:assert>
-			<sch:assert test="count(gmd:resourceMaintenance) >= 1">MD_DataIdentification is missing maintenance information.</sch:assert>
-			<sch:assert test="count(gmd:resourceFormat) >= 1">MD_DataIdentification is missing format information.</sch:assert>
-			<sch:assert test="count(gmd:descriptiveKeywords) >= 4">MD_DataIdentification is missing keywords. Provide one for each of the 4 provided thesauri.</sch:assert>
-			<sch:assert test="count(gmd:resourceConstraints) >= 1">MD_DataIdentification is missing resource constraints.</sch:assert>
+			<sch:assert test="count(gmd:status) &gt;= 1">MD_DataIdentification is missing its current status.</sch:assert>
+			<sch:assert test="count(gmd:pointOfContact) &gt;= 1">MD_DataIdentification is missing a point of contact.</sch:assert>
+			<sch:assert test="count(gmd:characterSet) &gt;= 1">MD_DataIdentification is missing a defined character set.</sch:assert>
+			<sch:assert test="count(gmd:topicCategory) &gt;= 1">MD_DataIdentification is missing topic category.</sch:assert>
+			<sch:assert test="count(gmd:resourceMaintenance) &gt;= 1">MD_DataIdentification is missing maintenance information.</sch:assert>
+			<sch:assert test="count(gmd:resourceFormat) &gt;= 1">MD_DataIdentification is missing format information.</sch:assert>
+			<sch:assert test="count(gmd:descriptiveKeywords) &gt;= 4">MD_DataIdentification is missing keywords. Provide one for each of the 4 provided thesauri.</sch:assert>
+			<sch:assert test="count(gmd:resourceConstraints) &gt;= 1">MD_DataIdentification is missing resource constraints.</sch:assert>
 		</sch:rule>
 	</sch:pattern>
 
 	<!-- Maintenance restriction -->
 	<sch:pattern>
-		<sch:title>if gmd:resourceMaintenance then must have gmd:maintenanceAndUpdateFrequency</sch:title>
+		<sch:title>gmd:resourceMaintenance must have gmd:maintenanceAndUpdateFrequency</sch:title>
 		<sch:rule context="//gmd:resourceMaintenance">
 			<sch:assert test="gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency/gmd:MD_MaintenanceFrequencyCode/@codeListValue!=''">maintenanceAndUpdateFrequency is mandatory if resourceMaintenance is documented.</sch:assert>
 		</sch:rule>
@@ -575,17 +571,16 @@ TODO: Update to current ruleset.
 	<sch:pattern>
 		<sch:title>resource must have a physical and temporal extent</sch:title>
 		<sch:rule context="//gmd:MD_DataIdentification">
-			<sch:report test="count(gmd:extent//gmd:temporalElement/gmd:EX_TemporalExtent) < 1">Provide at least one temporal extent when describing the extent of the resource in MD_DataIdentification</sch:report>
-			<sch:report test="count(gmd:extent//gmd:geographicElement/gmd:EX_GeographicBoundingBox) < 1">Provide at least one bounding box when describing the extent of the resource in MD_DataIdentification</sch:report>
+			<sch:report test="count(gmd:extent/gmd:temporalElement/gmd:EX_TemporalExtent) &lt; 1">Provide at least one temporal extent when describing the extent of the resource in MD_DataIdentification</sch:report>
+			<sch:report test="count(gmd:extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox) &lt; 1">Provide at least one bounding box when describing the extent of the resource in MD_DataIdentification</sch:report>
 		</sch:rule>
 	</sch:pattern>
-	
-	<!-- Resolution check -->
+
 	<sch:pattern>
 		<sch:title>MD_Resolution requires at least one value</sch:title>
 		<sch:rule context="//gmd:MD_Resolution">
-			<sch:report test="(count(gmd:equivalentScale) + count(gmd:distance)) < 1">provide at least one of equivalentScale and distance </sch:report>
-			<sch:report test="count(gmd:equivalentScale[@gco:nilReason]) =0 and count(gmd:distance[@gco:nilReason])=0">fields cannot both be nil</sch:report>
+			<sch:report test="(count(gmd:equivalentScale) + count(gmd:distance)) &gt; 1">provide at least one of equivalentScale and distance </sch:report>
+			<sch:report test="(count(gmd:equivalentScale[@gco:nilReason]) = 0) and (count(gmd:distance[@gco:nilReason])= 0)">fields cannot both be nil</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -593,7 +588,7 @@ TODO: Update to current ruleset.
 	<sch:pattern>
 		<sch:title>CI_Series requires one of name, issueIdentification</sch:title>
 		<sch:rule context="//gmd:CI_Series">
-		    <sch:report test="(count(gmd:name)+count(gmd:issueIdentification)) < 1">provide at least one of name, issueIdentification</sch:report>
+		    <sch:report test="(count(gmd:name)+count(gmd:issueIdentification)) &lt; 1">provide at least one of name, issueIdentification</sch:report>
 			<sch:report test="count(gmd:name[@gco:nilReason]) = 0 and count(gmd:issueIdentification[@gco:nilReason]) = 0">provide at least one of name, issueIdentification</sch:report>
 		</sch:rule>
 	</sch:pattern>
@@ -602,7 +597,7 @@ TODO: Update to current ruleset.
 	<sch:pattern>
 		<sch:title>CI_Contact requires one of phone, address</sch:title>
 		<sch:rule context="//gmd:CI_Series">
-			<sch:report test="count(gmd:phone)+count(gmd:address) < 1">provide at least one of phone, address (strongly recommended to provide email address)</sch:report>
+			<sch:report test="count(gmd:phone)+count(gmd:address) &lt; 1">provide at least one of phone, address (strongly recommended to provide email address)</sch:report>
 			<sch:report test="count(gmd:phone[@gco:nilReason]) = 0 and count(gmd:address[@gco:nilReason])=0">fields cannot both be nil</sch:report>
 		</sch:rule>
 	</sch:pattern>
@@ -611,7 +606,7 @@ TODO: Update to current ruleset.
 	<sch:pattern>
 		<sch:title>CI_Contact requires one of voice phone #, fax phone #</sch:title>
 		<sch:rule context="//gmd:CI_Telephone">
-			<sch:report test="count(gmd:voice)+count(gmd:facsimile) < 1">provide at least one phone #</sch:report>
+			<sch:report test="count(gmd:voice)+count(gmd:facsimile) &lt; 1">provide at least one phone #</sch:report>
 			<sch:report test="count(gmd:voice[@gco:nilReason]) = 0 and count(gmd:facsimile[@gco:nilReason]) =0">fields cannot both be nil</sch:report>
 		</sch:rule>
 	</sch:pattern>
@@ -620,7 +615,7 @@ TODO: Update to current ruleset.
 	<sch:pattern>
 		<sch:title>Require a free-text description of constraints whenever constraints are provided.</sch:title>
 		<sch:rule context="//gmd:resourceConstraints">
-			<sch:report test="count(gmd:MD_Constraints/useLimitation) < 1 and count(gmd:MD_LegalConstraints/useLimitation) < 1 and count(gmd:MD_SecurityConstraints/useLimitation) < 1">provide at least one useLimitation in free text</sch:report>
+			<sch:report test="count(gmd:MD_Constraints/useLimitation) &lt; 1 and count(gmd:MD_LegalConstraints/useLimitation) &lt; 1 and count(gmd:MD_SecurityConstraints/useLimitation) &lt; 1">provide at least one useLimitation in free text</sch:report>
 			<sch:report test="count(gmd:MD_Constraints/useLimitation[@gco:nilReason]) = 0 and count(gmd:MD_LegalConstraints/useLimitation[@gco:nilReason]) = 0 and count(gmd:MD_SecurityConstraints/useLimitation[@gco:nilreason]) = 0">At least one useLimitation must be provided</sch:report>
 		</sch:rule>
 	</sch:pattern>
@@ -629,7 +624,7 @@ TODO: Update to current ruleset.
 	<sch:pattern>
 		<sch:title>CI_Contact requires one of phone, address</sch:title>
 		<sch:rule context="//gmi:LE_NominalResolution">
-			<sch:report test="count(gmi:scanningResolution)+count(gmi:groundResolution) < 1">provide at least one of scanning resolution, ground distance</sch:report>
+			<sch:report test="count(gmi:scanningResolution)+count(gmi:groundResolution) &lt; 1">provide at least one of scanning resolution, ground distance</sch:report>
 			<sch:report test="count(gmi:scanningResolution[@gco:nilReason]) = 0 and count(gmi:groundResolution[@gco:nilReason]) = 0 ">fields cannot both be nil</sch:report>
 		</sch:rule>
 	</sch:pattern>
@@ -641,14 +636,14 @@ TODO: Update to current ruleset.
 	<sch:pattern>
 		<sch:title>MD_Band requires either a sequenceIdentifier or a description.</sch:title>
 		<sch:rule context="//gmi:MD_Band">
-			<sch:report test="(count(gmd:sequenceIdentifier)+count(gmd:descriptor)) < 1">Provide at least one of sequenceIdentifier, descriptor</sch:report>
+			<sch:report test="(count(gmd:sequenceIdentifier)+count(gmd:descriptor)) &lt; 1">Provide at least one of sequenceIdentifier, descriptor</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	<!-- MI_Band -->
 	<sch:pattern>
 		<sch:title>MI_Band requires either a sequenceIdentifier or a description.</sch:title>
 		<sch:rule context="//gmi:MI_Band">
-			<sch:report test="(count(gmd:sequenceIdentifier)+count(gmd:descriptor)) < 1">Provide at least one of sequenceIdentifier, descriptor</sch:report>
+			<sch:report test="(count(gmd:sequenceIdentifier)+count(gmd:descriptor)) &lt; 1">Provide at least one of sequenceIdentifier, descriptor</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -698,7 +693,7 @@ TODO: Update to current ruleset.
 		<sch:rule context="//gmi:MI_Platform">
 			<sch:report test="count(gmi:identifier) != 1">A single identifier is required for MI_Platform.</sch:report>
 			<sch:report test="count(gmi:description) != 1">A single description is required for MI_Platform.</sch:report>
-			<sch:report test="count(gmi:instrument) < 1">At least one instrument is required for MI_Platform.</sch:report>
+			<sch:report test="count(gmi:instrument) &lt; 1">At least one instrument is required for MI_Platform.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -716,7 +711,7 @@ TODO: Update to current ruleset.
 		<sch:title>MI_Objective requires a single identifier and at least one ObjectiveOccurrence. </sch:title>
 		<sch:rule context="//gmi:MI_Objective">
 			<sch:report test="count(gmi:identifier) != 1">A single identifier is required for MI_Objective.</sch:report>
-			<sch:report test="count(gmi:objectiveOccurence) < 1">At least one objectiveOccurence is required for MI_Objective.</sch:report>
+			<sch:report test="count(gmi:objectiveOccurence) &lt; 1">At least one objectiveOccurence is required for MI_Objective.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -729,8 +724,8 @@ TODO: Update to current ruleset.
 			<sch:report test="count(gmi:priority) != 1">A single priority is required for MI_Requirement.</sch:report>
 			<sch:report test="count(gmi:requestedDate) != 1">A single requestedDate is required for MI_Requirement.</sch:report>
 			<sch:report test="count(gmi:expiryDate) != 1">A single expiryDate is required for MI_Requirement.</sch:report>
-			<sch:report test="count(gmi:requestor) < 1">At least one requestor is required for MI_Requirement.</sch:report>
-			<sch:report test="count(gmi:recipient) < 1">At least one recipient is required for MI_Requirement.</sch:report>
+			<sch:report test="count(gmi:requestor) &lt; 1">At least one requestor is required for MI_Requirement.</sch:report>
+			<sch:report test="count(gmi:recipient) &lt; 1">At least one recipient is required for MI_Requirement.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -747,10 +742,10 @@ TODO: Update to current ruleset.
 	<sch:pattern>
 		<sch:title>A DarwinRecordSet must be composed of at least an Occurrence, Location, identification, and Taxon.</sch:title>
 		<sch:rule context="//dwr:DarwinRecordSet">
-			<sch:report test="count(dwc:Occurrence) < 1">A DarwinRecordSet must contain at least one Occurrence.</sch:report>
-			<sch:report test="count(dcterms:Location) < 1">A DarwinRecordSet must contain at least one Location.</sch:report>
-			<sch:report test="count(dwc:Identification) < 1">A DarwinRecordSet must contain at least one Identification.</sch:report>
-			<sch:report test="count(dwc:Taxon) < 1">A DarwinRecordSet must contain at least one Taxon.</sch:report>
+			<sch:report test="count(dwc:Occurrence) &lt; 1">A DarwinRecordSet must contain at least one Occurrence.</sch:report>
+			<sch:report test="count(dcterms:Location) &lt; 1">A DarwinRecordSet must contain at least one Location.</sch:report>
+			<sch:report test="count(dwc:Identification) &lt; 1">A DarwinRecordSet must contain at least one Identification.</sch:report>
+			<sch:report test="count(dwc:Taxon) &lt; 1">A DarwinRecordSet must contain at least one Taxon.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	-->
