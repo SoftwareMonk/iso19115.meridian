@@ -34,6 +34,12 @@ Creative Commons,
 543 Howard Street, 5th Floor, 
 San Francisco, California, 94105, 
 USA.
+
+TODO: Update to current ruleset.
+
+	<sch:ns prefix="dwc" uri="http://rs.tdwg.org/dwc/terms/"/>
+	<sch:ns prefix="dwr" uri="http://rs.tdwg.org/dwc/dwcrecord/"/>
+	<sch:ns prefix="dcterms" uri="http://purl.org/dc/terms/"/>
 -->
 
 	<sch:title xmlns="http://www.w3.org/2001/XMLSchema">Schematron validation for MERIDIAN profile version 0.2 of ISO 19115-2(19139-2)</sch:title>
@@ -44,9 +50,6 @@ USA.
 	<sch:ns prefix="geonet" uri="http://www.fao.org/geonetwork"/>
 	<sch:ns prefix="xlink" uri="http://www.w3.org/1999/xlink"/>
 	<sch:ns prefix="gmi" uri="http://standards.iso.org/iso/19115/-2/gmi/1.0"/>
-	<sch:ns prefix="dwc" uri="http://rs.tdwg.org/dwc/terms/"/>
-	<sch:ns prefix="dwr" uri="http://rs.tdwg.org/dwc/dwcrecord/"/>
-	<sch:ns prefix="dcterms" uri="http://purl.org/dc/terms/"/>
 	<sch:ns prefix="gmx" uri="http://www.isotc211.org/2005/gmx"/>
 	<sch:ns prefix="gss" uri="http://www.isotc211.org/2005/gss"/>
 	<sch:ns prefix="gsr" uri="http://www.isotc211.org/2005/gsr"/>
@@ -551,12 +554,12 @@ USA.
 			<sch:assert test="count(gmd:abstract) = 1">MD_DataIdentification must have a single abstract.</sch:assert>
 			<sch:assert test="count(gmd:status) >= 1">MD_DataIdentification is missing its current status.</sch:assert>
 			<sch:assert test="count(gmd:pointOfContact) >= 1">MD_DataIdentification is missing a point of contact.</sch:assert>
-			<sch:assert test="count(gmd:characterSet) >=1">MD_DataIdentification is missing a defined character set.</sch:assert>
-			<sch:assert test="count(gmd:topicCategory) >=1">MD_DataIdentification is missing topic category.</sch:assert>
-			<sch:assert test="count(gmd:resourceMaintenance) >=1">MD_DataIdentification is missing maintenance information.</sch:assert>
-			<sch:assert test="count(gmd:resourceFormat) >=1">MD_DataIdentification is missing format information.</sch:assert>
+			<sch:assert test="count(gmd:characterSet) >= 1">MD_DataIdentification is missing a defined character set.</sch:assert>
+			<sch:assert test="count(gmd:topicCategory) >= 1">MD_DataIdentification is missing topic category.</sch:assert>
+			<sch:assert test="count(gmd:resourceMaintenance) >= 1">MD_DataIdentification is missing maintenance information.</sch:assert>
+			<sch:assert test="count(gmd:resourceFormat) >= 1">MD_DataIdentification is missing format information.</sch:assert>
 			<sch:assert test="count(gmd:descriptiveKeywords) >= 4">MD_DataIdentification is missing keywords. Provide one for each of the 4 provided thesauri.</sch:assert>
-			<sch:assert test="count(gmd:resourceConstraints) >=1">MD_DataIdentification is missing resource constraints.</sch:assert>
+			<sch:assert test="count(gmd:resourceConstraints) >= 1">MD_DataIdentification is missing resource constraints.</sch:assert>
 		</sch:rule>
 	</sch:pattern>
 
@@ -572,8 +575,8 @@ USA.
 	<sch:pattern>
 		<sch:title>resource must have a physical and temporal extent</sch:title>
 		<sch:rule context="//gmd:MD_DataIdentification">
-			<sch:report test="count(gmd:extent//gmd:temporalElement/gmd:EX_TemporalExtent) >= 1">Provide at least one temporal extent when describing the extent of the resource in MD_DataIdentification</sch:report>
-			<sch:report test="count(gmd:extent//gmd:geographicElement/gmd:EX_GeographicBoundingBox) >= 1">Provide at least one bounding box when describing the extent of the resource in MD_DataIdentification</sch:report>
+			<sch:report test="count(gmd:extent//gmd:temporalElement/gmd:EX_TemporalExtent) < 1">Provide at least one temporal extent when describing the extent of the resource in MD_DataIdentification</sch:report>
+			<sch:report test="count(gmd:extent//gmd:geographicElement/gmd:EX_GeographicBoundingBox) < 1">Provide at least one bounding box when describing the extent of the resource in MD_DataIdentification</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -581,8 +584,8 @@ USA.
 	<sch:pattern>
 		<sch:title>MD_Resolution requires at least one value</sch:title>
 		<sch:rule context="//gmd:MD_Resolution">
-			<sch:report test="count(gmd:equivalentScale) + count(gmd:distance) >= 1">provide at least one of equivalentScale and distance </sch:report>
-			<sch:report test="count(gmd:equivalentScale[@gco:nilReason]) =0 or count(gmd:distance[@gco:nilReason])=0">fields cannot both be nil</sch:report>
+			<sch:report test="(count(gmd:equivalentScale) + count(gmd:distance)) < 1">provide at least one of equivalentScale and distance </sch:report>
+			<sch:report test="count(gmd:equivalentScale[@gco:nilReason]) =0 and count(gmd:distance[@gco:nilReason])=0">fields cannot both be nil</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -590,8 +593,8 @@ USA.
 	<sch:pattern>
 		<sch:title>CI_Series requires one of name, issueIdentification</sch:title>
 		<sch:rule context="//gmd:CI_Series">
-			<sch:report test="count(gmd:name)+count(gmd:issueIdentification) >= 1 0">provide at least one of name, issueIdentification</sch:report>
-			<sch:report test="count(gmd:name[@gco:nilReason]) =0 or count(gmd:issueIdentification[@gco:nilReason]) = 0">fields cannot both be nil</sch:report>
+		    <sch:report test="(count(gmd:name)+count(gmd:issueIdentification)) < 1">provide at least one of name, issueIdentification</sch:report>
+			<sch:report test="count(gmd:name[@gco:nilReason]) = 0 and count(gmd:issueIdentification[@gco:nilReason]) = 0">provide at least one of name, issueIdentification</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -599,8 +602,8 @@ USA.
 	<sch:pattern>
 		<sch:title>CI_Contact requires one of phone, address</sch:title>
 		<sch:rule context="//gmd:CI_Series">
-			<sch:report test="count(gmd:phone)+count(gmd:address) >= 1">provide at least one of phone, address (strongly recommended to provide email address)</sch:report>
-			<sch:report test="count(gmd:phone[@gco:nilReason]) = 0 or count(gmd:address[@gco:nilReason])=0">fields cannot both be nil</sch:report>
+			<sch:report test="count(gmd:phone)+count(gmd:address) < 1">provide at least one of phone, address (strongly recommended to provide email address)</sch:report>
+			<sch:report test="count(gmd:phone[@gco:nilReason]) = 0 and count(gmd:address[@gco:nilReason])=0">fields cannot both be nil</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -608,8 +611,8 @@ USA.
 	<sch:pattern>
 		<sch:title>CI_Contact requires one of voice phone #, fax phone #</sch:title>
 		<sch:rule context="//gmd:CI_Telephone">
-			<sch:report test="count(gmd:voice)+count(gmd:facsimile) >= 1">provide at least one phone #</sch:report>
-			<sch:report test="count(gmd:voice[@gco:nilReason]) =0 or count(gmd:facsimile[@gco:nilReason]) =0">fields cannot both be nil</sch:report>
+			<sch:report test="count(gmd:voice)+count(gmd:facsimile) < 1">provide at least one phone #</sch:report>
+			<sch:report test="count(gmd:voice[@gco:nilReason]) = 0 and count(gmd:facsimile[@gco:nilReason]) =0">fields cannot both be nil</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -617,8 +620,8 @@ USA.
 	<sch:pattern>
 		<sch:title>Require a free-text description of constraints whenever constraints are provided.</sch:title>
 		<sch:rule context="//gmd:resourceConstraints">
-			<sch:report test="count(gmd:MD_Constraints/useLimitation)>= 1 or count(gmd:MD_LegalConstraints/useLimitation)>= 1 or count(gmd:MD_SecurityConstraints/useLimitation)>= 1">provide at least one useLimitation in free text</sch:report>
-			<sch:report test="count(gmd:MD_Constraints/useLimitation[@gco:nilReason])= 0 or count(gmd:MD_LegalConstraints/useLimitation[@gco:nilReason]) = 0 or count(gmd:MD_SecurityConstraints/useLimitation[@gco:nilreason]) = 0">At least one useLimitation must be provided</sch:report>
+			<sch:report test="count(gmd:MD_Constraints/useLimitation) < 1 and count(gmd:MD_LegalConstraints/useLimitation) < 1 and count(gmd:MD_SecurityConstraints/useLimitation) < 1">provide at least one useLimitation in free text</sch:report>
+			<sch:report test="count(gmd:MD_Constraints/useLimitation[@gco:nilReason]) = 0 and count(gmd:MD_LegalConstraints/useLimitation[@gco:nilReason]) = 0 and count(gmd:MD_SecurityConstraints/useLimitation[@gco:nilreason]) = 0">At least one useLimitation must be provided</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -626,8 +629,8 @@ USA.
 	<sch:pattern>
 		<sch:title>CI_Contact requires one of phone, address</sch:title>
 		<sch:rule context="//gmi:LE_NominalResolution">
-			<sch:report test="count(gmi:scanningResolution)+count(gmi:groundResolution) >= 1">provide at least one of scanning resolution, ground distance</sch:report>
-			<sch:report test="count(gmi:scanningResolution[@gco:nilReason])=0 or count(gmi:groundResolution[@gco:nilReason])=0">fields cannot both be nil</sch:report>
+			<sch:report test="count(gmi:scanningResolution)+count(gmi:groundResolution) < 1">provide at least one of scanning resolution, ground distance</sch:report>
+			<sch:report test="count(gmi:scanningResolution[@gco:nilReason]) = 0 and count(gmi:groundResolution[@gco:nilReason]) = 0 ">fields cannot both be nil</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -638,14 +641,14 @@ USA.
 	<sch:pattern>
 		<sch:title>MD_Band requires either a sequenceIdentifier or a description.</sch:title>
 		<sch:rule context="//gmi:MD_Band">
-			<sch:report test="count(gmd:sequenceIdentifier)+count(gmd:descriptor)>=1">Provide at least one of sequenceIdentifier, descriptor</sch:report>
+			<sch:report test="(count(gmd:sequenceIdentifier)+count(gmd:descriptor)) < 1">Provide at least one of sequenceIdentifier, descriptor</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	<!-- MI_Band -->
 	<sch:pattern>
 		<sch:title>MI_Band requires either a sequenceIdentifier or a description.</sch:title>
 		<sch:rule context="//gmi:MI_Band">
-			<sch:report test="count(gmd:sequenceIdentifier)+count(gmd:descriptor)>=1">Provide at least one of sequenceIdentifier, descriptor</sch:report>
+			<sch:report test="(count(gmd:sequenceIdentifier)+count(gmd:descriptor)) < 1">Provide at least one of sequenceIdentifier, descriptor</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -654,8 +657,8 @@ USA.
 	<sch:pattern>
 		<sch:title>MI_Instrument requires an identifier and a type.</sch:title>
 		<sch:rule context="//gmi:MI_Instrument">
-			<sch:report test="count(gmi:type) = 1">A single type is required for MI_Instrument.</sch:report>
-			<sch:report test="count(gmi:identifier) = 1">A single identifier is required for MI_Instrument. </sch:report>
+			<sch:report test="count(gmi:type) != 1">A single type is required for MI_Instrument.</sch:report>
+			<sch:report test="count(gmi:identifier) != 1">A single identifier is required for MI_Instrument. </sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -663,9 +666,9 @@ USA.
 	<sch:pattern>
 		<sch:title>MI_Operation requires a single citation, identifier, and status. </sch:title>
 		<sch:rule context="//gmi:MI_Operation">
-			<sch:report test="count(gmi:citation) = 1">A single citation is required for MI_Operation.</sch:report>
-			<sch:report test="count(gmi:identifier) = 1">A single identifier is required for MI_Operation.</sch:report>
-			<sch:report test="count(gmi:status)= 1">A single status is required for MI_Operation.</sch:report>
+			<sch:report test="count(gmi:citation) != 1">A single citation is required for MI_Operation.</sch:report>
+			<sch:report test="count(gmi:identifier) != 1">A single identifier is required for MI_Operation.</sch:report>
+			<sch:report test="count(gmi:status) != 1">A single status is required for MI_Operation.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -673,11 +676,11 @@ USA.
 	<sch:pattern>
 		<sch:title>MI_Event requires a single: identifier, trigger, context, sequence, and time.</sch:title>
 		<sch:rule context="//gmi:MI_Event">
-			<sch:report test="count(gmi:identifier) = 1">A single identifier is required for MI_Event.</sch:report>
-			<sch:report test="count(gmi:trigger) = 1">A single trigger type is required for MI_Event.</sch:report>
-			<sch:report test="count(gmi:context) = 1">A single event context is required for MI_Event.</sch:report>
-			<sch:report test="count(gmi:sequence) = 1">A single temporal event context is required for MI_Event.</sch:report>
-			<sch:report test="count(gmi:time) = 1">A single time of occurrence is required for MI_Event.</sch:report>
+			<sch:report test="count(gmi:identifier) != 1">A single identifier is required for MI_Event.</sch:report>
+			<sch:report test="count(gmi:trigger) != 1">A single trigger type is required for MI_Event.</sch:report>
+			<sch:report test="count(gmi:context) != 1">A single event context is required for MI_Event.</sch:report>
+			<sch:report test="count(gmi:sequence) != 1">A single temporal event context is required for MI_Event.</sch:report>
+			<sch:report test="count(gmi:time) != 1">A single time of occurrence is required for MI_Event.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -685,7 +688,7 @@ USA.
 	<sch:pattern>
 		<sch:title>MI_PlatformPass requires an identifier.</sch:title>
 		<sch:rule context="//gmi:MI_PlatformPass">
-			<sch:report test="count(gmi:identifier) = 1">A single identifier is required for MI_PlatformPass.</sch:report>
+			<sch:report test="count(gmi:identifier) != 1">A single identifier is required for MI_PlatformPass.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -693,9 +696,9 @@ USA.
 	<sch:pattern>
 		<sch:title>MI_Platform requires a single identifier and description, and at least one instrument.</sch:title>
 		<sch:rule context="//gmi:MI_Platform">
-			<sch:report test="count(gmi:identifier) = 1">A single identifier is required for MI_Platform.</sch:report>
-			<sch:report test="count(gmi:description) = 1">A single description is required for MI_Platform.</sch:report>
-			<sch:report test="count(gmi:instrument) >= 1">At least one instrument is required for MI_Platform.</sch:report>
+			<sch:report test="count(gmi:identifier) != 1">A single identifier is required for MI_Platform.</sch:report>
+			<sch:report test="count(gmi:description) != 1">A single description is required for MI_Platform.</sch:report>
+			<sch:report test="count(gmi:instrument) < 1">At least one instrument is required for MI_Platform.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -703,8 +706,8 @@ USA.
 	<sch:pattern>
 		<sch:title>MI_Plan requires a single status and citation.</sch:title>
 		<sch:rule context="//gmi:MI_Plan">
-			<sch:report test="count(gmi:status)=1">A single status is required for MI_Plan.</sch:report>
-			<sch:report test="count(gmi:citation)=1">A single citation is required for MI_Plan.</sch:report>
+			<sch:report test="count(gmi:status) != 1">A single status is required for MI_Plan.</sch:report>
+			<sch:report test="count(gmi:citation) != 1">A single citation is required for MI_Plan.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -712,8 +715,8 @@ USA.
 	<sch:pattern>
 		<sch:title>MI_Objective requires a single identifier and at least one ObjectiveOccurrence. </sch:title>
 		<sch:rule context="//gmi:MI_Objective">
-			<sch:report test="count(gmi:identifier)=1">A single identifier is required for MI_Objective.</sch:report>
-			<sch:report test="count(gmi:objectiveOccurence)>=1">At least one objectiveOccurence is required for MI_Objective.</sch:report>
+			<sch:report test="count(gmi:identifier) != 1">A single identifier is required for MI_Objective.</sch:report>
+			<sch:report test="count(gmi:objectiveOccurence) < 1">At least one objectiveOccurence is required for MI_Objective.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -721,13 +724,13 @@ USA.
 	<sch:pattern>
 		<sch:title>MI_Requirement must have a single citation, identifier, priority, requested date, and expiry date. It must also have at least one requestor and recipient.</sch:title>
 		<sch:rule context="//gmi:MI_Requirement">
-			<sch:report test="count(gmi:citation)=1">A single citation is required for MI_Requirement.</sch:report>
-			<sch:report test="count(gmi:identifier)=1">A single identifier is required for MI_Requirement.</sch:report>
-			<sch:report test="count(gmi:priority)=1">A single priority is required for MI_Requirement.</sch:report>
-			<sch:report test="count(gmi:requestedDate)=1">A single requestedDate is required for MI_Requirement.</sch:report>
-			<sch:report test="count(gmi:expiryDate)=1">A single expiryDate is required for MI_Requirement.</sch:report>
-			<sch:report test="count(gmi:requestor)>=1">At least one requestor is required for MI_Requirement.</sch:report>
-			<sch:report test="count(gmi:recipient)>=1">At least one recipient is required for MI_Requirement.</sch:report>
+			<sch:report test="count(gmi:citation) != 1">A single citation is required for MI_Requirement.</sch:report>
+			<sch:report test="count(gmi:identifier) != 1">A single identifier is required for MI_Requirement.</sch:report>
+			<sch:report test="count(gmi:priority) != 1">A single priority is required for MI_Requirement.</sch:report>
+			<sch:report test="count(gmi:requestedDate) != 1">A single requestedDate is required for MI_Requirement.</sch:report>
+			<sch:report test="count(gmi:expiryDate) != 1">A single expiryDate is required for MI_Requirement.</sch:report>
+			<sch:report test="count(gmi:requestor) < 1">At least one requestor is required for MI_Requirement.</sch:report>
+			<sch:report test="count(gmi:recipient) < 1">At least one recipient is required for MI_Requirement.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
@@ -735,46 +738,49 @@ USA.
 	<sch:pattern>
 		<sch:title>MI_RequiredDate requires a single requestedDateOfCollection and latestAcceptableDate.</sch:title>
 		<sch:rule context="//gmi:MI_RequestedDate">
-			<sch:report test="count(gmi:requestedDateOfCollection)=1">A single requestedDateOfCollection is required for MI_RequestedDate.</sch:report>
-			<sch:report test="count(gmi:latestAcceptableDate)=1">A single latestAcceptableDate is required for MI_RequestedDate.</sch:report>
+			<sch:report test="count(gmi:requestedDateOfCollection) != 1">A single requestedDateOfCollection is required for MI_RequestedDate.</sch:report>
+			<sch:report test="count(gmi:latestAcceptableDate) != 1">A single latestAcceptableDate is required for MI_RequestedDate.</sch:report>
 		</sch:rule>
 	</sch:pattern>
 	
-	<!-- DarwinRecordSet -->
+	<!-- DarwinRecordSet 
 	<sch:pattern>
 		<sch:title>A DarwinRecordSet must be composed of at least an Occurrence, Location, identification, and Taxon.</sch:title>
 		<sch:rule context="//dwr:DarwinRecordSet">
-			<sch:report test="count(dwc:Occurrence)>=1">A DarwinRecordSet must contain at least one Occurrence.</sch:report>
-			<sch:report test="count(dcterms:Location)>=1">A DarwinRecordSet must contain at least one Location.</sch:report>
-			<sch:report test="count(dwc:Identification)>=1">A DarwinRecordSet must contain at least one Identification.</sch:report>
-			<sch:report test="count(dwc:Taxon)>=1">A DarwinRecordSet must contain at least one Taxon.</sch:report>
+			<sch:report test="count(dwc:Occurrence) < 1">A DarwinRecordSet must contain at least one Occurrence.</sch:report>
+			<sch:report test="count(dcterms:Location) < 1">A DarwinRecordSet must contain at least one Location.</sch:report>
+			<sch:report test="count(dwc:Identification) < 1">A DarwinRecordSet must contain at least one Identification.</sch:report>
+			<sch:report test="count(dwc:Taxon) < 1">A DarwinRecordSet must contain at least one Taxon.</sch:report>
 		</sch:rule>
 	</sch:pattern>
+	-->
 	<!-- Do we need to add most M-1 rules if they are already in the DWC definition? -->
-	<!-- Occurrence -->
+	<!-- Occurrence 
 	<sch:pattern>
 		<sch:title>When organismQuantity is reported, an organismQuantityType is required.</sch:title>
 		<sch:rule context="//dwc:Occurrence">
-			<sch:report test="(count(dwc:organismQuantity)=1 and count(dwc:organismQuantityType)=1) or (count(dwc:organismQuantity)=0 and count(dwc:organismQuantityType)=0)">A single organismQuantityType must be matched with a single organismQuantity in an Occurrence.</sch:report>
+			<sch:assert test="(count(dwc:organismQuantity) = 1 and count(dwc:organismQuantityType) = 1) or (count(dwc:organismQuantity) = 0 and count(dwc:organismQuantityType) = 0)">A single organismQuantityType must be matched with a single organismQuantity in an Occurrence.</sch:assert>
 		</sch:rule>
 	</sch:pattern>
-	<!-- Events -->
+	-->
+	<!-- Events 
+	<sch:pattern>
+		<sch:title>When a sampleSizeValue is reported, a sampleSizeUnit is required.</sch:title>
+		<sch:rule context="//dwc:Event">
+			<sch:assert test="(count(dwc:sampleSizeUnit) = 1 and count(dwc:sampleSizeValue) = 1) or (count(dwc:sampleSizeUnit)=0 and count(dwc:sampleSizeValue) = 0)">When sampleSizeValue is recorded, record a sampleSizeUnit.</sch:assert>
+		</sch:rule>
+	</sch:pattern>
 	<sch:pattern>
 		<sch:title>When a sampleSizeValue is report, a sampleSizeUnit is required.</sch:title>
-		<sch:rule context="//dwc:Event">
-			<sch:report test="(count(dwc:sampleSizeUnit)=1 and count(dwc:sampleSizeValue)=1) or (count(dwc:sampleSizeUnit)=0 and count(dwc:sampleSizeValue)=0)">When sampleSizeValue is recorded, record a sampleSizeUnit.</sch:report>
-		</sch:rule>
-	</sch:pattern>
-		<sch:pattern>
-		<sch:title>When a sampleSizeValue is report, a sampleSizeUnit is required.</sch:title>
 		<sch:rule context="//dwc:HumanObservation">
-			<sch:report test="(count(dwc:sampleSizeUnit)=1 and count(dwc:sampleSizeValue)=1) or (count(dwc:sampleSizeUnit)=0 and count(dwc:sampleSizeValue)=0)">When sampleSizeValue is recorded, record a sampleSizeUnit.</sch:report>
+			<sch:assert test="(count(dwc:sampleSizeUnit) = 1 and count(dwc:sampleSizeValue) = 1) or (count(dwc:sampleSizeUnit) = 0 and count(dwc:sampleSizeValue) = 0)">When sampleSizeValue is recorded, record a sampleSizeUnit.</sch:assert>
 		</sch:rule>
 	</sch:pattern>
-		<sch:pattern>
+	<sch:pattern>
 		<sch:title>When a sampleSizeValue is report, a sampleSizeUnit is required.</sch:title>
 		<sch:rule context="//dwc:MachineObservation">
-			<sch:report test="(count(dwc:sampleSizeUnit)=1 and count(dwc:sampleSizeValue)=1) or (count(dwc:sampleSizeUnit)=0 and count(dwc:sampleSizeValue)=0)">When sampleSizeValue is recorded, record a sampleSizeUnit.</sch:report>
+			<sch:assert test="(count(dwc:sampleSizeUnit) = 1 and count(dwc:sampleSizeValue) = 1) or (count(dwc:sampleSizeUnit) = 0 and count(dwc:sampleSizeValue) = 0)">When sampleSizeValue is recorded, record a sampleSizeUnit.</sch:assert>
 		</sch:rule>
 	</sch:pattern>
+	-->
 </sch:schema>
