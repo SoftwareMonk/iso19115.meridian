@@ -21,19 +21,7 @@
 		Geonetwork requires that all namespaces be present to be recognized, and since some records
 		may not have Darwin Core elements, these have to be commented out-->
 		<elements type="root">
-			<gmi:MI_Metadata>
-				<gmd:metadataStandardName>
-					<gco:CharacterString>
-						.*MERIDIAN.*
-					</gco:CharacterString>
-				</gmd:metadataStandardName>
-				<gmd:metadataStandardVersion>
-					<gco:CharacterString>
-						.*0.3$
-					</gco:CharacterString>
-				</gmd:metadataStandardVersion>
-			</gmi:MI_Metadata>
-			
+			<gmi:MI_Metadata/>
 		</elements>
 	</autodetect>
 </schema>

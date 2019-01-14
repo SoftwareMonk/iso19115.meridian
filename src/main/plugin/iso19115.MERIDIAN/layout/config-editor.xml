@@ -116,8 +116,8 @@
 		</for>
 
     <for name="mcp:MD_Commons" addDirective="data-gn-commons-jurisdiction-selector"/>
-  </fields>
 -->
+  </fields>
 
   <fieldsWithFieldset>
     <name>gmi:MI_Metadata</name>

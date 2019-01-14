@@ -15,7 +15,7 @@
   xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
   xmlns:dwr="http://rs.tdwg.org/dwc/dwcrecord/" 
   xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="#all" version="2.0">
-<!-- TODO** KDM - check if more namespaces need to be added
+<!-- TODO** KDM - check if more namespaces need to be added -->
 	<xsl:include href="utility-tpl.xsl"/>
 
   <!-- ===================================================================== -->
@@ -54,6 +54,7 @@
 					</xsl:for-each>
 				</datacommons>
 			</xsl:for-each>
+			-->
 <!-- TODO** KDM This is how they put in custom codelists - what happens when we use custom codelists but don't have this? 
 			<xsl:choose>
 
