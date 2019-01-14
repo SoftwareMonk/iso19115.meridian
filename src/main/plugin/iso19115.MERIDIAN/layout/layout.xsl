@@ -59,7 +59,7 @@
     
     <xsl:call-template name="render-boxed-element">
       <xsl:with-param name="label"
-        select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)/label"/>
+        select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
       <xsl:with-param name="editInfo" select="gn:element"/>
       <xsl:with-param name="errors" select="$errors"/>
       <xsl:with-param name="cls" select="local-name()"/>
@@ -114,7 +114,7 @@
 
     <xsl:call-template name="render-element">
       <xsl:with-param name="label"
-        select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)/label"/>
+        select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
       <xsl:with-param name="value" select="*/@codeListValue"/>
       <xsl:with-param name="cls" select="local-name()"/>
       <xsl:with-param name="xpath" select="$xpath"/>
@@ -162,7 +162,7 @@
 
     <xsl:call-template name="render-element">
       <xsl:with-param name="label"
-        select="gn-fn-metadata:getLabel($schema, name(..), $labels, name(../..), '', '')/label"/>
+        select="gn-fn-metadata:getLabel($schema, name(..), $labels, name(../..), '', '')"/>
       <xsl:with-param name="value" select="text()"/>
       <xsl:with-param name="cls" select="local-name()"/>
       <xsl:with-param name="type" select="gn-fn-iso19139:getCodeListType(name())"/>
@@ -203,7 +203,7 @@
          id="gn-el-{$dateTypeElementRef}"
          data-gn-field-highlight="">
       <label class="col-sm-2 control-label">
-        <xsl:value-of select="$labelConfig/label"/>
+        <xsl:value-of select="$labelConfig"/>
       </label>
       <div class="col-sm-3 gn-value">
         <xsl:call-template name="render-codelist-as-select">
