@@ -22,16 +22,16 @@
   <!-- === iso19139.mcp-2.0 brief formatting === -->
   <!-- Edited to become MERIDIAN in 2018 -->
   <!-- ===================================================================== -->
-  <xsl:template name="iso19139.MERIDIANBrief">
+  <xsl:template name="iso19115.MERIDIANBrief">
     <metadata>
       <xsl:call-template name="iso19139-brief"/>
-			<xsl:call-template name="iso19139.MERIDIAN-brief"/>
+			<xsl:call-template name="iso19115.MERIDIAN-brief"/>
     </metadata>
   </xsl:template>
 
 <!-- TODO** KDM - any extensions in MI_Metadata need to be added to brief template -->
 
-	<xsl:template name="iso19139.MERIDIAN-brief">
+	<xsl:template name="iso19115.MERIDIAN-brief">
 
 <!--
 		<xsl:for-each select="gmd:identificationInfo/gmd:MD_DataIdentification">
