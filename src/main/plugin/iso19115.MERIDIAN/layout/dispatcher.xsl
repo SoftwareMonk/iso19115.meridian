@@ -18,13 +18,13 @@
   <!-- 
     Load the schema configuration for the editor.
       -->
-  <xsl:template name="get-iso19139.MERIDIAN-configuration">
+  <xsl:template name="get-iso19115.MERIDIAN-configuration">
     <xsl:copy-of select="document('config-editor.xml')"/>
   </xsl:template>
 
 
 	<!-- The main dispatch point -->
-  <xsl:template name="dispatch-iso19139.MERIDIAN">
+  <xsl:template name="dispatch-iso19115.MERIDIAN">
     <xsl:param name="base" as="node()"/>
     <xsl:param name="overrideLabel" as="xs:string" required="no" select="''"/>
 
@@ -35,7 +35,7 @@
     <xsl:apply-templates mode="mode-iso19139" select="$base">
      	<xsl:with-param name="overrideLabel" select="$overrideLabel"/>
     	<xsl:with-param name="schema" select="$schema"/>
-    	<xsl:with-param name="labels" select="$iso19139.MERIDIANlabels"/>
+    	<xsl:with-param name="labels" select="$iso19115.MERIDIANlabels"/>
     </xsl:apply-templates>
 
   </xsl:template>
@@ -49,7 +49,7 @@
     
        A node returned by evaluate will lost its context (ancestors).
     -->
-  <xsl:template name="evaluate-iso19139.MERIDIAN">
+  <xsl:template name="evaluate-iso19115.MERIDIAN">
     <xsl:param name="base" as="node()"/>
     <xsl:param name="in"/>
    <!-- <xsl:message>in xml <xsl:copy-of select="$base"></xsl:copy-of></xsl:message>
@@ -66,7 +66,7 @@
   </xsl:template>
 
   <!-- Evaluate XPath returning a boolean value. -->
-  <xsl:template name="evaluate-iso19139.MERIDIAN-boolean">
+  <xsl:template name="evaluate-iso19115.MERIDIAN-boolean">
     <xsl:param name="base" as="node()"/>
     <xsl:param name="in"/>
    
