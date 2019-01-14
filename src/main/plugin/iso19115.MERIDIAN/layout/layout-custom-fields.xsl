@@ -172,15 +172,15 @@
   
   -->
 
-
+<!--
   <xsl:template mode="mode-iso19139" priority="9999999" match="mcp:parameterName|mcp:parameterUnits">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
 
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
-    <!--<xsl:variable name="thesaurusUrl"
-      select="mcp:DP_Term/mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyListURL/gmd:URL"/>-->
+    <xsl:variable name="thesaurusUrl"
+      select="mcp:DP_Term/mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyListURL/gmd:URL"/>
 
     <xsl:variable name="isThesaurusAvailable"
       select="count($listOfThesaurus/thesaurus[url=$thesaurusUrl]) > 0"/>
@@ -191,8 +191,8 @@
 
     <xsl:variable name="attributes">
       <xsl:if test="$isEditing">
-        <!-- Create form for all existing attribute (not in gn namespace)
-        and all non existing attributes not already present. -->
+        Create form for all existing attribute (not in gn namespace)
+        and all non existing attributes not already present. 
         <xsl:apply-templates mode="render-for-field-for-attribute"
           select="
           @*|
@@ -219,7 +219,7 @@
     </xsl:call-template>
 
   </xsl:template>
-
+-->
 	<!-- Offer a thesaurus picker for mcp:DP_Term -->
 <!--
 TODO** KDM - what is the value of this picker? Do we need it?
