@@ -35,7 +35,7 @@
     * of the fieldset is the creative commons license name
 -->
   <xsl:template mode="mode-iso19139" priority="33000" match="gmd:resourceConstraints">
-    <xsl:param name="schema" select="'iso19139.MERIDIAN'" required="no"/>
+    <xsl:param name="schema" select="'iso19115.MERIDIAN'" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
 
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
