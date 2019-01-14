@@ -16,10 +16,10 @@
 	<xsl:include href="layout-custom-fields.xsl"/>
 
 
-  <xsl:variable name="iso19115.MERIDIANschema" select="/root/gui/schemas/iso19139.MERIDIAN"/>
-  <xsl:variable name="iso19115.MERIDIANlabels" select="$iso19139.MERIDIANschema/labels"/>
-  <xsl:variable name="iso19115.MERIDIANcodelists" select="$iso19139.MERIDIANschema/codelists"/>
-  <xsl:variable name="iso19115.MERIDIANstrings" select="$iso19139.MERIDIANschema/strings"/>
+  <xsl:variable name="iso19115.MERIDIANschema" select="/root/gui/schemas/iso19115.MERIDIAN"/>
+  <xsl:variable name="iso19115.MERIDIANlabels" select="$iso19115.MERIDIANschema/labels"/>
+  <xsl:variable name="iso19115.MERIDIANcodelists" select="$iso19115.MERIDIANschema/codelists"/>
+  <xsl:variable name="iso19115.MERIDIANstrings" select="$iso19115.MERIDIANschema/strings"/>
 
   <!-- Boxed element
     
@@ -78,9 +78,9 @@
 
   </xsl:template>
 
-  <!-- Match codelist values. Must use iso19139.MERIDIAN because  
+  <!-- Match codelist values. Must use iso19115.MERIDIAN because  
 	     19139 codelists are extended in MERIDIAN - if the codelist exists in
-			 iso19139.MERIDIAN then use that otherwise use iso19139 codelists 
+			 iso19115.MERIDIAN then use that otherwise use iso19139 codelists 
   
   eg. 
   <gmd:CI_RoleCode codeList="./resources/codeList.xml#CI_RoleCode" codeListValue="pointOfContact">
@@ -90,7 +90,7 @@
     <geonet:attribute name="codeSpace" add="true"/>
   
   -->
-  <xsl:template mode="mode-iso19139" priority="30000" match="*[*/@codeList and $schema='iso19139.MERIDIAN' and name()!='gmd:dateType']">
+  <xsl:template mode="mode-iso19139" priority="30000" match="*[*/@codeList and $schema='iso19115.MERIDIAN' and name()!='gmd:dateType']">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="codelists" select="$iso19115.MERIDIANcodelists" required="no"/>
