@@ -6,17 +6,17 @@
 <!-- TODO - **check how many prefixes we need to include in stylesheet here -->
 
   <!-- Get the main metadata languages -->
-  <xsl:template name="get-iso19139.MERIDIAN-language">
+  <xsl:template name="get-iso19115.MERIDIAN-language">
     <xsl:call-template name="get-iso19139-language"/>
   </xsl:template>
 
   <!-- Get the list of other languages in JSON -->
-  <xsl:template name="get-iso19139.MERIDIAN-other-languages-as-json">
+  <xsl:template name="get-iso19115.MERIDIAN-other-languages-as-json">
     <xsl:call-template name="get-iso19139-other-languages-as-json"/>
   </xsl:template>
 
   <!-- Get the list of other languages -->
-  <xsl:template name="get-iso19139.MERIDIAN-other-languages">
+  <xsl:template name="get-iso19115.MERIDIAN-other-languages">
     <xsl:call-template name="get-iso19139-other-languages"/>
   </xsl:template>
 </xsl:stylesheet>
