@@ -64,7 +64,7 @@
 -->    
     <for name="gmd:contact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes 
-					data-schema="iso19139.MERIDIAN"
+					data-schema="iso19115.MERIDIAN"
 					data-template-add-action="true"
 					data-template-type="contact"
 					data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
@@ -72,7 +72,7 @@
 
     <for name="gmd:pointOfContact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes 
-					data-schema="iso19139.MERIDIAN"
+					data-schema="iso19115.MERIDIAN"
 					data-template-add-action="true"
 					data-template-type="contact"
 					data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
@@ -80,7 +80,7 @@
 
     <for name="gmd:distributorContact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes 
-					data-schema="iso19139.MERIDIAN"
+					data-schema="iso19115.MERIDIAN"
 					data-template-add-action="true"
 					data-template-type="contact"
 					data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
@@ -88,7 +88,7 @@
 
     <for name="gmd:processor" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes 
-					data-schema="iso19139.MERIDIAN"
+					data-schema="iso191159.MERIDIAN"
 					data-template-add-action="true"
 					data-template-type="contact"
 					data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
@@ -96,7 +96,7 @@
 
     <for name="gmd:citedResponsibleParty" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes 
-					data-schema="iso19139.MERIDIAN"
+					data-schema="iso19115.MERIDIAN"
 					data-template-add-action="false"
 					data-template-type="contact"
 					data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
