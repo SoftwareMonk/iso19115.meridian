@@ -16,10 +16,10 @@
 	<xsl:include href="layout-custom-fields.xsl"/>
 
 
-  <xsl:variable name="iso19139.MERIDIANschema" select="/root/gui/schemas/iso19139.MERIDIAN"/>
-  <xsl:variable name="iso19139.MERIDIANlabels" select="$iso19139.MERIDIANschema/labels"/>
-  <xsl:variable name="iso19139.MERIDIANcodelists" select="$iso19139.MERIDIANschema/codelists"/>
-  <xsl:variable name="iso19139.MERIDIANstrings" select="$iso19139.MERIDIANschema/strings"/>
+  <xsl:variable name="iso19115.MERIDIANschema" select="/root/gui/schemas/iso19139.MERIDIAN"/>
+  <xsl:variable name="iso19115.MERIDIANlabels" select="$iso19139.MERIDIANschema/labels"/>
+  <xsl:variable name="iso19115.MERIDIANcodelists" select="$iso19139.MERIDIANschema/codelists"/>
+  <xsl:variable name="iso19115.MERIDIANstrings" select="$iso19139.MERIDIANschema/strings"/>
 
   <!-- Boxed element
     
@@ -93,13 +93,13 @@
   <xsl:template mode="mode-iso19139" priority="30000" match="*[*/@codeList and $schema='iso19139.MERIDIAN' and name()!='gmd:dateType']">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
-    <xsl:param name="codelists" select="$iso19139.MERIDIANcodelists" required="no"/>
+    <xsl:param name="codelists" select="$iso19115.MERIDIANcodelists" required="no"/>
 
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
     <xsl:variable name="elementName" select="name()"/>
 
-		<!-- check iso19139.MERIDIAN first, then fall back to iso19139 -->
+		<!-- check iso19115.MERIDIAN first, then fall back to iso19139 -->
 		<xsl:variable name="listOfValues" as="node()">
 			<xsl:variable name="MERIDIANList" as="node()" select="gn-fn-metadata:getCodeListValues($schema, name(*[@codeListValue]), $codelists, .)"/>
 			<xsl:choose>
@@ -131,7 +131,7 @@
 
 	
   <!-- 
-    Take care of enumerations. Same as for codelists, check iso19139.MERIDIAN
+    Take care of enumerations. Same as for codelists, check iso19115.MERIDIAN
 		first and if not found there, then check iso19139.
     
     In the metadocument an enumeration provide the list of possible values:
@@ -142,12 +142,12 @@
       <geonet:text value="biota"/>
       <geonet:text value="boundaries"/
   -->
-  <xsl:template mode="mode-iso19139" priority="30000" match="*[gn:element/gn:text and $schema='iso19139.MERIDIAN']">
+  <xsl:template mode="mode-iso19139" priority="30000" match="*[gn:element/gn:text and $schema='iso19115.MERIDIAN']">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
-    <xsl:param name="codelists" select="$iso19139.MERIDIANcodelists" required="no"/>
+    <xsl:param name="codelists" select="$iso19115.MERIDIANcodelists" required="no"/>
 
-		<!-- check iso19139.MERIDIAN first, then fall back to iso19139 -->
+		<!-- check iso19115.MERIDIAN first, then fall back to iso19139 -->
 		<xsl:variable name="listOfValues" as="node()">
 			<xsl:variable name="MERIDIANList" as="node()" select="gn-fn-metadata:getCodeListValues($schema, name(), $codelists, .)"/>
 			<xsl:choose>
@@ -175,10 +175,10 @@
   <!-- Rendering date type as a dropdown to select type
   and the calendar next to it.
   -->
-  <xsl:template mode="mode-iso19139" priority="2000" match="gmd:CI_Date/gmd:date[$schema='iso19139.MERIDIAN']">
+  <xsl:template mode="mode-iso19139" priority="2000" match="gmd:CI_Date/gmd:date[$schema='iso19115.MERIDIAN']">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
-    <xsl:param name="codelists" select="$iso19139.MERIDIANcodelists" required="no"/>
+    <xsl:param name="codelists" select="$iso19115.MERIDIANcodelists" required="no"/>
 
     <xsl:variable name="labelConfig"
                   select="gn-fn-metadata:getLabel($schema, name(), $labels)"/>
@@ -186,7 +186,7 @@
     <xsl:variable name="dateTypeElementRef"
                   select="../gn:element/@ref"/>
 
-		<!-- check iso19139.MERIDIAN first, then fall back to iso19139 -->
+		<!-- check iso19115.MERIDIAN first, then fall back to iso19139 -->
 		<xsl:variable name="listOfValues" as="node()">
 			<xsl:variable name="MERIDIANList" as="node()" select="gn-fn-metadata:getCodeListValues($schema, 'gmd:CI_DateTypeCode', $codelists, .)"/>
 			<xsl:choose>
