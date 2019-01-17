@@ -13,7 +13,7 @@
 
 	<xsl:import href="../../iso19139/layout/layout.xsl"/>
 	<xsl:include href="utility-tpl.xsl"/>
-	<xsl:include href="layout-custom-fields.xsl"/>
+	<!--<xsl:include href="layout-custom-fields.xsl"/>-->
 
 
   <xsl:variable name="iso19115.MERIDIANschema" select="/root/gui/schemas/iso19115.MERIDIAN"/>
@@ -30,53 +30,18 @@
       * and not(gco:CharacterString): Don't take into account those having gco:CharacterString (eg. multilingual elements)
   -->  
   <!-- todo (KDM): check if darwin core elements are grabbed appropriately -->
-  <xsl:template mode="mode-iso19139" priority="2000"
-    match="*[name() = $editorConfig/editor/fieldsWithFieldset/name and namespace-uri()='TODO**INSERT URL']"      
->
+  
+    <!-- Visit all XML tree recursively -->
+  <xsl:template mode="mode-iso19115.MERIDIAN" match="*|@*">
     <xsl:param name="schema" select="$schema" required="no"/>
-    <xsl:param name="labels" select="$labels" required="no"/>
+    <xsl:param name="labels" select="$iso19115.MERIDIANlabels" required="no"/>
 
-    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
-
-    <xsl:variable name="attributes">
-      <!-- Create form for all existing attribute (not in gn namespace)
-      and all non existing attributes not already present. -->
-      <xsl:apply-templates mode="render-for-field-for-attribute"
-        select="
-        @*|
-        gn:attribute[not(@name = parent::node()/@*/name())]">
-        <xsl:with-param name="ref" select="gn:element/@ref"/>
-        <xsl:with-param name="insertRef" select="gn:element/@ref"/>
-      </xsl:apply-templates>
-    </xsl:variable>
-    
-    <xsl:variable name="errors">
-      <xsl:if test="$showValidationErrors">
-        <xsl:call-template name="get-errors"/>
-      </xsl:if>
-    </xsl:variable>
-    
-    <xsl:call-template name="render-boxed-element">
-      <xsl:with-param name="label"
-        select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
-      <xsl:with-param name="editInfo" select="gn:element"/>
-      <xsl:with-param name="errors" select="$errors"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="$xpath"/>
-      <xsl:with-param name="attributesSnippet" select="$attributes"/>
-      <xsl:with-param name="subTreeSnippet">
-        <!-- Process child of those element. Propagate schema
-        and labels to all subchilds (eg. needed like iso19110 elements
-        contains gmd:* child. -->
-        <xsl:apply-templates mode="mode-iso19139" select="*">
-          <xsl:with-param name="schema" select="$schema"/>
-          <xsl:with-param name="labels" select="$labels"/>
-        </xsl:apply-templates>
-      </xsl:with-param>
-    </xsl:call-template>
-
+    <xsl:apply-templates mode="mode-iso19139" select=".">
+      <xsl:with-param name="schema" select="$schema"/>
+      <xsl:with-param name="labels" select="$labels"/>
+    </xsl:apply-templates>
   </xsl:template>
+
 
   <!-- Match codelist values. Must use iso19115.MERIDIAN because  
 	     19139 codelists are extended in MERIDIAN - if the codelist exists in
