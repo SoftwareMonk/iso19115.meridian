@@ -25,114 +25,16 @@
   <xsl:template name="iso19115.MERIDIANBrief">
     <metadata>
       <xsl:call-template name="iso19139-brief"/>
-			<xsl:call-template name="iso19115.MERIDIAN-brief"/>
+      <!--<xsl:call-template name="ISO19115.MERIDIAN-brief"/>-->
     </metadata>
   </xsl:template>
 
 <!-- TODO** KDM - any extensions in MI_Metadata need to be added to brief template -->
 
-	<xsl:template name="iso19115.MERIDIAN-brief">
+    <xsl:template name="iso19115.MERIDIAN-brief">
 
-<!--
-		<xsl:for-each select="gmd:identificationInfo/gmd:MD_DataIdentification">
-			<xsl:for-each select=".//mcp:MD_Commons[@mcp:commonsType='Creative Commons']">
-				<creativecommons>
-					<xsl:for-each select="*">
-						<xsl:element name="{local-name(.)}">
-							<xsl:value-of select="*/text()|*/@codeListValue"/>
-						</xsl:element>
-					</xsl:for-each>
-				</creativecommons>
-			</xsl:for-each>
 
-			<xsl:for-each select=".//mcp:MD_Commons[@mcp:commonsType='Data Commons']">
-				<datacommons>
-					<xsl:for-each select="*">
-						<xsl:element name="{local-name(.)}">
-							<xsl:value-of select="*/text()|*/@codeListValue"/>
-						</xsl:element>
-					</xsl:for-each>
-				</datacommons>
-			</xsl:for-each>
-			-->
-<!-- TODO** KDM This is how they put in custom codelists - what happens when we use custom codelists but don't have this? 
-			<xsl:choose>
+    </xsl:template>
 
-				1. role=moralRightsOwner 
-				<xsl:when test="gmd:pointOfContact/*[gmd:role/*/@codeListValue='moralRightsOwner']">
-					<xsl:for-each select="gmd:pointOfContact/*[gmd:role/*/@codeListValue='moralRightsOwner']">
-						<moralrightsowner>
-							<xsl:apply-templates mode="responsiblepartyprocessor" select="."/>
-						</moralrightsowner>
-					</xsl:for-each>
-				</xsl:when>
 
-				2. role=ipOwner 
-				<xsl:when test="gmd:pointOfContact/*[gmd:role/*/@codeListValue='ipOwner']">
-					<xsl:for-each select="gmd:pointOfContact/*[gmd:role/*/@codeListValue='ipOwner']">
-						<ipOwner>
-							<xsl:apply-templates mode="responsiblepartyprocessor" select="."/>
-						</ipOwner>
-					</xsl:for-each>
-				</xsl:when>
-
-				3. role=owner 
-				<xsl:when test="gmd:pointOfContact/*[gmd:role/*/@codeListValue='owner']">
-					<xsl:for-each select="gmd:pointOfContact/*[gmd:role/*/@codeListValue='licensor']">
-						<owner>
-							<xsl:apply-templates mode="responsiblepartyprocessor" select="."/>
-						</owner>
-					</xsl:for-each>
-				</xsl:when>
-
-				4. role=principalInvestigator
-				<xsl:when test="gmd:pointOfContact/*[gmd:role/*/@codeListValue='principalInvestigator']">
-					<xsl:for-each select="gmd:pointOfContact/*[gmd:role/*/@codeListValue='principalInvestigator']">
-						<principalInvestigator>
-							<xsl:apply-templates mode="responsiblepartyprocessor" select="."/>
-						</principalInvestigator>
-					</xsl:for-each>
-				</xsl:when>
-
-				<5. role=licensor
-				<xsl:when test="gmd:pointOfContact/*[gmd:role/*/@codeListValue='licensor']">
-					<xsl:for-each select="gmd:pointOfContact/*[gmd:role/*/@codeListValue='licensor']">
-						<licensor>
-							<xsl:apply-templates mode="responsiblepartyprocessor" select="."/>
-						</licensor>
-					</xsl:for-each>
-				</xsl:when>
-			</xsl:choose>
-
-			<xsl:for-each select="gmd:extent/*/gmd:temporalElement/mcp:EX_TemporalExtent/gmd:extent/gml:TimePeriod">
-				<temporalExtent>
-					<begin><xsl:apply-templates mode="brieftime" select="gml:beginPosition|gml:begin/gml:TimeInstant/gml:timePosition"/></begin>
-					<end><xsl:apply-templates mode="brieftime" select="gml:endPosition|gml:end/gml:TimeInstant/gml:timePosition"/></end>
-				</temporalExtent>
-			</xsl:for-each>
-
-			<xsl:for-each select="gmd:extent/mcp:EX_Extent/mcp:taxonomicElement/mcp:EX_TaxonomicCoverage/mcp:presentationLink">
-				<taxonomicCoverage>	
-					<link><xsl:value-of select="string(.)"/></link>
-				</taxonomicCoverage>
-			</xsl:for-each>
-		</xsl:for-each>
--->
-  </xsl:template>
-
-	<!-- helper to create a simplified view of a CI_ResponsibleParty|
-       CI_Responsibility block -->
-
-  <xsl:template mode="responsiblepartyprocessor" match="*">
-    <xsl:choose>
-      <xsl:when test="*">
-        <xsl:apply-templates mode="responsiblepartyprocessor"/>
-      </xsl:when>
-      <xsl:when test="text()!=''">
-        <xsl:element name="{local-name(..)}">
-          <xsl:value-of select="."/>
-        </xsl:element>
-      </xsl:when>
-    </xsl:choose>
-  </xsl:template>
 </xsl:stylesheet>
