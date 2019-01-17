@@ -6,24 +6,24 @@
   xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
   exclude-result-prefixes="#all">
 <!-- TODO - **check how many prefixes we need to include in stylesheet here -->
-  <xsl:include href="utility-tpl-multilingual.xsl"/>
+    <xsl:include href="utility-tpl-multilingual.xsl"/>
 
 	<xsl:template name="get-iso19115.MERIDIAN-is-service">
 		<xsl:call-template name="get-iso19139-is-service"/>
 	</xsl:template>
 
-  <xsl:template name="get-iso19115.MERIDIAN-title">
-    <xsl:call-template name="get-iso19139-title"/>
-  </xsl:template>
+    <xsl:template name="get-iso19115.MERIDIAN-title">
+        <xsl:call-template name="get-iso19139-title"/>
+    </xsl:template>
 
 	<xsl:template name="get-iso19115.MERIDIAN-extents-as-json">
 		<xsl:call-template name="get-iso19139-extents-as-json"/>
 	</xsl:template>
 
-  <xsl:template name="get-iso19115.MERIDIAN-online-source-config">
-    <xsl:param name="pattern"/>
-    <xsl:call-template name="get-iso19139-online-source-config">
-        <xsl:with-param name="pattern" select="$pattern"/>
-    </xsl:call-template>
-  </xsl:template>
+    <xsl:template name="get-iso19115.MERIDIAN-online-source-config">
+        <xsl:param name="pattern"/>
+        <xsl:call-template name="get-iso19139-online-source-config">
+            <xsl:with-param name="pattern" select="$pattern"/>
+        </xsl:call-template>
+    </xsl:template>
 </xsl:stylesheet>
